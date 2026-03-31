@@ -78,6 +78,22 @@ const Footer = () => {
                 </a>
               ))}
             </div>
+            <form onSubmit={handleSubscribe} className="mt-6">
+              <h4 className="text-foreground text-sm font-medium mb-3">Subscribe for Updates</h4>
+              <div className="flex gap-2">
+                <Input
+                  type="email"
+                  placeholder="Enter your email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  required
+                  className="h-9 text-sm"
+                />
+                <Button type="submit" size="sm" className="shrink-0">
+                  Subscribe
+                </Button>
+              </div>
+            </form>
           </div>
         </div>
 
