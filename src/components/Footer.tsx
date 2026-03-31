@@ -1,6 +1,21 @@
+import { useState } from 'react';
 import { Linkedin, Twitter, Instagram, Youtube, ArrowUpRight } from 'lucide-react';
+import { Input } from './ui/input';
+import { Button } from './ui/button';
+import { useToast } from '@/hooks/use-toast';
 
 const Footer = () => {
+  const [email, setEmail] = useState('');
+  const { toast } = useToast();
+
+  const handleSubscribe = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (email) {
+      toast({ title: "Subscribed!", description: "You'll receive updates at " + email });
+      setEmail('');
+    }
+  };
+
   return (
     <footer id="contact" className="border-t border-border">
       <div className="max-w-[1400px] mx-auto px-6 lg:px-12 py-16 lg:py-20">
@@ -63,6 +78,22 @@ const Footer = () => {
                 </a>
               ))}
             </div>
+            <form onSubmit={handleSubscribe} className="mt-6">
+              <h4 className="text-foreground text-sm font-medium mb-3">Subscribe for Updates</h4>
+              <div className="flex gap-2">
+                <Input
+                  type="email"
+                  placeholder="Enter your email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  required
+                  className="h-9 text-sm"
+                />
+                <Button type="submit" size="sm" className="shrink-0">
+                  Subscribe
+                </Button>
+              </div>
+            </form>
           </div>
         </div>
 
