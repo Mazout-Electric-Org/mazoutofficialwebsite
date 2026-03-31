@@ -36,7 +36,7 @@ const BlogsSection = () => {
           <h2 className="text-foreground font-medium text-5xl">Blog</h2>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
           {blogs.map((blog, i) => (
             <motion.div
               key={blog.id}
@@ -51,15 +51,12 @@ const BlogsSection = () => {
                   {String(i + 1).padStart(2, "0")}
                 </span>
               </div>
-              <h3 className="text-foreground font-light text-lg mb-3 leading-snug">
+              <h3 className="text-foreground font-light text-lg mb-4 leading-snug">
                 {blog.title}
               </h3>
-              <p className="text-muted-foreground text-sm leading-relaxed mb-6 flex-1">
-                {blog.description}
-              </p>
               <Link
                 to={`/blog/${blog.id}`}
-                className="text-primary text-sm flex items-center gap-1.5 hover:gap-3 transition-all duration-300"
+                className="text-primary text-sm flex items-center gap-1.5 hover:gap-3 transition-all duration-300 mt-auto"
               >
                 Read more <span className="text-lg">→</span>
               </Link>
