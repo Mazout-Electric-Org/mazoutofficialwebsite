@@ -45,8 +45,8 @@ const ApplicationsSection = () => {
               transition={{ duration: 0.5, delay: i * 0.1 }}
               className="group border border-border rounded-xl p-8 flex flex-col hover:border-primary/30 transition-colors duration-300"
             >
-              <app.icon className="w-6 h-6 text-primary mb-6" />
-              <h3 className="text-foreground text-xl font-light mb-3">
+              <app.icon className="text-primary mb-6 w-[48px] h-[48px]" />
+              <h3 className="text-foreground font-light mb-3 text-3xl">
                 {app.title}
               </h3>
               <p className="text-muted-foreground text-sm leading-relaxed mb-8 flex-1">
