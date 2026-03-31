@@ -93,7 +93,7 @@ const ApplicationCard = ({ app, i }: { app: typeof applications[0]; i: number })
             height={600}
           />
           <div className="absolute inset-0 bg-background/40 flex items-end p-6">
-            <span className="text-foreground font-medium text-lg">
+            <span className="text-foreground font-medium text-2xl">
               {app.title} →
             </span>
           </div>
