@@ -20,10 +20,18 @@ const Footer = () => {
           <div>
             <h4 className="text-foreground text-sm font-medium mb-6">Product</h4>
             <ul className="space-y-3">
-              {["Zooty Platform", "Documentation", "Dashboard", "Buy Now"].map((link) => (
-                <li key={link}>
-                  <a href="#" className="text-muted-foreground text-sm hover:text-foreground transition-colors duration-300">
-                    {link}
+              {[
+                { label: "Zooty for Logistics", external: false },
+                { label: "Zooty for Patrolling", external: false },
+                { label: "Zooty as Taxi", external: false },
+                { label: "Documentation", external: true },
+                { label: "Dashboard", external: true },
+                { label: "Buy Now", external: false },
+              ].map(({ label, external }) => (
+                <li key={label}>
+                  <a href="#" className="text-muted-foreground text-sm hover:text-foreground transition-colors duration-300 inline-flex items-center gap-1">
+                    {label}
+                    {external && <ArrowUpRight size={14} />}
                   </a>
                 </li>
               ))}
