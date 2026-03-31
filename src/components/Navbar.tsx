@@ -41,7 +41,7 @@ const Navbar = () => {
               </a>
             )
           )}
-          <Button size="sm" className="bg-primary border border-input hover:text-accent-foreground opacity-100">Login</Button>
+          <Button size="sm" className="bg-primary border border-input hover:text-primary-foreground opacity-100">Login</Button>
         </div>
 
         <button
