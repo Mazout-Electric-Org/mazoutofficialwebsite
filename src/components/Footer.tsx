@@ -21,7 +21,7 @@ const Footer = () => {
       <div className="max-w-[1400px] mx-auto px-6 lg:px-12 py-16 lg:py-20">
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-8 mb-16">
           <div>
-            <h4 className="text-foreground text-sm font-medium mb-6">Company</h4>
+            <h4 className="text-foreground font-medium mb-6 text-base">Company</h4>
             <ul className="space-y-3">
               {["Vision", "Careers", "Blogs", "Gallery"].map((link) => (
                 <li key={link}>
@@ -33,7 +33,7 @@ const Footer = () => {
             </ul>
           </div>
           <div>
-            <h4 className="text-foreground text-sm font-medium mb-6">Product</h4>
+            <h4 className="text-foreground font-medium mb-6 text-base">Product</h4>
             <ul className="space-y-3">
               {[
                 { label: "Zooty for Logistics", external: false },
@@ -53,7 +53,7 @@ const Footer = () => {
             </ul>
           </div>
           <div>
-            <h4 className="text-foreground text-sm font-medium mb-6">Legal</h4>
+            <h4 className="text-foreground font-medium mb-6 text-base">Legal</h4>
             <ul className="space-y-3">
               {["Privacy Policy", "Terms of Service", "Cookie Policy"].map((link) => (
                 <li key={link}>
@@ -65,7 +65,7 @@ const Footer = () => {
             </ul>
           </div>
           <div>
-            <h4 className="text-foreground text-sm font-medium mb-6">Connect</h4>
+            <h4 className="text-foreground font-medium mb-6 text-base">Connect</h4>
             <div className="flex gap-4">
               {[
                 { icon: Linkedin, label: "LinkedIn" },
