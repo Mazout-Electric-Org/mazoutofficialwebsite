@@ -4,48 +4,46 @@
 
 @layer base {
   :root {
-    --background: 240 20% 3.5%;
-    --foreground: 210 20% 92%;
+    --background: 0 0% 0%;
+    --foreground: 0 0% 100%;
 
-    --card: 240 15% 6%;
-    --card-foreground: 210 20% 92%;
+    --card: 0 0% 0%;
+    --card-foreground: 0 0% 100%;
 
-    --popover: 240 15% 6%;
-    --popover-foreground: 210 20% 92%;
+    --popover: 0 0% 0%;
+    --popover-foreground: 0 0% 100%;
 
-    --primary: 190 90% 55%;
-    --primary-foreground: 240 20% 3.5%;
+    --primary: 36 44% 56%;
+    --primary-foreground: 0 0% 0%;
 
-    --secondary: 220 60% 45%;
-    --secondary-foreground: 210 20% 92%;
+    --secondary: 36 30% 40%;
+    --secondary-foreground: 0 0% 100%;
 
-    --muted: 240 10% 12%;
-    --muted-foreground: 215 15% 55%;
+    --muted: 0 0% 10%;
+    --muted-foreground: 0 0% 55%;
 
-    --accent: 190 80% 40%;
-    --accent-foreground: 210 20% 92%;
+    --accent: 36 44% 56%;
+    --accent-foreground: 0 0% 0%;
 
     --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive-foreground: 0 0% 98%;
 
-    --border: 240 10% 14%;
-    --input: 240 10% 14%;
-    --ring: 190 90% 55%;
+    --border: 0 0% 15%;
+    --input: 0 0% 15%;
+    --ring: 36 44% 56%;
 
     --radius: 0.5rem;
 
-    --sidebar-background: 240 15% 5%;
-    --sidebar-foreground: 210 20% 92%;
-    --sidebar-primary: 190 90% 55%;
-    --sidebar-primary-foreground: 240 20% 3.5%;
-    --sidebar-accent: 240 10% 12%;
-    --sidebar-accent-foreground: 210 20% 92%;
-    --sidebar-border: 240 10% 14%;
-    --sidebar-ring: 190 90% 55%;
+    --sidebar-background: 0 0% 2%;
+    --sidebar-foreground: 0 0% 100%;
+    --sidebar-primary: 36 44% 56%;
+    --sidebar-primary-foreground: 0 0% 0%;
+    --sidebar-accent: 0 0% 10%;
+    --sidebar-accent-foreground: 0 0% 100%;
+    --sidebar-border: 0 0% 15%;
+    --sidebar-ring: 36 44% 56%;
 
-    --glow-cyan: 190 90% 55%;
-    --glow-blue: 220 70% 50%;
-    --surface-elevated: 240 12% 8%;
+    --surface-elevated: 0 0% 6%;
   }
 }
 
@@ -65,20 +63,10 @@
 }
 
 @layer utilities {
-  .text-gradient-cyan {
-    background: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--glow-blue)));
+  .text-gradient-gold {
+    background: linear-gradient(135deg, hsl(36, 44%, 56%), hsl(36, 60%, 70%));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-  }
-
-  .glow-line {
-    background: linear-gradient(90deg, transparent, hsl(var(--primary) / 0.6), transparent);
-    height: 1px;
-  }
-
-  .grid-dot-pattern {
-    background-image: radial-gradient(circle, hsl(var(--primary) / 0.15) 1px, transparent 1px);
-    background-size: 32px 32px;
   }
 }

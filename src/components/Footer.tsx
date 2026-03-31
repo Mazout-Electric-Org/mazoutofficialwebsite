@@ -1,57 +1,68 @@
-const footerLinks = {
-  Company: ["About", "Careers", "Blog", "Gallery"],
-  Product: ["Zooty Platform", "Documentation", "Dashboard", "Buy Now"],
-  Legal: ["Privacy Policy", "Terms of Service", "Cookie Policy"],
-  Connect: ["LinkedIn", "Twitter", "Instagram", "YouTube"],
-};
-
 const Footer = () => {
   return (
-    <footer className="border-t border-border bg-card/30">
-      <div className="max-w-7xl mx-auto px-6 lg:px-12 py-16 lg:py-20">
-        <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-10 lg:gap-8">
-          {/* Brand */}
-          <div className="lg:col-span-1">
-            <div className="flex items-center gap-2 mb-4">
-              <div className="w-7 h-7 rounded-full border-2 border-primary flex items-center justify-center">
-                <div className="w-2.5 h-2.5 rounded-full bg-primary" />
-              </div>
-              <span className="font-semibold tracking-tight">MAZOUT</span>
-            </div>
-            <p className="text-muted-foreground text-sm leading-relaxed">
-              Redefining urban movement through software-defined micro-mobility.
-            </p>
+    <footer id="contact" className="border-t border-border">
+      <div className="max-w-[1400px] mx-auto px-6 lg:px-12 py-16 lg:py-20">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-8 mb-16">
+          <div>
+            <h4 className="text-foreground text-sm font-medium mb-6">Company</h4>
+            <ul className="space-y-3">
+              {["About", "Careers", "Blog", "Gallery"].map((link) => (
+                <li key={link}>
+                  <a href="#" className="text-muted-foreground text-sm hover:text-foreground transition-colors duration-300">
+                    {link}
+                  </a>
+                </li>
+              ))}
+            </ul>
           </div>
-
-          {/* Link columns */}
-          {Object.entries(footerLinks).map(([heading, links]) => (
-            <div key={heading}>
-              <h4 className="text-sm font-semibold mb-4 tracking-wide">{heading}</h4>
-              <ul className="space-y-2.5">
-                {links.map((link) => (
-                  <li key={link}>
-                    <a
-                      href="#"
-                      className="text-muted-foreground text-sm hover:text-primary transition-colors duration-300"
-                    >
-                      {link}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
+          <div>
+            <h4 className="text-foreground text-sm font-medium mb-6">Product</h4>
+            <ul className="space-y-3">
+              {["Zooty Platform", "Documentation", "Dashboard", "Buy Now"].map((link) => (
+                <li key={link}>
+                  <a href="#" className="text-muted-foreground text-sm hover:text-foreground transition-colors duration-300">
+                    {link}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div>
+            <h4 className="text-foreground text-sm font-medium mb-6">Legal</h4>
+            <ul className="space-y-3">
+              {["Privacy Policy", "Terms of Service", "Cookie Policy"].map((link) => (
+                <li key={link}>
+                  <a href="#" className="text-muted-foreground text-sm hover:text-foreground transition-colors duration-300">
+                    {link}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div>
+            <h4 className="text-foreground text-sm font-medium mb-6">Connect</h4>
+            <ul className="space-y-3">
+              {["LinkedIn", "Twitter", "Instagram", "YouTube"].map((link) => (
+                <li key={link}>
+                  <a href="#" className="text-muted-foreground text-sm hover:text-foreground transition-colors duration-300">
+                    {link}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
 
-        <div className="glow-line w-full mt-12 mb-8" />
-
-        <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div className="flex flex-col sm:flex-row items-center justify-between gap-4 pt-8 border-t border-border">
           <p className="text-muted-foreground text-xs">
             © {new Date().getFullYear()} Mazout Electric. All rights reserved.
           </p>
-          <p className="text-muted-foreground text-xs">
-            Built for the future of mobility.
-          </p>
+          <a
+            href="mailto:hello@mazoutelectric.com"
+            className="text-primary text-sm hover:text-foreground transition-colors duration-300"
+          >
+            hello@mazoutelectric.com
+          </a>
         </div>
       </div>
     </footer>
