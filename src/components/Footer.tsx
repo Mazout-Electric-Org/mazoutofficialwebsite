@@ -1,3 +1,5 @@
+import { Linkedin, Twitter, Instagram, Youtube } from 'lucide-react';
+
 const Footer = () => {
   return (
     <footer id="contact" className="border-t border-border">
