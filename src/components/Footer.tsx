@@ -43,15 +43,18 @@ const Footer = () => {
           </div>
           <div>
             <h4 className="text-foreground text-sm font-medium mb-6">Connect</h4>
-            <ul className="space-y-3">
-              {["LinkedIn", "Twitter", "Instagram", "YouTube"].map((link) => (
-                <li key={link}>
-                  <a href="#" className="text-muted-foreground text-sm hover:text-foreground transition-colors duration-300">
-                    {link}
-                  </a>
-                </li>
+            <div className="flex gap-4">
+              {[
+                { icon: Linkedin, label: "LinkedIn" },
+                { icon: Twitter, label: "Twitter" },
+                { icon: Instagram, label: "Instagram" },
+                { icon: Youtube, label: "YouTube" },
+              ].map(({ icon: Icon, label }) => (
+                <a key={label} href="#" aria-label={label} className="text-muted-foreground hover:text-foreground transition-colors duration-300">
+                  <Icon size={20} />
+                </a>
               ))}
-            </ul>
+            </div>
           </div>
         </div>
 
