@@ -1,4 +1,8 @@
+import { useState } from 'react';
 import { Linkedin, Twitter, Instagram, Youtube, ArrowUpRight } from 'lucide-react';
+import { Input } from './ui/input';
+import { Button } from './ui/button';
+import { useToast } from '@/hooks/use-toast';
 
 const Footer = () => {
   return (
