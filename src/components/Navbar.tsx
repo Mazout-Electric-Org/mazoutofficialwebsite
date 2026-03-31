@@ -15,7 +15,7 @@ const Navbar = () => {
   return (
     <nav className="fixed top-0 left-0 right-0 z-50">
       <div className="max-w-[1400px] mx-auto px-6 lg:px-12 flex items-center justify-between h-16 lg:h-20">
-        <a href="#" className="text-foreground font-bold text-lg tracking-[0.15em] uppercase">
+        <a href="#" className="text-foreground font-bold text-xl tracking-[0.15em] uppercase" style={{ fontFamily: "'DM Serif Display', serif" }}>
           MAZOUT
         </a>
 
