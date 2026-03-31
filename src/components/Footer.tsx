@@ -5,6 +5,17 @@ import { Button } from './ui/button';
 import { useToast } from '@/hooks/use-toast';
 
 const Footer = () => {
+  const [email, setEmail] = useState('');
+  const { toast } = useToast();
+
+  const handleSubscribe = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (email) {
+      toast({ title: "Subscribed!", description: "You'll receive updates at " + email });
+      setEmail('');
+    }
+  };
+
   return (
     <footer id="contact" className="border-t border-border">
       <div className="max-w-[1400px] mx-auto px-6 lg:px-12 py-16 lg:py-20">
