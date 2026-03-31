@@ -58,10 +58,10 @@ const Footer = () => {
             © {new Date().getFullYear()} Mazout Electric. All rights reserved.
           </p>
           <a
-            href="mailto:hello@mazoutelectric.com"
+            href="mailto:info@mazoutelectric.com"
             className="text-primary text-sm hover:text-foreground transition-colors duration-300"
           >
-            hello@mazoutelectric.com
+            info@mazoutelectric.com
           </a>
         </div>
       </div>
