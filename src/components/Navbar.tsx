@@ -1,9 +1,10 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const navLinks = [
-  { label: "Vision", href: "#vision" },
+  { label: "Vision", href: "/vision" },
   { label: "Careers", href: "#careers" },
   { label: "Contact", href: "#contact" },
 ];
