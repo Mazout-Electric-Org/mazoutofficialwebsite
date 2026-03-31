@@ -79,7 +79,7 @@ const Footer = () => {
               ))}
             </div>
             <form onSubmit={handleSubscribe} className="mt-6">
-              <h4 className="text-foreground text-sm font-medium mb-3">Subscribe for Updates</h4>
+              <h4 className="text-foreground font-medium mb-3 text-base">Subscribe for Updates</h4>
               <div className="flex gap-2">
                 <Input
                   type="email"
