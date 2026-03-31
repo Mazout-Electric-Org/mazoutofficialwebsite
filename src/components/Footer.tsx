@@ -6,7 +6,7 @@ const Footer = () => {
           <div>
             <h4 className="text-foreground text-sm font-medium mb-6">Company</h4>
             <ul className="space-y-3">
-              {["About", "Careers", "Blog", "Gallery"].map((link) => (
+              {["Vision", "Careers", "Blogs", "Gallery"].map((link) => (
                 <li key={link}>
                   <a href="#" className="text-muted-foreground text-sm hover:text-foreground transition-colors duration-300">
                     {link}
