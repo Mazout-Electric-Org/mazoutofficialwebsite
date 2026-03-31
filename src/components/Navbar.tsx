@@ -9,6 +9,8 @@ const navLinks = [
   { label: "Contact", href: "#contact" },
 ];
 
+import { Button } from "./ui/button";
+
 const Navbar = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
 
@@ -39,6 +41,7 @@ const Navbar = () => {
               </a>
             )
           )}
+          <Button size="sm" variant="outline">Login</Button>
         </div>
 
         <button
