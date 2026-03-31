@@ -41,6 +41,7 @@ const Navbar = () => {
               </a>
             )
           )}
+          <Button size="sm" variant="outline">Login</Button>
         </div>
 
         <button
