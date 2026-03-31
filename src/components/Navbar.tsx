@@ -1,9 +1,10 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const navLinks = [
-  { label: "Vision", href: "#vision" },
+  { label: "Vision", href: "/vision" },
   { label: "Careers", href: "#careers" },
   { label: "Contact", href: "#contact" },
 ];
@@ -19,15 +20,25 @@ const Navbar = () => {
         </a>
 
         <div className="hidden md:flex items-center gap-10">
-          {navLinks.map((link) => (
-            <a
-              key={link.label}
-              href={link.href}
-              className="text-muted-foreground hover:text-foreground text-sm transition-colors duration-300"
-            >
-              {link.label}
-            </a>
-          ))}
+          {navLinks.map((link) =>
+            link.href.startsWith("/") ? (
+              <Link
+                key={link.label}
+                to={link.href}
+                className="text-muted-foreground hover:text-foreground text-sm transition-colors duration-300"
+              >
+                {link.label}
+              </Link>
+            ) : (
+              <a
+                key={link.label}
+                href={link.href}
+                className="text-muted-foreground hover:text-foreground text-sm transition-colors duration-300"
+              >
+                {link.label}
+              </a>
+            )
+          )}
         </div>
 
         <button
@@ -47,16 +58,27 @@ const Navbar = () => {
             className="md:hidden bg-background border-b border-border"
           >
             <div className="px-6 py-6 flex flex-col gap-4">
-              {navLinks.map((link) => (
-                <a
-                  key={link.label}
-                  href={link.href}
-                  onClick={() => setMobileOpen(false)}
-                  className="text-muted-foreground hover:text-foreground text-lg transition-colors"
-                >
-                  {link.label}
-                </a>
-              ))}
+              {navLinks.map((link) =>
+                link.href.startsWith("/") ? (
+                  <Link
+                    key={link.label}
+                    to={link.href}
+                    onClick={() => setMobileOpen(false)}
+                    className="text-muted-foreground hover:text-foreground text-lg transition-colors"
+                  >
+                    {link.label}
+                  </Link>
+                ) : (
+                  <a
+                    key={link.label}
+                    href={link.href}
+                    onClick={() => setMobileOpen(false)}
+                    className="text-muted-foreground hover:text-foreground text-lg transition-colors"
+                  >
+                    {link.label}
+                  </a>
+                )
+              )}
             </div>
           </motion.div>
         )}
