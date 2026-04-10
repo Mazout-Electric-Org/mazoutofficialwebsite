@@ -86,6 +86,12 @@ const Navbar = () => {
                   </a>
                 )
               )}
+              <button
+                onClick={() => { setContactOpen(true); setMobileOpen(false); }}
+                className="text-muted-foreground hover:text-foreground text-lg transition-colors text-left"
+              >
+                Contact
+              </button>
             </div>
           </motion.div>
         )}
