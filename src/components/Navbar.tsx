@@ -17,9 +17,11 @@ const Navbar = () => {
   return (
     <nav className="fixed top-0 left-0 right-0 z-50">
       <div className="max-w-[1400px] mx-auto px-6 lg:px-12 flex items-center justify-between h-16 lg:h-20">
-        <a href="#" className="text-foreground font-bold tracking-[0.15em] uppercase text-3xl font-serif" style={{ fontFamily: "'DM Serif Display', serif" }}>
-          MAZOUT
-        </a>
+        <img
+          src="/src/assets/ComLogo1.png"
+          alt="Mazout Logo"
+          className="h-10 w-auto"
+        />
 
         <div className="hidden md:flex items-center gap-10">
           {navLinks.map((link) =>
