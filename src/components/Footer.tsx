@@ -68,12 +68,12 @@ const Footer = () => {
             <h4 className="text-foreground font-medium mb-6 text-base">Connect</h4>
             <div className="flex gap-4">
               {[
-                { icon: Linkedin, label: "LinkedIn" },
-                { icon: Twitter, label: "Twitter" },
-                { icon: Instagram, label: "Instagram" },
-                { icon: Youtube, label: "YouTube" },
-              ].map(({ icon: Icon, label }) => (
-                <a key={label} href="#" aria-label={label} className="text-muted-foreground hover:text-foreground transition-colors duration-300">
+                { icon: Linkedin, label: "LinkedIn", href: "https://www.linkedin.com/company/mazout-electric/posts/?feedView=all" },
+                { icon: Twitter, label: "Twitter", href: "https://x.com/ElectricMazout/" },
+                { icon: Instagram, label: "Instagram", href: "https://www.instagram.com/zootyev/" },
+                { icon: Youtube, label: "YouTube", href: "https://www.youtube.com/@mazoutelectric2117" },
+              ].map(({ icon: Icon, label, href }) => (
+                <a key={label} href={href} aria-label={label} className="text-muted-foreground hover:text-foreground transition-colors duration-300" target="_blank" rel="noopener noreferrer">
                   <Icon size={20} />
                 </a>
               ))}
