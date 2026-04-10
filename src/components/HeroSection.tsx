@@ -23,12 +23,10 @@ const HeroSection = () => {
           transition={{ duration: 0.8, delay: 0.3 }}
           className="text-3xl lg:text-5xl font-light leading-[1.3] max-w-2xl sm:text-4xl"
         >
-          Software-defined mobility
+          Rails for the future
           <br />
-          to transform cities
-          <br />
-          and{" "}
-          <span className="text-primary">move the world.</span>
+          of{" "}
+          <span className="text-primary">e-commerce</span>
         </motion.h1>
 
         <motion.a
