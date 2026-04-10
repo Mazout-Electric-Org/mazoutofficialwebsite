@@ -2,17 +2,18 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { Link } from "react-router-dom";
+import ContactDialog from "./ContactDialog";
 
 const navLinks = [
   { label: "Vision", href: "/vision" },
   { label: "Product", href: "#technology" },
-  { label: "Contact", href: "#contact" },
 ];
 
 import { Button } from "./ui/button";
 
 const Navbar = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [contactOpen, setContactOpen] = useState(false);
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50">
@@ -43,6 +44,7 @@ const Navbar = () => {
               </a>
             )
           )}
+          <Button size="sm" variant="ghost" onClick={() => setContactOpen(true)} className="text-muted-foreground hover:text-foreground text-sm">Contact</Button>
           <Button size="sm" className="bg-primary border border-input hover:text-primary-foreground opacity-100">Login</Button>
         </div>
 
@@ -84,10 +86,17 @@ const Navbar = () => {
                   </a>
                 )
               )}
+              <button
+                onClick={() => { setContactOpen(true); setMobileOpen(false); }}
+                className="text-muted-foreground hover:text-foreground text-lg transition-colors text-left"
+              >
+                Contact
+              </button>
             </div>
           </motion.div>
         )}
       </AnimatePresence>
+      <ContactDialog open={contactOpen} onOpenChange={setContactOpen} />
     </nav>
   );
 };
