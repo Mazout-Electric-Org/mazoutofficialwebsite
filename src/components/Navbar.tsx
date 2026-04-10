@@ -13,6 +13,7 @@ import { Button } from "./ui/button";
 
 const Navbar = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [contactOpen, setContactOpen] = useState(false);
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50">
