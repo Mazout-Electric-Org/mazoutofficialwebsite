@@ -44,6 +44,7 @@ const Navbar = () => {
               </a>
             )
           )}
+          <Button size="sm" variant="ghost" onClick={() => setContactOpen(true)} className="text-muted-foreground hover:text-foreground text-sm">Contact</Button>
           <Button size="sm" className="bg-primary border border-input hover:text-primary-foreground opacity-100">Login</Button>
         </div>
 
@@ -89,6 +90,7 @@ const Navbar = () => {
           </motion.div>
         )}
       </AnimatePresence>
+      <ContactDialog open={contactOpen} onOpenChange={setContactOpen} />
     </nav>
   );
 };
