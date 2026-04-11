@@ -23,10 +23,16 @@ const Footer = () => {
           <div>
             <h4 className="text-foreground font-medium mb-6 text-base">Company</h4>
             <ul className="space-y-3">
-              {["Vision", "Careers", "Blogs", "Gallery"].map((link) => (
-                <li key={link}>
-                  <a href="#" className="text-muted-foreground text-sm hover:text-foreground transition-colors duration-300">
-                    {link}
+              {[
+                { label: "Vision", href: "#", external: false },
+                { label: "Careers", href: "https://wellfound.com/company/mazout-electric/jobs", external: true },
+                { label: "Blogs", href: "#", external: false },
+                { label: "Gallery", href: "#", external: false },
+              ].map(({ label, href, external }) => (
+                <li key={label}>
+                  <a href={href} className="text-muted-foreground text-sm hover:text-foreground transition-colors duration-300 inline-flex items-center gap-1" {...(external ? { target: "_blank", rel: "noopener noreferrer" } : {})}>
+                    {label}
+                    {external && <ArrowUpRight size={14} />}
                   </a>
                 </li>
               ))}
