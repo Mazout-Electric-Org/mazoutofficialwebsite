@@ -9,6 +9,8 @@ import Patrolling from "./pages/Patrolling.tsx";
 import Taxi from "./pages/Taxi.tsx";
 import Vision from "./pages/Vision.tsx";
 import BlogPost from "./pages/BlogPost.tsx";
+import Privacy from "./pages/Privacy.tsx";
+import Terms from "./pages/Terms.tsx";
 import NotFound from "./pages/NotFound.tsx";
 
 const queryClient = new QueryClient();
@@ -26,6 +28,8 @@ const App = () => (
           <Route path="/taxi" element={<Taxi />} />
           <Route path="/vision" element={<Vision />} />
           <Route path="/blog/:slug" element={<BlogPost />} />
+          <Route path="/privacy" element={<Privacy />} />
+          <Route path="/terms" element={<Terms />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

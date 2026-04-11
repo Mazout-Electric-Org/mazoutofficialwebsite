@@ -55,10 +55,14 @@ const Footer = () => {
           <div>
             <h4 className="text-foreground font-medium mb-6 text-base">Legal</h4>
             <ul className="space-y-3">
-              {["Privacy Policy", "Terms of Service", "Cookie Policy"].map((link) => (
-                <li key={link}>
-                  <a href="#" className="text-muted-foreground text-sm hover:text-foreground transition-colors duration-300">
-                    {link}
+              {[
+                { label: "Privacy Policy", href: "/privacy" },
+                { label: "Terms of Service", href: "/terms" },
+                { label: "Cookie Policy", href: "#" },
+              ].map(({ label, href }) => (
+                <li key={label}>
+                  <a href={href} className="text-muted-foreground text-sm hover:text-foreground transition-colors duration-300">
+                    {label}
                   </a>
                 </li>
               ))}
