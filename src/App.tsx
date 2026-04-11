@@ -11,6 +11,7 @@ import Vision from "./pages/Vision.tsx";
 import BlogPost from "./pages/BlogPost.tsx";
 import Privacy from "./pages/Privacy.tsx";
 import Terms from "./pages/Terms.tsx";
+import Cookies from "./pages/Cookies.tsx";
 import NotFound from "./pages/NotFound.tsx";
 
 const queryClient = new QueryClient();
