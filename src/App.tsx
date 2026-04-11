@@ -9,6 +9,8 @@ import Patrolling from "./pages/Patrolling.tsx";
 import Taxi from "./pages/Taxi.tsx";
 import Vision from "./pages/Vision.tsx";
 import BlogPost from "./pages/BlogPost.tsx";
+import Privacy from "./pages/Privacy.tsx";
+import Terms from "./pages/Terms.tsx";
 import NotFound from "./pages/NotFound.tsx";
 
 const queryClient = new QueryClient();
