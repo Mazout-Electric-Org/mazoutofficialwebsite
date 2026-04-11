@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { Link } from "react-router-dom";
 import ContactDialog from "./ContactDialog";
+import ComLogo1 from "@/assets/ComLogo1.png";
 
 const navLinks = [
   { label: "Vision", href: "/vision" },
@@ -19,7 +20,7 @@ const Navbar = () => {
     <nav className="fixed top-0 left-0 right-0 z-50">
       <div className="max-w-[1400px] mx-auto px-6 lg:px-12 flex items-center justify-between h-16 lg:h-20">
         <img
-          src="/src/assets/ComLogo1.png"
+          src={ComLogo1}
           alt="Mazout Logo"
           className="h-10 w-auto"
         />
