@@ -36,15 +36,15 @@ const Footer = () => {
             <h4 className="text-foreground font-medium mb-6 text-base">Product</h4>
             <ul className="space-y-3">
               {[
-                { label: "Zooty for Logistics", external: false },
-                { label: "Zooty for Patrolling", external: false },
-                { label: "Zooty as Taxi", external: false },
-                { label: "Documentation", external: true },
-                { label: "Dashboard", external: true },
-                { label: "Buy Now", external: false },
-              ].map(({ label, external }) => (
+                { label: "Zooty for Logistics", href: "/logistics", external: false },
+                { label: "Zooty for Patrolling", href: "/patrolling", external: false },
+                { label: "Zooty as Taxi", href: "/taxi", external: false },
+                { label: "Documentation", href: "https://github.com/Mazout-Electric/Documentation/blob/main/README.md", external: true },
+                { label: "Dashboard", href: "https://dashboard.mazoutelectric.com/", external: true },
+                { label: "Buy Now", href: "#", external: false },
+              ].map(({ label, href, external }) => (
                 <li key={label}>
-                  <a href="#" className="text-muted-foreground text-sm hover:text-foreground transition-colors duration-300 inline-flex items-center gap-1">
+                  <a href={href} className="text-muted-foreground text-sm hover:text-foreground transition-colors duration-300 inline-flex items-center gap-1" {...(external ? { target: "_blank", rel: "noopener noreferrer" } : {})}>
                     {label}
                     {external && <ArrowUpRight size={14} />}
                   </a>
@@ -58,7 +58,7 @@ const Footer = () => {
               {[
                 { label: "Privacy Policy", href: "/privacy" },
                 { label: "Terms of Service", href: "/terms" },
-                { label: "Cookie Policy", href: "#" },
+                { label: "Cookie Policy", href: "/cookies" },
               ].map(({ label, href }) => (
                 <li key={label}>
                   <a href={href} className="text-muted-foreground text-sm hover:text-foreground transition-colors duration-300">
