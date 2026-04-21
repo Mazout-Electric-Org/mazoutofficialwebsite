@@ -42,7 +42,7 @@ const Vision = () => {
                 Building the <span className="text-primary">Rails</span> for Autonomous Commerce
               </h1>
               <p className="text-muted-foreground text-lg leading-relaxed">
-                Commerce is entering a new era—one defined by intelligence, autonomy, and seamless orchestration. The future will not be built on isolated innovations, but on deeply integrated systems where every layer of fulfillment communicates, learns, and optimizes in real time.
+                Commerce is entering a new era - one defined by intelligence, autonomy, and seamless orchestration. The future will not be built on isolated innovations, but on deeply integrated systems where every layer of fulfillment communicates, learns, and optimizes in real time.
               </p>
               <p className="text-muted-foreground text-lg leading-relaxed">
                 AI will move beyond incremental efficiency gains to become the backbone of revenue generation. Companies that embrace end-to-end automation will scale faster, operate leaner, and unlock entirely new business models.
@@ -71,7 +71,7 @@ const Vision = () => {
                 Full-stack automation
               </h2>
               <p className="text-muted-foreground text-lg leading-relaxed">
-                We are building a complete infrastructure layer for autonomous commerce—integrating every stage of the fulfillment chain into a single intelligent system.
+                We are building a complete infrastructure layer for autonomous commerce - integrating every stage of the fulfillment chain into a single intelligent system.
               </p>
               <p className="text-muted-foreground text-lg leading-relaxed">Our platform enables:</p>
               <ul className="space-y-4">
@@ -89,7 +89,7 @@ const Vision = () => {
                 ))}
               </ul>
               <p className="text-foreground text-lg leading-relaxed font-light pt-2">
-                This is not just automation—it is <span className="text-primary">orchestration</span>.
+                This is not just automation - it is <span className="text-primary">orchestration</span>.
               </p>
             </div>
 
@@ -111,7 +111,7 @@ const Vision = () => {
                 ))}
               </div>
               <p className="text-muted-foreground text-lg leading-relaxed pt-2">
-                The result is not linear improvement—but exponential growth in efficiency, throughput, and revenue.
+                The result is not linear improvement - but exponential growth in efficiency, throughput, and revenue.
               </p>
             </div>
 
@@ -121,7 +121,7 @@ const Vision = () => {
                 A platform for the next generation
               </h2>
               <p className="text-muted-foreground text-lg leading-relaxed">
-                The next generation of e-commerce leaders will not just deliver faster—they will operate on entirely new infrastructure.
+                The next generation of e-commerce leaders will not just deliver faster - they will operate on entirely new infrastructure.
               </p>
               <p className="text-foreground text-2xl lg:text-3xl font-light leading-relaxed">
                 We are building the <span className="text-primary">rails</span> for that future.
