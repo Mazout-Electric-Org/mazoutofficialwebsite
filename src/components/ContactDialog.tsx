@@ -99,7 +99,7 @@ const ContactDialog = ({ open, onOpenChange }: ContactDialogProps) => {
               <p className="mb-3 font-sans text-xs uppercase tracking-[0.24em] text-primary">Contact</p>
               <h2 className="text-3xl font-bold text-foreground">Get in Touch</h2>
               <p className="mt-3 text-sm leading-6 text-muted-foreground">
-                Speak with the Mazout Electric team about pilots, partnerships, and deployments.
+                Reach out to us for demos, pilots, partnerships, and deployments.
               </p>
             </div>
 
