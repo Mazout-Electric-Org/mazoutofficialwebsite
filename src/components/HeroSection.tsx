@@ -3,7 +3,7 @@ import heroImage from "@/assets/zooty-hero.png";
 
 const HeroSection = () => {
   return (
-    <section className="relative min-h-screen flex items-end overflow-hidden">
+    <section className="relative min-h-screen flex items-center overflow-hidden">
       {/* Background image */}
       <div className="absolute inset-0">
         <img
@@ -12,39 +12,64 @@ const HeroSection = () => {
           className="w-full h-full object-cover object-center"
         />
         {/* Dark overlay for text readability */}
-        <div className="absolute inset-0 bg-gradient-to-r from-background via-background/70 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-r from-background via-background/80 to-background/20" />
       </div>
 
       {/* Left-aligned content */}
-      <div className="relative z-10 max-w-[1400px] mx-auto px-6 lg:px-12 pb-24 lg:pb-32 w-full">
-        <motion.h2
+      <div className="relative z-10 max-w-[1400px] mx-auto px-6 lg:px-12 pt-24 lg:pt-20 w-full">
+        {/* Small brand mark — top-left like STARFORGE */}
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.1 }}
-          className="font-['DM_Serif_Display'] text-foreground text-6xl lg:text-8xl tracking-tight leading-none mb-4 lg:mb-6"
+          transition={{ duration: 0.6, delay: 0.05 }}
+          className="font-['DM_Serif_Display'] text-foreground text-xl lg:text-2xl tracking-[0.3em] mb-12 lg:mb-16"
         >
           ZOOTY
-        </motion.h2>
+        </motion.div>
+
+        {/* Massive stacked headline */}
         <motion.h1
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.3 }}
-          className="text-3xl lg:text-5xl font-light leading-[1.3] max-w-3xl sm:text-4xl"
+          transition={{ duration: 0.9, delay: 0.2 }}
+          className="font-bold uppercase tracking-tight leading-[0.95] text-foreground text-5xl sm:text-6xl lg:text-8xl xl:text-9xl max-w-5xl"
         >
-          Redefining <span className="text-primary">campus mobility</span>:
-          <br />
-          Autonomous vehicles serving to your doorstep
+          Redefining{" "}
+          <span className="text-primary">campus mobility</span>{" "}
+          to your doorstep
         </motion.h1>
 
-        <motion.a
-          href="#vision"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.8, delay: 0.8 }}
-          className="mt-6 inline-flex text-primary text-sm items-center gap-1.5 hover:gap-3 transition-all duration-300"
+        {/* Supporting paragraph */}
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.5 }}
+          className="mt-10 lg:mt-12 max-w-xl text-base lg:text-lg text-muted-foreground leading-relaxed"
         >
-          Read vision <span className="text-lg">→</span>
-        </motion.a>
+          Autonomous vehicles, intelligent fleets, and seamless orchestration —
+          building the rails for the future of campus and last-mile mobility.
+        </motion.p>
+
+        {/* CTA buttons */}
+        <motion.div
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.7 }}
+          className="mt-10 flex flex-wrap items-center gap-4"
+        >
+          <a
+            href="#meet-zooty"
+            className="inline-flex items-center justify-center px-7 py-3.5 bg-primary text-primary-foreground text-xs tracking-[0.2em] uppercase font-medium hover:bg-primary/90 transition-colors"
+          >
+            See what we're building
+          </a>
+          <a
+            href="#vision"
+            className="inline-flex items-center justify-center px-7 py-3.5 border border-foreground/30 text-foreground text-xs tracking-[0.2em] uppercase font-medium hover:border-foreground/70 transition-colors"
+          >
+            Read vision
+          </a>
+        </motion.div>
       </div>
     </section>
   );
