@@ -9,23 +9,10 @@ const Vision = () => {
       <Navbar />
       <section className="pt-32 pb-24 lg:pt-48 lg:pb-40">
         <div className="max-w-3xl mx-auto px-6">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-          >
-            <Link
-              to="/"
-              className="text-muted-foreground text-sm hover:text-foreground transition-colors mb-12 inline-flex items-center gap-2"
-            >
-              ← Back
-            </Link>
-          </motion.div>
-
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.1 }}
+            transition={{ duration: 0.8 }}
             className="text-muted-foreground text-xs tracking-[0.3em] uppercase mb-12"
           >
             Vision
@@ -129,6 +116,15 @@ const Vision = () => {
               <p className="text-muted-foreground text-lg leading-relaxed">
                 A world where commerce moves autonomously, scales effortlessly, and serves humanity with precision, speed, and intelligence.
               </p>
+            </div>
+
+            <div className="pt-4">
+              <Link
+                to="/"
+                className="text-muted-foreground text-sm hover:text-foreground transition-colors inline-flex items-center gap-2"
+              >
+                ← Back
+              </Link>
             </div>
           </motion.div>
         </div>

@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 import heroImage from "@/assets/zooty-hero.png";
 
 const HeroSection = () => {
@@ -37,15 +38,18 @@ const HeroSection = () => {
           Autonomous vehicles serving to your doorstep
         </motion.h1>
 
-        <motion.a
-          href="#vision"
+        <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.8, delay: 0.8 }}
-          className="mt-6 inline-flex text-primary text-sm items-center gap-1.5 hover:gap-3 transition-all duration-300"
         >
-          Read vision <span className="text-lg">→</span>
-        </motion.a>
+          <Link
+            to="/vision"
+            className="mt-6 inline-flex text-primary text-sm items-center gap-1.5 hover:gap-3 transition-all duration-300"
+          >
+            Read vision <span className="text-lg">→</span>
+          </Link>
+        </motion.div>
       </div>
     </section>
   );
