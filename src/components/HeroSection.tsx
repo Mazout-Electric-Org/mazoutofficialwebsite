@@ -23,7 +23,7 @@ const HeroSection = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.1 }}
-          className="font-sans text-7xl sm:text-8xl lg:text-[10.5rem] leading-[0.85] tracking-normal mb-7 lg:mb-10"
+          className="font-sans text-5xl sm:text-6xl lg:text-[6.5rem] leading-[0.85] tracking-normal mb-7 lg:mb-10"
         >
           <span className="text-foreground">ZO</span>
           <span className="text-secondary-foreground">OTY</span>
@@ -32,7 +32,7 @@ const HeroSection = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.3 }}
-          className="text-4xl sm:text-5xl lg:text-7xl font-light leading-[1.08] max-w-5xl text-balance"
+          className="text-4xl sm:text-5xl lg:text-5xl font-light leading-[1.08] max-w-4xl text-balance"
         >
           Redefining <span className="text-primary">campus mobility</span>
           <br />
