@@ -17,26 +17,26 @@ const HeroSection = () => {
 
       {/* Left-aligned content */}
       <div className="relative z-10 max-w-[1400px] mx-auto px-6 lg:px-12 pt-24 lg:pt-20 w-full">
-        {/* Small brand mark — top-left like STARFORGE */}
-        <motion.div
+        {/* Massive ZOOTY wordmark */}
+        <motion.h2
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.05 }}
-          className="font-['DM_Serif_Display'] text-foreground text-xl lg:text-2xl tracking-[0.3em] mb-12 lg:mb-16"
+          transition={{ duration: 0.9, delay: 0.1 }}
+          className="font-bold uppercase tracking-tight leading-[0.95] text-foreground text-5xl sm:text-6xl lg:text-8xl xl:text-9xl mb-6 lg:mb-8"
         >
           ZOOTY
-        </motion.div>
+        </motion.h2>
 
-        {/* Massive stacked headline */}
+        {/* Original headline */}
         <motion.h1
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.9, delay: 0.2 }}
-          className="font-bold uppercase tracking-tight leading-[0.95] text-foreground text-5xl sm:text-6xl lg:text-8xl xl:text-9xl max-w-5xl"
+          transition={{ duration: 0.8, delay: 0.3 }}
+          className="text-3xl lg:text-5xl font-light leading-[1.3] max-w-3xl sm:text-4xl"
         >
-          Redefining{" "}
-          <span className="text-primary">campus mobility</span>{" "}
-          to your doorstep
+          Redefining <span className="text-primary">campus mobility</span>:
+          <br />
+          Autonomous vehicles serving to your doorstep
         </motion.h1>
 
         {/* Supporting paragraph */}
