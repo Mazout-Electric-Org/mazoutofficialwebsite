@@ -45,7 +45,11 @@ const Navbar = () => {
             )
           )}
           <Button size="sm" variant="ghost" onClick={() => setContactOpen(true)} className="text-muted-foreground hover:text-foreground text-sm">Contact</Button>
-          <Button size="sm" className="bg-primary border border-input hover:text-primary-foreground opacity-100">Login</Button>
+          <Button asChild size="sm" className="bg-primary border border-input hover:text-primary-foreground opacity-100">
+            <a href="https://dashboard.mazoutelectric.com/" target="_blank" rel="noopener noreferrer">
+              Login
+            </a>
+          </Button>
         </div>
 
         <button
@@ -92,6 +96,15 @@ const Navbar = () => {
               >
                 Contact
               </button>
+              <a
+                href="https://dashboard.mazoutelectric.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => setMobileOpen(false)}
+                className="text-primary text-lg transition-colors"
+              >
+                Login
+              </a>
             </div>
           </motion.div>
         )}
