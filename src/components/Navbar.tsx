@@ -7,7 +7,6 @@ import ComLogo1 from "@/assets/ComLogo1.png";
 
 const navLinks = [
   { label: "Vision", href: "/vision" },
-  { label: "Product", href: "#technology" },
 ];
 
 import { Button } from "./ui/button";
