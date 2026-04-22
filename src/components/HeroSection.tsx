@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import heroImage from "@/assets/zooty-hero.png";
+import heroImage from "@/assets/zooty-landing-vehicle.png";
 
 const HeroSection = () => {
   return (
