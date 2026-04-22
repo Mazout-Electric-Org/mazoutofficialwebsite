@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import zootyMeetImage from "@/assets/zooty-meet.jpeg";
 
 const MeetZootySection = () => {
   return (
@@ -22,7 +23,7 @@ const MeetZootySection = () => {
           </p>
         </motion.div>
 
-        {/* Right: Video */}
+        {/* Right: Image */}
         <motion.div
           initial={{ opacity: 0, x: 30 }}
           whileInView={{ opacity: 1, x: 0 }}
@@ -30,16 +31,12 @@ const MeetZootySection = () => {
           transition={{ duration: 0.7, delay: 0.2 }}
           className="relative aspect-video rounded-lg overflow-hidden border border-border bg-card"
         >
-          <video
+          <img
+            src={zootyMeetImage}
+            alt="Zooty autonomous vehicle moving through a residential campus walkway"
             className="w-full h-full object-cover"
-            autoPlay
-            loop
-            muted
-            playsInline
-          >
-            <source src="/zooty-demo.mp4" type="video/mp4" />
-            Your browser does not support the video tag.
-          </video>
+            loading="lazy"
+          />
         </motion.div>
       </div>
     </section>
