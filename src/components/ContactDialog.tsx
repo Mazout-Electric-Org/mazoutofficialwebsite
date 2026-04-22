@@ -3,8 +3,35 @@ import { Dialog, DialogContent, DialogClose } from "@/components/ui/dialog";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
+import { Mail, MapPin, Phone } from "lucide-react";
 
 const FORMSPREE_CONTACT = import.meta.env.VITE_FORMSPREE_CONTACT_ENDPOINT as string;
+
+const contactInfo = [
+  {
+    icon: Phone,
+    label: "Contact number",
+    value: "+91 00000 00000",
+    href: "tel:+910000000000",
+  },
+  {
+    icon: Mail,
+    label: "Email",
+    value: "info@mazoutelectric.com",
+    href: "mailto:info@mazoutelectric.com",
+  },
+];
+
+const addresses = [
+  {
+    label: "Registered office",
+    value: "Mazout Electric, Address line 1, City, State, India",
+  },
+  {
+    label: "Operations office",
+    value: "Mazout Electric, Address line 2, City, State, India",
+  },
+];
 
 interface ContactDialogProps {
   open: boolean;
@@ -64,65 +91,95 @@ const ContactDialog = ({ open, onOpenChange }: ContactDialogProps) => {
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className="bg-[#0a0a0a] border-[#222] text-[#f0f0f0] sm:max-w-md">
+      <DialogContent className="bg-background border-border text-foreground sm:max-w-4xl">
         <DialogClose className="absolute right-4 top-4 z-50" />
-        <div className="mb-2">
-          <h2 className="text-2xl font-bold text-[#f0f0f0]">Get in Touch</h2>
-          <p className="text-sm text-[#888] mt-1">
-            Fill in your details and we'll get back to you shortly.
-          </p>
+        <div className="grid gap-8 md:grid-cols-[0.9fr_1.1fr]">
+          <aside className="space-y-8 border-b border-border pb-8 md:border-b-0 md:border-r md:pb-0 md:pr-8">
+            <div>
+              <p className="mb-3 font-sans text-xs uppercase tracking-[0.24em] text-primary">Contact</p>
+              <h2 className="text-3xl font-bold text-foreground">Get in Touch</h2>
+              <p className="mt-3 text-sm leading-6 text-muted-foreground">
+                Speak with the Mazout Electric team about pilots, partnerships, and deployments.
+              </p>
+            </div>
+
+            <div className="space-y-5">
+              {contactInfo.map(({ icon: Icon, label, value, href }) => (
+                <a key={label} href={href} className="flex gap-4 text-sm transition-colors hover:text-primary">
+                  <Icon className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
+                  <span>
+                    <span className="block font-sans text-[11px] uppercase tracking-[0.22em] text-muted-foreground">{label}</span>
+                    <span className="mt-1 block text-foreground">{value}</span>
+                  </span>
+                </a>
+              ))}
+            </div>
+
+            <div className="space-y-5">
+              {addresses.map(({ label, value }) => (
+                <div key={label} className="flex gap-4 text-sm">
+                  <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
+                  <span>
+                    <span className="block font-sans text-[11px] uppercase tracking-[0.22em] text-muted-foreground">{label}</span>
+                    <span className="mt-1 block leading-6 text-foreground">{value}</span>
+                  </span>
+                </div>
+              ))}
+            </div>
+          </aside>
+
+          <form onSubmit={handleSubmit} className="flex flex-col gap-4">
+            <Input
+              name="fullName"
+              placeholder="Full Name"
+              value={formData.fullName}
+              onChange={handleChange}
+              required
+              className="bg-card border-border text-foreground placeholder:text-muted-foreground focus-visible:ring-primary"
+            />
+            <Input
+              name="email"
+              type="email"
+              placeholder="Email Address"
+              value={formData.email}
+              onChange={handleChange}
+              required
+              className="bg-card border-border text-foreground placeholder:text-muted-foreground focus-visible:ring-primary"
+            />
+            <Input
+              name="company"
+              placeholder="Company Name"
+              value={formData.company}
+              onChange={handleChange}
+              className="bg-card border-border text-foreground placeholder:text-muted-foreground focus-visible:ring-primary"
+            />
+            <Input
+              name="mobile"
+              type="tel"
+              placeholder="Phone Number"
+              value={formData.mobile}
+              onChange={handleChange}
+              className="bg-card border-border text-foreground placeholder:text-muted-foreground focus-visible:ring-primary"
+            />
+            <Textarea
+              name="message"
+              placeholder="Your Message"
+              value={formData.message}
+              onChange={handleChange}
+              required
+              rows={5}
+              className="bg-card border-border text-foreground placeholder:text-muted-foreground focus-visible:ring-primary resize-none"
+            />
+            <Button type="submit" className="w-full mt-2" disabled={status === "submitting"}>
+              {status === "submitting" ? "Sending…" : "Send Message"}
+            </Button>
+            {status === "error" && (
+              <p className="text-destructive text-sm text-center">
+                Something went wrong. Please try again.
+              </p>
+            )}
+          </form>
         </div>
-        <form onSubmit={handleSubmit} className="flex flex-col gap-4 mt-2">
-          <Input
-            name="fullName"
-            placeholder="Full Name"
-            value={formData.fullName}
-            onChange={handleChange}
-            required
-            className="bg-[#111] border-[#333] text-[#f0f0f0] placeholder:text-[#555] focus-visible:ring-primary"
-          />
-          <Input
-            name="email"
-            type="email"
-            placeholder="Email Address"
-            value={formData.email}
-            onChange={handleChange}
-            required
-            className="bg-[#111] border-[#333] text-[#f0f0f0] placeholder:text-[#555] focus-visible:ring-primary"
-          />
-          <Input
-            name="company"
-            placeholder="Company Name"
-            value={formData.company}
-            onChange={handleChange}
-            className="bg-[#111] border-[#333] text-[#f0f0f0] placeholder:text-[#555] focus-visible:ring-primary"
-          />
-          <Input
-            name="mobile"
-            type="tel"
-            placeholder="Phone Number"
-            value={formData.mobile}
-            onChange={handleChange}
-            className="bg-[#111] border-[#333] text-[#f0f0f0] placeholder:text-[#555] focus-visible:ring-primary"
-          />
-          <Textarea
-            name="message"
-            placeholder="Your Message"
-            value={formData.message}
-            onChange={handleChange}
-            required
-            rows={4}
-            className="bg-[#111] border-[#333] text-[#f0f0f0] placeholder:text-[#555] focus-visible:ring-primary resize-none"
-          />
-          <Button type="submit" className="w-full mt-2" disabled={status === "submitting"}>
-            {status === "submitting" ? "Sending…" : "Send Message"}
-          </Button>
-          {status === "error" && (
-            <p className="text-red-500 text-sm text-center">
-              Something went wrong. Please try again.
-            </p>
-          )}
-        </form>
       </DialogContent>
     </Dialog>
   );
