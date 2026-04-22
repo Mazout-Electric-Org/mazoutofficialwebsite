@@ -11,8 +11,8 @@ const contactInfo = [
   {
     icon: Phone,
     label: "Contact number",
-    value: "+91 00000 00000",
-    href: "tel:+910000000000",
+    value: "+91 93541 78340",
+    href: "tel:+919354178340",
   },
   {
     icon: Mail,
@@ -25,11 +25,11 @@ const contactInfo = [
 const addresses = [
   {
     label: "Registered office",
-    value: "Mazout Electric, Address line 1, City, State, India",
+    value: "Mazout Electric, G-39, Cross River Mall, CBD Shahdara, Delhi - 110092, India",
   },
   {
-    label: "Operations office",
-    value: "Mazout Electric, Address line 2, City, State, India",
+    label: "OVERSEAS OFFICE",
+    value: "8-111, 78 SW 7th Street, Brickell City Centre, Miami, Florida 33130, United States",
   },
 ];
 
