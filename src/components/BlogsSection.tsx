@@ -21,22 +21,19 @@ const applications = [
   {
     icon: Package,
     title: "Logistics",
-    description:
-      "Purpose-built autonomous movement for last-mile fulfilment, route density, and high-frequency urban delivery corridors.",
+    description: "Purpose-built autonomous movement for last leg of the last-mile logistics for population dense premises",
     href: "/logistics",
   },
   {
     icon: Shield,
     title: "Patrolling",
-    description:
-      "Connected campus, industrial, and municipal surveillance with real-time coverage mapping and incident response.",
+    description: "Safeguarding the facility with in-campus mobility, enhancing vigilance with 24x7 automated operation",
     href: "/patrolling",
   },
   {
     icon: Bike,
     title: "Taxi",
-    description:
-      "Software-defined bike taxi operations with fleet management, live routing, rider analytics, and city-scale orchestration.",
+    description: "Automated summoning of vehicle at the pick up location, giving complete freedom from fixed pick up and drop locations",
     href: "/taxi",
   },
 ];
