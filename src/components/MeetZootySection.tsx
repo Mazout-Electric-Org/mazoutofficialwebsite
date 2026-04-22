@@ -1,9 +1,5 @@
 import { motion } from "framer-motion";
-<<<<<<< HEAD
-import render from "../assets/Render1.png";
-=======
 import zootyMeetImage from "@/assets/zooty-meet.jpeg";
->>>>>>> 9520f54abea6cee3caa02e13516ccf2d258a78b6
 
 const MeetZootySection = () => {
   return (
@@ -36,18 +32,11 @@ const MeetZootySection = () => {
           className="relative aspect-video rounded-lg overflow-hidden border border-border bg-card"
         >
           <img
-<<<<<<< HEAD
-            src={render}
-            alt="Zooty Render"
-            loading="lazy"
-            decoding="async"
-            className="w-full h-full object-cover"
-=======
             src={zootyMeetImage}
             alt="Zooty autonomous vehicle moving through a residential campus walkway"
             className="w-full h-full object-cover"
             loading="lazy"
->>>>>>> 9520f54abea6cee3caa02e13516ccf2d258a78b6
+            decoding="async"
           />
         </motion.div>
       </div>
