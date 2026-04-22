@@ -23,8 +23,8 @@ const HeroSection = () => {
           transition={{ duration: 0.8, delay: 0.1 }}
           className="font-['DM_Serif_Display'] text-7xl sm:text-8xl lg:text-[10rem] leading-[0.95] tracking-tight mb-6 lg:mb-8"
         >
-          <span className="text-foreground">ZO</span>
-          <span className="text-secondary-foreground">OTY</span>
+          <span className="text-foreground font-sans">ZO</span>
+          <span className="text-secondary-foreground font-sans">OTY</span>
         </motion.h2>
         <motion.h1
           initial={{ opacity: 0, y: 20 }}
