@@ -17,6 +17,14 @@ const HeroSection = () => {
 
       {/* Left-aligned content */}
       <div className="relative z-10 max-w-[1400px] mx-auto px-6 lg:px-12 pb-24 lg:pb-32 w-full">
+        <motion.h2
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.1 }}
+          className="font-['DM_Serif_Display'] text-foreground text-6xl lg:text-8xl tracking-tight leading-none mb-4 lg:mb-6"
+        >
+          ZOOTY
+        </motion.h2>
         <motion.h1
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
