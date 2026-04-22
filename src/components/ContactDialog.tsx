@@ -25,7 +25,7 @@ const contactInfo = [
 const addresses = [
   {
     label: "Registered office",
-    value: "Mazout Electric, G-39, Cross River Mall, CBD Shahdara, Delhi - 110092, India",
+    value: "G-39, Cross River Mall, CBD Shahdara, Delhi - 110092, India",
   },
   {
     label: "OVERSEAS OFFICE",
