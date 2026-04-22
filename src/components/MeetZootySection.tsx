@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import zootyMeetImage from "@/assets/zooty-meet.jpeg";
+import render from "../assets/Render1.png";
 
 const MeetZootySection = () => {
   return (
@@ -32,11 +32,11 @@ const MeetZootySection = () => {
           className="relative aspect-video rounded-lg overflow-hidden border border-border bg-card"
         >
           <img
-            src={zootyMeetImage}
-            alt="Zooty autonomous vehicle moving through a residential campus walkway"
-            className="w-full h-full object-cover"
+            src={render}
+            alt="Zooty Render"
             loading="lazy"
             decoding="async"
+            className="w-full h-full object-cover"
           />
         </motion.div>
       </div>
