@@ -42,9 +42,6 @@ const Footer = () => {
             <h4 className="text-foreground font-medium mb-6 text-base">Product</h4>
             <ul className="space-y-3">
               {[
-                { label: "Zooty for Logistics", href: "/logistics", external: false },
-                { label: "Zooty for Patrolling", href: "/patrolling", external: false },
-                { label: "Zooty as Taxi", href: "/taxi", external: false },
                 { label: "Documentation", href: "https://github.com/Mazout-Electric/Documentation/blob/main/README.md", external: true },
                 { label: "Dashboard", href: "https://dashboard.mazoutelectric.com/", external: true },
                 { label: "Buy Now", href: "#", external: false },
