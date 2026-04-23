@@ -13,8 +13,8 @@ const HeroSection = () => {
           className="w-full h-full object-cover object-center"
         />
         {/* Dark overlay for text readability */}
-        <div className="absolute inset-0 bg-gradient-to-r from-background via-background/80 via-55% to-background/10" />
-        <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-background/30" />
+        <div className="absolute inset-0 bg-gradient-to-r from-background/80 via-background/50 via-55% to-background/0" />
+        <div className="absolute inset-0 bg-gradient-to-t from-background/75 via-transparent to-background/10" />
       </div>
 
       {/* Left-aligned content */}
