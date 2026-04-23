@@ -10,11 +10,11 @@ const HeroSection = () => {
         <img
           src={heroImage}
           alt="Zooty platform vehicle"
-          className="w-full h-full object-cover object-center brightness-110"
+          className="w-full h-full object-cover object-center brightness-125 contrast-110 saturate-110"
         />
         {/* Dark overlay for text readability */}
-        <div className="absolute inset-0 bg-gradient-to-r from-background via-background/80 via-55% to-background/10" />
-        <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-background/30" />
+        <div className="absolute inset-0 bg-gradient-to-r from-background via-background/85 via-55% to-background/20" />
+        <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-background/20" />
       </div>
 
       {/* Left-aligned content */}
