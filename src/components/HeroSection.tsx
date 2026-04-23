@@ -10,7 +10,7 @@ const HeroSection = () => {
         <img
           src={heroImage}
           alt="Zooty platform vehicle"
-          className="w-full h-full object-cover object-center"
+          className="w-full h-full object-cover object-center brightness-110"
         />
         {/* Dark overlay for text readability */}
         <div className="absolute inset-0 bg-gradient-to-r from-background via-background/80 via-55% to-background/10" />
