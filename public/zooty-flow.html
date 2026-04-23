@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Zooty — System Architecture & Flow</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/10.6.1/mermaid.min.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0a0a0f;
+    --surface: #111118;
+    --surface2: #16161f;
+    --border: #2a2a3a;
+    --accent: #00e5a0;
+    --accent2: #5b6af8;
+    --accent3: #f7c35f;
+    --text: #e8e8f0;
+    --muted: #6b6b80;
+    --danger: #ff4d6d;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-weight: 300;
+    line-height: 1.7;
+    padding: 0 0 80px;
+  }
+
+  /* HERO */
+  .hero {
+    padding: 60px 60px 40px;
+    border-bottom: 1px solid var(--border);
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -80px; right: -80px;
+    width: 400px; height: 400px;
+    background: radial-gradient(circle, rgba(0,229,160,0.07) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .hero-label {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 16px;
+  }
+  .hero h1 {
+    font-family: 'Syne', sans-serif;
+    font-size: clamp(36px, 5vw, 64px);
+    font-weight: 800;
+    letter-spacing: -2px;
+    line-height: 1.0;
+    color: #fff;
+  }
+  .hero h1 span { color: var(--accent); }
+  .hero-sub {
+    margin-top: 16px;
+    font-size: 15px;
+    color: var(--muted);
+    max-width: 640px;
+  }
+  .meta-row {
+    display: flex; gap: 32px; margin-top: 32px; flex-wrap: wrap;
+  }
+  .meta-item {
+    display: flex; flex-direction: column; gap: 4px;
+  }
+  .meta-item .label {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+  .meta-item .value {
+    font-family: 'Syne', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--accent3);
+  }
+
+  /* LAYOUT */
+  .container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 60px;
+  }
+
+  /* SECTIONS */
+  .section {
+    padding: 56px 60px;
+    border-bottom: 1px solid var(--border);
+  }
+  .section-num {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 3px;
+    color: var(--accent2);
+    margin-bottom: 10px;
+    text-transform: uppercase;
+  }
+  .section h2 {
+    font-family: 'Syne', sans-serif;
+    font-size: 26px;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 20px;
+    letter-spacing: -0.5px;
+  }
+  .section p {
+    font-size: 14px;
+    color: #b0b0c0;
+    max-width: 860px;
+    margin-bottom: 12px;
+  }
+
+  /* PHASE STEPS */
+  .phase-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 16px;
+    margin-top: 28px;
+  }
+  .phase-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 20px 22px;
+    position: relative;
+    transition: border-color 0.2s;
+  }
+  .phase-card:hover { border-color: var(--accent2); }
+  .phase-card .step-num {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    color: var(--accent);
+    letter-spacing: 2px;
+    margin-bottom: 8px;
+  }
+  .phase-card h4 {
+    font-family: 'Syne', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 8px;
+  }
+  .phase-card p {
+    font-size: 13px;
+    color: var(--muted);
+    margin: 0;
+  }
+  .phase-card .tag {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 3px 9px;
+    border-radius: 3px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 1px;
+  }
+  .tag-wa { background: rgba(0,229,160,0.12); color: var(--accent); }
+  .tag-admin { background: rgba(91,106,248,0.15); color: var(--accent2); }
+  .tag-zooty { background: rgba(247,195,95,0.12); color: var(--accent3); }
+  .tag-pay { background: rgba(255,77,109,0.12); color: var(--danger); }
+
+  /* TECH STACK */
+  .stack-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 12px;
+    margin-top: 24px;
+  }
+  .stack-item {
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 14px 16px;
+  }
+  .stack-item .layer {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 6px;
+  }
+  .stack-item .tech {
+    font-family: 'Syne', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    color: #fff;
+  }
+  .stack-item .detail {
+    font-size: 12px;
+    color: var(--muted);
+    margin-top: 4px;
+  }
+
+  /* DIAGRAM WRAPPER */
+  .diagram-box {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 32px;
+    margin-top: 28px;
+    overflow-x: auto;
+  }
+  .diagram-box .mermaid {
+    min-width: 700px;
+  }
+
+  /* RISK TABLE */
+  .risk-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 24px;
+    font-size: 13px;
+  }
+  .risk-table th {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--muted);
+    text-align: left;
+    padding: 10px 14px;
+    border-bottom: 1px solid var(--border);
+  }
+  .risk-table td {
+    padding: 12px 14px;
+    border-bottom: 1px solid rgba(255,255,255,0.04);
+    color: #b0b0c0;
+    vertical-align: top;
+  }
+  .risk-table tr:hover td { background: var(--surface2); }
+  .badge {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 3px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    font-weight: 500;
+  }
+  .badge-hi { background: rgba(255,77,109,0.15); color: var(--danger); }
+  .badge-md { background: rgba(247,195,95,0.15); color: var(--accent3); }
+  .badge-lo { background: rgba(0,229,160,0.12); color: var(--accent); }
+
+  /* DIVIDER */
+  .divider {
+    height: 1px; background: var(--border);
+    margin: 0 60px;
+  }
+
+  /* FOOTER */
+  footer {
+    padding: 32px 60px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    color: var(--muted);
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-label">System Design Document — v1.0</div>
+  <h1>Zooty<span>.</span><br>Last-Mile Campus Delivery</h1>
+  <p class="hero-sub">Autonomous locker-on-wheels bridging third-party delivery platforms (Blinkit / Zomato) to hostel students via WhatsApp-native order management and teleoperated delivery.</p>
+  <div class="meta-row">
+    <div class="meta-item"><span class="label">Document Type</span><span class="value">System Design Presentation</span></div>
+    <div class="meta-item"><span class="label">Interfaces</span><span class="value">WhatsApp Bot · Admin Dashboard · Zooty Unit</span></div>
+    <div class="meta-item"><span class="label">Infrastructure</span><span class="value">AWS Backend</span></div>
+    <div class="meta-item"><span class="label">Payment</span><span class="value">UPI / QR</span></div>
+  </div>
+</div>
+
+<!-- SECTION 1: PROBLEM -->
+<div class="section">
+  <div class="section-num">01 — Problem Statement</div>
+  <h2>The Last 500 Metres Problem</h2>
+  <p>Delivery platforms (Blinkit, Zomato) stop at the university gate. The student is sitting in a hostel block that's a 5–15 minute walk inside campus. The delivery person cannot enter. The student has to drop everything and come to the gate or miss the delivery entirely.</p>
+  <p>Zooty eliminates this by acting as an autonomous, teleoperated locker vehicle that picks up the order at the gate and drives it to the exact drop location, controlled by a campus admin. No app install required — the entire student experience runs on WhatsApp.</p>
+</div>
+
+<!-- SECTION 2: END-TO-END FLOW -->
+<div class="section">
+  <div class="section-num">02 — End-to-End Operational Flow</div>
+  <h2>10-Step Delivery Lifecycle</h2>
+  <p>Every order follows a deterministic 10-step lifecycle from student registration to parcel collection. Each step has a responsible actor (Student / Admin / System) and a communication channel.</p>
+
+  <div class="phase-grid">
+    <div class="phase-card">
+      <div class="step-num">STEP 01</div>
+      <h4>Student Registers Order on WhatsApp Bot</h4>
+      <p>Student initiates Zooty bot. Bot collects: Name, Order No., Platform, Item Amount, Pickup Location (gate), Drop Location (hostel block + room), Alt Phone.</p>
+      <span class="tag tag-wa">WhatsApp Bot</span>
+    </div>
+    <div class="phase-card">
+      <div class="step-num">STEP 02</div>
+      <h4>Confirmation & Backend Sync</h4>
+      <p>Bot shows a structured summary. Student confirms. Payload is sent to AWS backend via REST API and immediately reflects on Admin Dashboard.</p>
+      <span class="tag tag-admin">Admin Dashboard</span>
+    </div>
+    <div class="phase-card">
+      <div class="step-num">STEP 03</div>
+      <h4>Admin Assigns Zooty Unit</h4>
+      <p>Admin reviews open orders dashboard and assigns an available Zooty (e.g., Zooty101) to the order. Zooty is teleoperated to the pickup location (gate).</p>
+      <span class="tag tag-admin">Admin + Telemetry</span>
+    </div>
+    <div class="phase-card">
+      <div class="step-num">STEP 04</div>
+      <h4>Student Gets Assignment Notification</h4>
+      <p>WhatsApp bot pushes: "Zooty101 assigned to you. Share this ID with the delivery person." Zooty is on the way towards gate.</p>
+      <span class="tag tag-wa">WhatsApp Bot</span>
+    </div>
+    <div class="phase-card">
+      <div class="step-num">STEP 05</div>
+      <h4>Delivery Person Loads the Order</h4>
+      <p>Delivery person arrives at gate with parcel. Admin monitors gate camera feed. Once confirmed, admin remotely opens Zooty's container door. Parcel is placed inside. Door auto-closes.</p>
+      <span class="tag tag-zooty">Zooty Unit</span>
+    </div>
+    <div class="phase-card">
+      <div class="step-num">STEP 06</div>
+      <h4>Order Confirmed Loaded + ETA Notification</h4>
+      <p>System sends: "Your order is loaded. Zooty101 is on the way — ETA 3 min." Admin drives Zooty via telemetry to the drop location.</p>
+      <span class="tag tag-wa">WhatsApp Bot</span>
+    </div>
+    <div class="phase-card">
+      <div class="step-num">STEP 07</div>
+      <h4>Zooty Arrives at Drop Location</h4>
+      <p>Admin parks Zooty at hostel block. System pushes notification with: arrival alert + UPI QR code image for delivery fee payment.</p>
+      <span class="tag tag-pay">Payment</span>
+    </div>
+    <div class="phase-card">
+      <div class="step-num">STEP 08</div>
+      <h4>Student Pays — Container Unlocks</h4>
+      <p>Payment verified via UPI webhook. Only on successful payment confirmation does the "Open Container" option become active on Admin Dashboard. No payment = box stays locked.</p>
+      <span class="tag tag-pay">Payment Gate</span>
+    </div>
+    <div class="phase-card">
+      <div class="step-num">STEP 09</div>
+      <h4>Admin Opens Box — Student Collects</h4>
+      <p>Admin opens container remotely. Student collects parcel. Order is marked as Delivered in the system.</p>
+      <span class="tag tag-zooty">Zooty Unit</span>
+    </div>
+    <div class="phase-card">
+      <div class="step-num">STEP 10</div>
+      <h4>Feedback & Session Close</h4>
+      <p>Bot sends: "Thanks! How was your Zooty experience?" — single-question feedback. Session auto-closes after 60 seconds if no response. Zooty returns to hub.</p>
+      <span class="tag tag-wa">WhatsApp Bot</span>
+    </div>
+  </div>
+</div>
+
+<!-- SECTION 3: DIAGRAM 1 — OPERATIONAL FLOW -->
+<div class="section">
+  <div class="section-num">03 — Diagram 1: Full Operational Flow</div>
+  <h2>End-to-End Sequence — All Actors</h2>
+  <p>This diagram maps every interaction across the four actors: Student, WhatsApp Bot + Backend, Admin Dashboard, and the Zooty Unit. Read top-to-bottom as a chronological order lifecycle.</p>
+
+  <div class="diagram-box">
+    <div class="mermaid">
+sequenceDiagram
+    actor S as Student
+    participant WA as WhatsApp Bot
+    participant BE as AWS Backend
+    participant AD as Admin Dashboard
+    participant ZT as Zooty Unit
+    participant PG as Payment Gateway
+
+    S->>WA: Initiates Zooty bot
+    WA->>S: Collects: Name, Order No., Platform, Item Amount,<br/>Pickup Location, Drop Location, Alt Phone
+    S->>WA: Confirms details
+    WA->>BE: POST /orders — payload with all order details
+    BE->>AD: New order appears on dashboard (status: PENDING)
+
+    AD->>AD: Admin reviews & assigns Zooty unit (e.g., Zooty101)
+    AD->>ZT: Telemetry command — drive to pickup location (gate)
+    AD->>BE: PATCH /orders/:id — assign Zooty101
+    BE->>WA: Push notification to student session
+    WA->>S: "Zooty101 assigned. Share this ID with the delivery person."
+
+    ZT-->>AD: Arrives at gate (GPS confirmation)
+    Note over AD,ZT: Admin monitors gate camera feed
+    AD->>ZT: Remote command — OPEN container door
+    Note over ZT: Delivery person loads parcel
+    ZT->>ZT: Door auto-closes after load
+    BE->>WA: Push notification
+    WA->>S: "Order loaded. Zooty101 on the way — ETA ~3 min"
+
+    AD->>ZT: Telemetry — drive to drop location
+    ZT-->>AD: Arrives at drop location (GPS confirmation)
+    BE->>WA: Push notification
+    WA->>S: "Zooty101 is here! Pay to unlock your parcel."
+    WA->>S: UPI QR Code image sent in chat
+
+    S->>PG: Scans QR & completes payment
+    PG->>BE: Payment success webhook
+    BE->>AD: Payment confirmed — ENABLE open-box button
+    AD->>ZT: Remote command — OPEN container door
+    S->>ZT: Collects parcel
+    BE->>AD: Order marked DELIVERED
+
+    WA->>S: "Thanks! Rate your Zooty experience (1–5)?"
+    alt Student responds
+        S->>WA: Submits rating/feedback
+        BE->>BE: Stores feedback
+    else No response in 60s
+        WA->>WA: Auto-close session
+    end
+
+    AD->>ZT: Drive back to Zooty Hub
+    </div>
+  </div>
+</div>
+
+<!-- SECTION 4: DIAGRAM 2 — TECHNICAL ARCHITECTURE -->
+<div class="section">
+  <div class="section-num">04 — Diagram 2: Technical Architecture & Data Flow</div>
+  <h2>Backend System Architecture</h2>
+  <p>This diagram shows how every component is wired together at the infrastructure level — what talks to what, over which protocol, and what data moves at each stage.</p>
+
+  <div class="diagram-box">
+    <div class="mermaid">
+flowchart TD
+    subgraph CLIENT["Client Layer"]
+        WA["WhatsApp\n(Student Interface)"]
+    end
+
+    subgraph BOT["Bot Layer"]
+        WB["WhatsApp Business API\n(Meta Cloud API)"]
+        BL["Bot Logic Engine\n(Node.js / Python)\nState Machine per session"]
+    end
+
+    subgraph BACKEND["AWS Backend"]
+        AG["API Gateway\n(REST)"]
+        LM["Lambda Functions\n- Order Handler\n- Payment Handler\n- Notification Service\n- Telemetry Controller"]
+        DB["DynamoDB / RDS\nOrders · Users · Sessions\nPayments · Telemetry Logs"]
+        S3["S3\nQR Code Images\nCamera Snapshots"]
+        SQS["SQS / SNS\nAsync Event Queue"]
+    end
+
+    subgraph ADMIN["Admin Dashboard"]
+        UI["Web Dashboard\n(React)"]
+        MAP["Live Map View\n(GPS Tracking)"]
+        CAM["Camera Feed\n(WebSocket)"]
+        CTRL["Telemetry Controls\nOpen/Close · Drive · Return"]
+    end
+
+    subgraph ZOOTY["Zooty Hardware Unit"]
+        MCU["Onboard MCU\n(MP2)"]
+        GPS["GPS Module"]
+        LOCK["Lock\n(Container Door)"]
+        BAT["Battery + BMS"]
+        CAM2["Onboard Camera"]
+        MQTT["MQTT Client"]
+    end
+
+    subgraph PAY["Payment Layer"]
+        UPI["UPI QR Generator"]
+        WH["Payment Webhook\n(Razorpay / Cashfree)"]
+    end
+
+    WA -->|"HTTPS"| WB
+    WB -->|"Webhook POST"| BL
+    BL -->|"REST API Call"| AG
+    AG --> LM
+    LM <--> DB
+    LM <--> S3
+    LM --> SQS
+    SQS -->|"Push Notification\nvia WB API"| WB
+    WB --> WA
+
+    LM -->|"WebSocket / REST"| UI
+    UI --> MAP
+    UI --> CAM
+    UI --> CTRL
+
+    CTRL -->|"MQTT Publish\n(AWS IoT Core)"| MQTT
+    MQTT --> MCU
+    MCU --> LOCK
+    MCU --> GPS
+    MCU --> CAM2
+    GPS -->|"MQTT Telemetry"| LM
+    CAM2 -->|"WebSocket Stream"| CAM
+
+    LM --> UPI
+    UPI -->|"QR Image → S3 URL"| BL
+    WH -->|"POST /webhook/payment"| AG
+
+    style CLIENT fill:#0f1f15,stroke:#00e5a0,color:#e8e8f0
+    style BOT fill:#0f1520,stroke:#5b6af8,color:#e8e8f0
+    style BACKEND fill:#111118,stroke:#2a2a3a,color:#e8e8f0
+    style ADMIN fill:#1a1520,stroke:#5b6af8,color:#e8e8f0
+    style ZOOTY fill:#1a1810,stroke:#f7c35f,color:#e8e8f0
+    style PAY fill:#1a1015,stroke:#ff4d6d,color:#e8e8f0
+    </div>
+  </div>
+</div>
+
+<!-- SECTION 5: TECH STACK -->
+<div class="section">
+  <div class="section-num">05 — Proposed Tech Stack</div>
+  <h2>Implementation Stack</h2>
+  <p>Every technology choice has a concrete rationale. Nothing exotic — all battle-tested with strong community support and free/cheap tiers for a campus pilot.</p>
+  <div class="stack-grid">
+    <div class="stack-item">
+      <div class="layer">Bot Layer</div>
+      <div class="tech">Meta WhatsApp Cloud API</div>
+      <div class="detail">Free tier. No phone number hosting cost. Webhooks for inbound messages.</div>
+    </div>
+    <div class="stack-item">
+      <div class="layer">Bot Logic</div>
+      <div class="tech">Node.js (Express)</div>
+      <div class="detail">Session state machine per student. Redis for session persistence.</div>
+    </div>
+    <div class="stack-item">
+      <div class="layer">API Layer</div>
+      <div class="tech">AWS API Gateway + Lambda</div>
+      <div class="detail">Serverless. Pay per request. No idle cost during low traffic.</div>
+    </div>
+    <div class="stack-item">
+      <div class="layer">Database</div>
+      <div class="tech">DynamoDB</div>
+      <div class="detail">Orders, sessions, users. Fast key-value lookups. Auto-scaling.</div>
+    </div>
+    <div class="stack-item">
+      <div class="layer">IoT Comm</div>
+      <div class="tech">AWS IoT Core (MQTT)</div>
+      <div class="detail">Bidirectional Zooty ↔ backend. Telemetry commands + GPS data.</div>
+    </div>
+    <div class="stack-item">
+      <div class="layer">Admin UI</div>
+      <div class="tech">React + Mapbox GL</div>
+      <div class="detail">Live GPS tracking, order management, remote container control.</div>
+    </div>
+    <div class="stack-item">
+      <div class="layer">Payment</div>
+      <div class="tech">Razorpay / Cashfree</div>
+      <div class="detail">Dynamic UPI QR generation. Webhook for payment confirmation.</div>
+    </div>
+    <div class="stack-item">
+      <div class="layer">Zooty Hardware</div>
+      <div class="tech">MP2 Module</div>
+      <div class="detail">Pi handles comms/camera. Arduino handles motor/lock control.</div>
+    </div>
+    <div class="stack-item">
+      <div class="layer">Camera</div>
+      <div class="tech">WebSocket (mediasoup)</div>
+      <div class="detail">Low-latency live feed to admin dashboard for gate monitoring.</div>
+    </div>
+    <div class="stack-item">
+      <div class="layer">Notifications</div>
+      <div class="tech">AWS SQS + SNS</div>
+      <div class="detail">Async event queue decouples notification sending from order logic.</div>
+    </div>
+  </div>
+</div>
+
+<!-- SECTION 6: RISKS -->
+<div class="section">
+  <div class="section-num">06 — Risks & Mitigations</div>
+  <h2>Known Risks</h2>
+  <p>Every system has failure modes.</p>
+  <table class="risk-table">
+    <thead>
+      <tr>
+        <th>Risk</th>
+        <th>Impact</th>
+        <th>Severity</th>
+        <th>Mitigation</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Payment webhook delay — door stays locked after student pays</td>
+        <td>Poor UX, student frustration</td>
+        <td><span class="badge badge-hi">HIGH</span></td>
+        <td>Implement idempotent retry logic on webhook. Admin override button always available.</td>
+      </tr>
+      <tr>
+        <td>Delivery person doesn't know which Zooty is theirs</td>
+        <td>Wrong parcel in wrong Zooty</td>
+        <td><span class="badge badge-hi">HIGH</span></td>
+        <td>Physical Zooty ID label (QR + number). Admin verifies via camera before opening door.</td>
+      </tr>
+      <tr>
+        <td>Campus Wi-Fi dead zones — Zooty loses MQTT connection mid-route</td>
+        <td>Zooty stuck, admin loses control</td>
+        <td><span class="badge badge-hi">HIGH</span></td>
+        <td>SIM card (4G) fallback on MP2 Module. Fail-safe: Zooty stops in place, admin notified.</td>
+      </tr>
+      <tr>
+        <td>WhatsApp session expires before delivery completes</td>
+        <td>Student misses notifications</td>
+        <td><span class="badge badge-md">MEDIUM</span></td>
+        <td>Use WhatsApp Business "utility" message templates.</td>
+      </tr>
+      <tr>
+        <td>Battery dies during delivery</td>
+        <td>Order stuck mid-route</td>
+        <td><span class="badge badge-md">MEDIUM</span></td>
+        <td>Low battery alert triggers admin; admin drives Zooty to nearest hub first. Battery threshold: 20%.</td>
+      </tr>
+      <tr>
+        <td>Student doesn't pick up parcel after box opens</td>
+        <td>Parcel exposed, vulnerable</td>
+        <td><span class="badge badge-lo">LOW</span></td>
+        <td>2-minute auto-close on container. Admin can re-open. Notify student again after 5 min.</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- SECTION 7: MVP SCOPE -->
+<div class="section">
+  <div class="section-num">07 — MVP Scope for Pilot</div>
+  <h2>What to Build First</h2>
+  <p>For a campus pilot, focus on validating the core loop: student registers → order gets to room → student pays and collects.</p>
+  <div class="phase-grid">
+    <div class="phase-card">
+      <div class="step-num">MUST HAVE — MVP</div>
+      <h4>Core Delivery Loop</h4>
+      <p>WhatsApp bot data collection, AWS backend, admin dashboard with manual Zooty assignment, basic MQTT telemetry, UPI payment gate before box opens.</p>
+      <span class="tag tag-admin">Phase 1</span>
+    </div>
+    <div class="phase-card">
+      <div class="step-num">SHOULD HAVE — V2</div>
+      <h4>Reliability & Automation</h4>
+      <p>GPS live tracking on dashboard, camera feed integration, auto-ETA calculations, payment webhook retry logic, low battery alerts.</p>
+      <span class="tag tag-zooty">Phase 2</span>
+    </div>
+    <div class="phase-card">
+      <div class="step-num">NICE TO HAVE — V3</div>
+      <h4>Scale & Intelligence</h4>
+      <p>Multi-Zooty routing, automated Zooty assignment based on proximity, student order history, analytics dashboard, battery swap scheduling.</p>
+      <span class="tag tag-wa">Phase 3</span>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <span>ZOOTY — SYSTEM DESIGN DOCUMENT v1.0</span>
+  <span>CONFIDENTIAL · FOR TEAM REVIEW</span>
+</footer>
+
+<script>
+  mermaid.initialize({
+    startOnLoad: true,
+    theme: 'dark',
+    themeVariables: {
+      background: '#111118',
+      primaryColor: '#16161f',
+      primaryTextColor: '#e8e8f0',
+      primaryBorderColor: '#2a2a3a',
+      lineColor: '#5b6af8',
+      secondaryColor: '#1a1520',
+      tertiaryColor: '#0f1520',
+      edgeLabelBackground: '#111118',
+      actorBkg: '#16161f',
+      actorBorder: '#2a2a3a',
+      actorTextColor: '#e8e8f0',
+      activationBorderColor: '#00e5a0',
+      activationBkgColor: '#0f1f15',
+      sequenceNumberColor: '#e8e8f0',
+      noteBkgColor: '#1a1520',
+      noteTextColor: '#b0b0c0',
+      noteBorderColor: '#2a2a3a',
+    },
+    flowchart: { curve: 'basis', padding: 20 },
+    sequence: { mirrorActors: false, actorMargin: 60, messageMargin: 30 }
+  });
+</script>
+</body>
+</html>
