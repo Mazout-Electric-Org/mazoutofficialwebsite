@@ -1,15 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
   <url>
     <loc>https://mazoutelectric.com/</loc>
-    <lastmod>2025-04-10</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>1.0</priority>
+    <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>https://mazoutelectric.com/vision</loc>
-    <lastmod>2025-04-10</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>1.0</priority>
+    <loc>https://mazoutelectric.com/privacy</loc>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://mazoutelectric.com/terms</loc>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://mazoutelectric.com/cookies</loc>
+    <changefreq>weekly</changefreq>
   </url>
 </urlset>
