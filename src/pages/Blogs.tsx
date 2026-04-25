@@ -13,6 +13,7 @@ const blogs = [
     id: "last-mile-logistics",
     date: "2025-07-23",
     title: "Effective fleet management with IOT in Q-commerce era",
+    cover: "https://zooty.mazoutelectric.com/assets/blogs-2B_OONlg.jpg",
   },
   {
     id: "software-defined-vehicles",
