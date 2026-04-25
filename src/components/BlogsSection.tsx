@@ -75,13 +75,13 @@ const BlogsSection = () => {
               </motion.div>
             ))}
             </div>
-            <div className="mt-12 flex justify-start">
+            <div className="mt-12">
               <Link
                 to="/blogs"
-                className="group inline-flex items-center gap-2 border border-border px-6 py-3 text-foreground font-sans text-sm uppercase tracking-[0.22em] transition-colors duration-300 hover:border-secondary-foreground hover:text-secondary-foreground"
+                className="group inline-flex flex-col items-start gap-1 border border-border px-6 py-3 text-foreground font-sans text-sm uppercase tracking-[0.22em] transition-colors duration-300 hover:border-secondary-foreground hover:text-secondary-foreground"
               >
-                Show all blogs
-                <span className="text-lg transition-transform duration-300 group-hover:translate-x-1">→</span>
+                <span>All blogs</span>
+                <span className="text-lg transition-transform duration-300 group-hover:translate-x-2">→</span>
               </Link>
             </div>
           </div>
