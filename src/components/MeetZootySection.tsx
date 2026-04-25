@@ -12,7 +12,7 @@ const MeetZootySection = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.7 }}
         >
-          <h2 className="text-3xl lg:text-5xl font-light leading-tight mb-8">
+          <h2 className="lg:text-5xl leading-tight mb-8 font-light text-5xl">
             Meet <span className="text-primary">Zooty</span>
           </h2>
           <p className="text-base lg:text-lg text-muted-foreground leading-relaxed mb-6">
