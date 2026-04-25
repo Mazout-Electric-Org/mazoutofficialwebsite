@@ -8,12 +8,12 @@ import patrollingCover from "@/assets/blog-patrolling-cover.png";
 const blogs = [
   {
     id: "autonomous-navigation",
-    date: "2024-05-04",
+    date: "2026-04-05",
     title: "The Future of Autonomous Navigation in Dense Urban Environments",
   },
   {
     id: "patrolling-demonstration",
-    date: "2025-02-17",
+    date: "2026-02-17",
     title: "Safeguarding Your Facility With in-Campus Mobility",
     cover: patrollingCover,
   },
