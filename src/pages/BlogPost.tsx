@@ -7,6 +7,7 @@ import patrollingCover from "@/assets/blog-patrolling-cover.png";
 import patrollingRoute from "@/assets/blog-patrolling-route.png";
 import patrollingCollage from "@/assets/blog-patrolling-collage.png";
 import sdvArchitecture from "@/assets/sdv-architecture.png";
+import autonomousCover from "@/assets/blog-autonomous-cover.png";
 
 type BlogBlock =
   | { type: "p"; text: string }
@@ -32,6 +33,12 @@ const blogContent: Record<string, BlogEntry> = {
   "autonomous-navigation": {
     title: "The Compression of the Last Leg: The Autonomous Imperative in Hyper-Local Logistics",
     blocks: [
+      {
+        type: "image",
+        src: autonomousCover,
+        alt: "Zooty autonomous vehicle navigating a residential campus",
+      },
+      { type: "h2", text: "Overview" },
       {
         type: "p",
         text: "In the evolving landscape of global commerce, we are witnessing a fundamental shift in the \"Last Mile\" logistics framework. The traditional model, predicated on massive regional hubs and human-centric delivery routes, is being disrupted by a phenomenon we define as Hyper-Local Compression. As consumer expectations shift from \"next day\" to \"next minute,\" the logistics industry is hitting a ceiling of human efficiency and security.",
