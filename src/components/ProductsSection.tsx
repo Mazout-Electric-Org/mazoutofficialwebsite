@@ -20,13 +20,13 @@ const products: Product[] = [
     ],
   },
   {
-    name: "Fleet Intelligence",
-    category: "Software",
+    name: "Zooty Patrolling Demonstration",
+    category: "Utility",
     description:
-      "Real-time telemetry, predictive routing, and demand forecasting. Over-the-air updates pushed to entire fleets simultaneously with closed-loop data pipelines.",
+      "Collaborating with YSC Delhi to showcase autonomous patrolling and utility movement. Featuring real-time sensor fusion and adaptive campus navigation.",
     links: [
-      { label: "Documentation", href: "#" },
-      { label: "Dashboard", href: "#" },
+      { label: "Learn More", href: "/blog/patrolling-demonstration" },
+      { label: "Inquire", href: "#contact" },
     ],
   },
   {
