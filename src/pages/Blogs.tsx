@@ -33,7 +33,7 @@ const Blogs = () => {
       <section className="pt-32 pb-24 lg:pt-48 lg:pb-40">
         <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
           <div className="flex items-baseline justify-between border-b border-border pb-8 mb-16">
-            <h1 className="text-foreground font-sans font-medium text-5xl lg:text-6xl">
+            <h1 className="text-foreground font-semibold font-sans font-medium text-5xl lg:text-6xl">
               Blogs
             </h1>
             <span className="text-secondary-foreground font-semibold font-sans text-2xl lg:text-3xl">
