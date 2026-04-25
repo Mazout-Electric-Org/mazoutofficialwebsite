@@ -35,8 +35,26 @@ export const ThemeProvider = ({ children }: { children: ReactNode }) => {
   );
 };
 
-export const useTheme = () => {
+export const useTheme = (): ThemeContextValue => {
   const ctx = useContext(ThemeContext);
-  if (!ctx) throw new Error("useTheme must be used within ThemeProvider");
-  return ctx;
+  if (ctx) return ctx;
+  // Fallback: read/write directly so the hook never crashes if used outside provider
+  // (e.g., during HMR or isolated renders).
+  const isLight =
+    typeof document !== "undefined" &&
+    document.documentElement.classList.contains("light");
+  return {
+    theme: isLight ? "light" : "dark",
+    toggleTheme: () => {
+      if (typeof document === "undefined") return;
+      const root = document.documentElement;
+      const next = root.classList.contains("light") ? "dark" : "light";
+      root.classList.toggle("light", next === "light");
+      try {
+        window.localStorage.setItem("theme", next);
+      } catch {
+        /* ignore */
+      }
+    },
+  };
 };
