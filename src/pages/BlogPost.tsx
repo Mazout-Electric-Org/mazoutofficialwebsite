@@ -316,7 +316,7 @@ const blogContent: Record<string, BlogEntry> = {
         type: "image",
         src: sdvArchitecture,
         alt: "iCommuteX Visualized",
-        caption: "Figure 2: iCommuteX Visualized",
+        caption: "Figure 2: X1 Visualized",
       },
       {
         type: "p",
