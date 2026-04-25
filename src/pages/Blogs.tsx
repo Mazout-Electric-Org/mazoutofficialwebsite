@@ -4,12 +4,14 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
 import patrollingCover from "@/assets/blog-patrolling-cover.png";
+import autonomousCover from "@/assets/blog-autonomous-cover.png";
 
 const blogs = [
   {
     id: "autonomous-navigation",
     date: "2026-04-05",
     title: "The Future of Autonomous Navigation in Dense Urban Environments",
+    cover: autonomousCover,
   },
   {
     id: "patrolling-demonstration",

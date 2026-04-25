@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { Bike, Package, Shield } from "lucide-react";
 import { Link } from "react-router-dom";
 import patrollingCover from "@/assets/blog-patrolling-cover-new.png";
+import autonomousCover from "@/assets/blog-autonomous-cover.png";
 
 const caseStudies = [
   {
@@ -9,6 +10,7 @@ const caseStudies = [
     title: "The Compression of the Last Leg: The Autonomous Imperative in Hyper-Local Logistics",
     description:
       "India's last-mile problem is unique. Here's how software-defined micro-mobility can cut delivery costs by 40% while improving reliability.",
+    cover: autonomousCover,
   },
   {
     id: "patrolling-demonstration",
