@@ -2,6 +2,9 @@ import { motion } from "framer-motion";
 import { Link, useParams } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import patrollingCover from "@/assets/blog-patrolling-cover.png";
+import patrollingRoute from "@/assets/blog-patrolling-route.png";
+import patrollingCollage from "@/assets/blog-patrolling-collage.png";
 
 type BlogBlock =
   | { type: "p"; text: string }
@@ -35,6 +38,7 @@ const blogContent: Record<string, BlogEntry> = {
     title: "Zooty with YSC, Delhi for Patrolling & Utility",
     date: "2026-02-08",
     readTime: "4 min read",
+    hero: { src: patrollingCover, alt: "Zooty x Daud-è-Dilli — Smart patrolling assistant for your facility" },
     blocks: [
       {
         type: "p",
@@ -48,6 +52,12 @@ const blogContent: Record<string, BlogEntry> = {
         type: "p",
         text: "The event, hosted by Daud-è-Dilli, brought together 300+ participants to promote Clean Air and Drug-Free Living. With roads sealed and a defined event perimeter in place, the challenge was clear: ensure seamless monitoring, crowd management, and security—without disrupting the environment or experience.",
       },
+      {
+        type: "image",
+        src: patrollingRoute,
+        alt: "Route map for the 10 KM Super Hero Run around Yamuna Sports Complex",
+        caption: "Route map for the 10 KM Super Hero Run — the perimeter Zooty patrolled.",
+      },
       { type: "divider" },
       { type: "h2", text: "Deployment Objective" },
       {
@@ -60,6 +70,12 @@ const blogContent: Record<string, BlogEntry> = {
       },
       { type: "divider" },
       { type: "h2", text: "On-Ground Impact with Zooty" },
+      {
+        type: "image",
+        src: patrollingCollage,
+        alt: "Zooty deployed on-ground at the Super Hero Run with participants and organizers",
+        caption: "Zooty on-ground at the Super Hero Run — start/finish line, perimeter patrols, and participant interactions.",
+      },
       {
         type: "p",
         text: "Zooty enabled security teams to operate with greater efficiency and presence:",

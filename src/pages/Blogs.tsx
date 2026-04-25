@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
+import patrollingCover from "@/assets/blog-patrolling-cover.png";
+
 const blogs = [
   {
     id: "autonomous-navigation",
@@ -13,6 +15,7 @@ const blogs = [
     id: "patrolling-demonstration",
     date: "2025-02-17",
     title: "Safeguarding Your Facility With in-Campus Mobility",
+    cover: patrollingCover,
   },
   {
     id: "last-mile-logistics",
