@@ -6,7 +6,7 @@ import patrollingCover from "@/assets/blog-patrolling-cover-new.png";
 const caseStudies = [
   {
     id: "autonomous-navigation",
-    title: "The Future of Autonomous Navigation in Dense Urban Environments",
+    title: "The Compression of the Last Leg: The Autonomous Imperative in Hyper-Local Logistics",
     description:
       "India's last-mile problem is unique. Here's how software-defined micro-mobility can cut delivery costs by 40% while improving reliability.",
   },
