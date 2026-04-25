@@ -12,12 +12,12 @@ const blogContent: Record<string, { title: string; body: string[] }> = {
       "The result is a vehicle that doesn't just navigate — it understands context, predicts behavior, and adapts in milliseconds.",
     ],
   },
-  "fleet-intelligence": {
-    title: "Fleet Intelligence: From Vehicles to Networked Systems",
+  "patrolling-demonstration": {
+    title: "Zooty with YSC, Delhi for Patrolling & Utility Demonstration",
     body: [
-      "Managing a fleet of autonomous vehicles is fundamentally different from managing individual units. It requires thinking in systems — where every vehicle is a data point, every route is an optimization problem, and every minute of downtime has a cascading cost.",
-      "Mazout's fleet intelligence layer treats vehicles as nodes in a living network. Real-time telemetry, predictive maintenance alerts, and dynamic route optimization work together to maximize uptime and minimize operational cost.",
-      "This is not fleet management software. This is fleet operating infrastructure.",
+      "Zooty's recent collaboration with YSC, Delhi showcases the practical application of autonomous mobility in high-security environments. By integrating advanced sensors and AI-driven navigation, we've demonstrated a robust solution for continuous patrolling and utility support.",
+      "The demonstration highlights how autonomous systems can operate reliably within complex campus settings, providing 24x7 vigilance while reducing manual overhead. This represents a significant step towards more efficient and automated facility management.",
+      "With every mile covered, Zooty continues to refine its ability to navigate and respond to dynamic environments, ensuring safety and utility are never compromised.",
     ],
   },
   "last-mile-logistics": {

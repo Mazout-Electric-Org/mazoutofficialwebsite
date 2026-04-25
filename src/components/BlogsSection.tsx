@@ -10,10 +10,10 @@ const caseStudies = [
       "India's last-mile problem is unique. Here's how software-defined micro-mobility can cut delivery costs by 40% while improving reliability.",
   },
   {
-    id: "fleet-intelligence",
-    title: "Fleet Intelligence: From Vehicles to Networked Systems",
+    id: "patrolling-demonstration",
+    title: "Zooty with YSC, Delhi for Patrolling & Utility Demonstration",
     description:
-      "Why managing 10,000 vehicles requires more than dashboards. A deep dive into real-time orchestration, predictive routing, and edge computing.",
+      "Experience how Zooty is transforming safety and utility at YSC Delhi with autonomous patrolling and real-time responsiveness.",
   },
 ];
 
