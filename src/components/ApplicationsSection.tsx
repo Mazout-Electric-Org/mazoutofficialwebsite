@@ -108,7 +108,7 @@ const ApplicationsSection = () => {
     <section className="relative py-32 lg:py-40">
       <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
         <div className="flex items-baseline gap-4 mb-16">
-          <h2 className="text-foreground font-medium text-5xl">Applications</h2>
+          <h2 className="text-foreground font-semibold font-medium text-5xl">Applications</h2>
           <span className="text-muted-foreground text-sm">​</span>
         </div>
 

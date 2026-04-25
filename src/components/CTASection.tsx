@@ -33,7 +33,7 @@ const CTASection = () => {
             </a>
             <a
               href="mailto:hello@mazoutelectric.com"
-              className="inline-flex items-center gap-2 px-8 py-4 rounded-full border border-border text-foreground hover:border-primary hover:text-primary transition-all duration-300"
+              className="inline-flex items-center gap-2 px-8 py-4 rounded-full border border-border text-foreground font-semibold hover:border-primary hover:text-primary transition-all duration-300"
             >
               Request a Demo
             </a>

@@ -89,7 +89,7 @@ const ProductsSection = () => {
       <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
         {/* Section header */}
         <div className="flex items-baseline gap-4 mb-16">
-          <h2 className="text-foreground text-lg font-medium">Products</h2>
+          <h2 className="text-foreground font-semibold text-lg font-medium">Products</h2>
           <span className="text-muted-foreground text-sm">
             {String(products.length).padStart(2, "0")}
           </span>
