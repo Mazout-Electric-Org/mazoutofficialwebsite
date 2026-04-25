@@ -36,7 +36,7 @@ const Blogs = () => {
             <h1 className="text-foreground font-sans font-medium text-5xl lg:text-6xl">
               Blogs
             </h1>
-            <span className="text-secondary-foreground font-sans text-2xl lg:text-3xl">
+            <span className="text-secondary-foreground font-semibold font-sans text-2xl lg:text-3xl">
               {String(blogs.length).padStart(2, "0")}
             </span>
           </div>

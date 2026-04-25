@@ -68,7 +68,7 @@ const BlogsSection = () => {
                 </h3>
                 <Link
                   to={`/blog/${blog.id}`}
-                  className="text-secondary-foreground font-sans text-sm flex items-center gap-1.5 hover:gap-3 transition-all duration-300 mt-auto"
+                  className="text-secondary-foreground font-semibold font-sans text-sm flex items-center gap-1.5 hover:gap-3 transition-all duration-300 mt-auto"
                 >
                   Read more <span className="text-lg">→</span>
                 </Link>

@@ -25,8 +25,8 @@ const HeroSection = () => {
           transition={{ duration: 0.8, delay: 0.1 }}
           className="font-sans text-5xl sm:text-6xl lg:text-[6.5rem] leading-[0.85] tracking-normal mb-7 lg:mb-10"
         >
-          <span className="text-foreground">ZO</span>
-          <span className="text-secondary-foreground">OTY</span>
+          <span className="text-foreground font-semibold">ZO</span>
+          <span className="text-secondary-foreground font-semibold">OTY</span>
         </motion.h2>
         <motion.h1
           initial={{ opacity: 0, y: 20 }}
