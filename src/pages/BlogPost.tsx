@@ -169,7 +169,7 @@ const BlogPost = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.1 }}
-            className="text-foreground text-3xl lg:text-5xl font-light leading-tight mt-6 mb-12"
+            className="text-foreground text-3xl lg:text-5xl leading-tight mt-6 mb-12 font-medium"
           >
             {blog.title}
           </motion.h1>
