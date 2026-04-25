@@ -78,10 +78,10 @@ const BlogsSection = () => {
             <div className="mt-12">
               <Link
                 to="/blogs"
-                className="group inline-flex flex-col items-start gap-1 border border-border px-6 py-3 text-foreground font-sans text-sm uppercase tracking-[0.22em] transition-colors duration-300 hover:border-secondary-foreground hover:text-secondary-foreground"
+                className="group inline-flex items-center gap-3 whitespace-nowrap bg-white px-6 py-3 text-black font-sans text-sm uppercase tracking-[0.22em] border border-white transition-colors duration-300 hover:bg-white/90"
               >
                 <span>All blogs</span>
-                <span className="text-lg transition-transform duration-300 group-hover:translate-x-2">→</span>
+                <span className="text-lg transition-transform duration-300 group-hover:translate-x-1">→</span>
               </Link>
             </div>
           </div>
