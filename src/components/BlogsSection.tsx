@@ -43,7 +43,7 @@ const BlogsSection = () => {
     <section className="relative py-32 lg:py-40">
       <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
         <div className="flex items-baseline gap-4 mb-16">
-          <h2 className="text-foreground font-sans font-medium text-5xl">Blogs</h2>
+          <h2 className="text-foreground font-semibold font-sans font-medium text-5xl">Blogs</h2>
         </div>
 
         <div className="grid lg:grid-cols-[minmax(0,0.9fr)_minmax(420px,1.1fr)] gap-16 lg:gap-20 items-start">
@@ -68,7 +68,7 @@ const BlogsSection = () => {
                 </h3>
                 <Link
                   to={`/blog/${blog.id}`}
-                  className="text-secondary-foreground font-sans text-sm flex items-center gap-1.5 hover:gap-3 transition-all duration-300 mt-auto"
+                  className="text-secondary-foreground font-semibold font-sans text-sm flex items-center gap-1.5 hover:gap-3 transition-all duration-300 mt-auto"
                 >
                   Read more <span className="text-lg">→</span>
                 </Link>

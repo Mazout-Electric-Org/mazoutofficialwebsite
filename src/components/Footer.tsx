@@ -21,7 +21,7 @@ const Footer = () => {
       <div className="max-w-[1400px] mx-auto px-6 lg:px-12 py-16 lg:py-20">
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-8 mb-16">
           <div>
-            <h4 className="text-foreground font-medium mb-6 text-base">Company</h4>
+            <h4 className="text-foreground font-semibold font-medium mb-6 text-base">Company</h4>
             <ul className="space-y-3">
               {[
                 { label: "Vision", href: "#", external: false },
@@ -39,7 +39,7 @@ const Footer = () => {
             </ul>
           </div>
           <div>
-            <h4 className="text-foreground font-medium mb-6 text-base">Product</h4>
+            <h4 className="text-foreground font-semibold font-medium mb-6 text-base">Product</h4>
             <ul className="space-y-3">
               {[
                 { label: "Documentation", href: "https://github.com/Mazout-Electric/Documentation/blob/main/README.md", external: true },
@@ -56,7 +56,7 @@ const Footer = () => {
             </ul>
           </div>
           <div>
-            <h4 className="text-foreground font-medium mb-6 text-base">Legal</h4>
+            <h4 className="text-foreground font-semibold font-medium mb-6 text-base">Legal</h4>
             <ul className="space-y-3">
               {[
                 { label: "Privacy Policy", href: "/privacy" },
@@ -72,7 +72,7 @@ const Footer = () => {
             </ul>
           </div>
           <div>
-            <h4 className="text-foreground font-medium mb-6 text-base">Connect</h4>
+            <h4 className="text-foreground font-semibold font-medium mb-6 text-base">Connect</h4>
             <div className="flex gap-4">
               {[
                 { icon: Linkedin, label: "LinkedIn", href: "https://www.linkedin.com/company/mazout-electric/posts/?feedView=all" },

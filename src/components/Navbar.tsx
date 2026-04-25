@@ -67,13 +67,13 @@ const Navbar = () => {
           <button
             onClick={toggleTheme}
             aria-label={theme === "dark" ? "Switch to light mode" : "Switch to dark mode"}
-            className="text-foreground"
+            className="text-foreground font-semibold"
           >
             {theme === "dark" ? <Sun size={20} /> : <Moon size={20} />}
           </button>
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
-            className="text-foreground"
+            className="text-foreground font-semibold"
           >
             {mobileOpen ? <X size={24} /> : <Menu size={24} />}
           </button>

@@ -97,7 +97,7 @@ const ContactDialog = ({ open, onOpenChange }: ContactDialogProps) => {
           <aside className="space-y-8 border-b border-border pb-8 md:border-b-0 md:border-r md:pb-0 md:pr-8">
             <div>
               <p className="mb-3 font-sans text-xs uppercase tracking-[0.24em] text-primary">Contact</p>
-              <h2 className="text-3xl font-bold text-foreground">Get in Touch</h2>
+              <h2 className="text-3xl font-bold text-foreground font-semibold">Get in Touch</h2>
               <p className="mt-3 text-sm leading-6 text-muted-foreground">
                 Reach out to us for demos, pilots, partnerships, and deployments.
               </p>
@@ -109,7 +109,7 @@ const ContactDialog = ({ open, onOpenChange }: ContactDialogProps) => {
                   <Icon className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
                   <span>
                     <span className="block font-sans text-[11px] uppercase tracking-[0.22em] text-muted-foreground">{label}</span>
-                    <span className="mt-1 block text-foreground">{value}</span>
+                    <span className="mt-1 block text-foreground font-semibold">{value}</span>
                   </span>
                 </a>
               ))}
@@ -121,7 +121,7 @@ const ContactDialog = ({ open, onOpenChange }: ContactDialogProps) => {
                   <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
                   <span>
                     <span className="block font-sans text-[11px] uppercase tracking-[0.22em] text-muted-foreground">{label}</span>
-                    <span className="mt-1 block leading-6 text-foreground">{value}</span>
+                    <span className="mt-1 block leading-6 text-foreground font-semibold">{value}</span>
                   </span>
                 </div>
               ))}

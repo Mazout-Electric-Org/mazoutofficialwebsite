@@ -21,7 +21,7 @@ const VisionSection = () => {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="space-y-8"
         >
-          <p className="text-foreground text-2xl lg:text-3xl font-light leading-relaxed">
+          <p className="text-foreground font-semibold text-2xl lg:text-3xl font-light leading-relaxed">
             We are building the operating system of urban movement — not vehicles, but the intelligence layer that connects them.
           </p>
           <p className="text-muted-foreground text-lg leading-relaxed">
