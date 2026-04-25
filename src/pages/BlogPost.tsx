@@ -48,10 +48,6 @@ const blogContent: Record<string, BlogEntry> = {
     title: "Why could EVs be the next big computing platform?",
     date: "2025-12-12",
     readTime: "3 min read",
-    hero: {
-      src: "https://zooty.mazoutelectric.com/assets/fig1.1-CQoUQqo1.webp",
-      alt: "Why could EVs be the next big computing platform?",
-    },
     blocks: [
       { type: "h2", text: "Overview" },
       {
@@ -89,12 +85,6 @@ const blogContent: Record<string, BlogEntry> = {
       {
         type: "p",
         text: "Applications for commercial usage of vehicles would be swiftly installable on the dashboard itself, adding to the rider's convenience. Many more applications could be built for the E2W ecosystem once the developer ecosystem gets kicked in. Its potential can be realized from the earnings of Apple through their app ecosystem in 2022 alone.",
-      },
-      {
-        type: "image",
-        src: "https://zooty.mazoutelectric.com/assets/fig1.1-CQoUQqo1.webp",
-        alt: "Apple app store in 2022",
-        caption: "Figure 1: Apple app store in 2022",
       },
       { type: "h2", text: "What will power your EV with this next generation platform?" },
       {
