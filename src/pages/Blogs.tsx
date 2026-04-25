@@ -5,14 +5,14 @@ import Footer from "@/components/Footer";
 
 const blogs = [
   {
-    id: "patrolling-demonstration",
-    date: "2025-02-17",
-    title: "Safeguarding Your Facility With in-Campus Mobility",
-  },
-  {
     id: "autonomous-navigation",
     date: "2024-05-04",
     title: "The Future of Autonomous Navigation in Dense Urban Environments",
+  },
+  {
+    id: "patrolling-demonstration",
+    date: "2025-02-17",
+    title: "Safeguarding Your Facility With in-Campus Mobility",
   },
   {
     id: "last-mile-logistics",
