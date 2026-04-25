@@ -16,7 +16,8 @@ type BlogBlock =
   | { type: "quote"; text: string }
   | { type: "ul"; items: { text: string; bold?: string }[] }
   | { type: "divider" }
-  | { type: "link"; href: string; label: string; description?: string };
+  | { type: "link"; href: string; label: string; description?: string }
+  | { type: "table"; headers: string[]; rows: string[][]; caption?: string };
 
 type BlogEntry = {
   title: string;
@@ -29,11 +30,113 @@ type BlogEntry = {
 
 const blogContent: Record<string, BlogEntry> = {
   "autonomous-navigation": {
-    title: "The Future of Autonomous Navigation in Dense Urban Environments",
-    body: [
-      "Urban environments in emerging markets present a uniquely complex challenge for autonomous systems. Unlike structured Western cities, roads in India are shared by pedestrians, animals, two-wheelers, auto-rickshaws, and heavy vehicles — often without lane markings.",
-      "Zooty's perception stack is built ground-up for this chaos. Using a fusion of LiDAR, camera, and ultrasonic sensors processed through custom neural networks, the system achieves real-time object detection and path planning at the edge.",
-      "The result is a vehicle that doesn't just navigate — it understands context, predicts behavior, and adapts in milliseconds.",
+    title: "The Compression of the Last Leg: The Autonomous Imperative in Hyper-Local Logistics",
+    blocks: [
+      {
+        type: "p",
+        text: "In the evolving landscape of global commerce, we are witnessing a fundamental shift in the \"Last Mile\" logistics framework. The traditional model, predicated on massive regional hubs and human-centric delivery routes, is being disrupted by a phenomenon we define as Hyper-Local Compression. As consumer expectations shift from \"next day\" to \"next minute,\" the logistics industry is hitting a ceiling of human efficiency and security.",
+      },
+      {
+        type: "p",
+        text: "The resolution to this friction lies not in more labor, but in the autonomous compartmentalization of the final 500 meters. This is the \"Last Leg\"—the most expensive, volatile, and sensitive segment of the supply chain.",
+      },
+      { type: "h2", text: "The Macro Trend: The Rise of the Dark Store Economy" },
+      {
+        type: "p",
+        text: "The traditional retail footprint is being replaced by \"Dark Stores\"—micro-fulfillment centers strategically positioned in high-density urban areas. In India, the surge of Quick Commerce (Q-Commerce) has set a global benchmark for frequency and speed.",
+      },
+      { type: "h3", text: "The Data of Hyper-Local Delivery (India Market)" },
+      {
+        type: "table",
+        headers: [
+          "Provider",
+          "Estimated Dark Stores (2021)",
+          "Estimated Dark Stores (2026)",
+          "Avg. Delivery Time (Min)",
+          "Order Frequency Increase",
+        ],
+        rows: [
+          ["Blinkit", "~150", "750+", "12", "4.2x"],
+          ["Zepto", "~40", "480+", "10", "5.8x"],
+          ["Instamart", "~180", "800+", "15", "3.5x"],
+          ["Amazon Fresh", "~50", "250+", "120", "2.1x"],
+        ],
+      },
+      {
+        type: "p",
+        text: "This trend is not isolated to emerging markets. In the United States, the infrastructure is pivoting. DoorDash's \"DashMart\" and Uber's integration with autonomous robot fleets in cities like Jersey City indicate a global realization: human-driven delivery for a $5 latte or a single bag of chips is economically and logistically unsustainable.",
+      },
+      { type: "h2", text: "The Friction Point: Security, Privacy, and the Human Variable" },
+      {
+        type: "p",
+        text: "As the frequency of deliveries increases, so does the \"surface area\" for security vulnerabilities. In high-density residential societies and corporate tech parks, the constant influx of external personnel poses a non-trivial risk to privacy and safety.",
+      },
+      {
+        type: "p",
+        text: "Recent discourse on social media platforms like X (formerly Twitter) highlights a growing concern regarding delivery-related security breaches. Reports of unauthorized access, harassment, and data privacy concerns are no longer outliers; they are systemic risks of a human-reliant last-mile system. For an individual, the convenience of a 10-minute delivery is increasingly weighed against the discomfort of an unknown person reaching their doorstep multiple times a day.",
+      },
+      { type: "h2", text: "Solving the Final 500 Meters: Enter Zooty" },
+      {
+        type: "p",
+        text: "To bridge the gap between the dark store and the doorstep without compromising security, we must decouple the \"transport\" from the \"human.\"",
+      },
+      {
+        type: "p",
+        text: "Zooty is an autonomous micro-mobility robot engineered specifically for this \"Last Leg.\" Unlike long-range delivery drones or road-heavy vehicles, Zooty is optimized for the in-premise environment.",
+      },
+      { type: "h3", text: "The Engineering Core: The Molecule Board" },
+      {
+        type: "p",
+        text: "At the heart of Zooty's autonomy is Molecule, a custom-built hardware development board. Molecule serves as the central nervous system, performing real-time sensor fusion from multiple depth cameras and inertial measurement units (IMUs).",
+      },
+      {
+        type: "ul",
+        items: [
+          {
+            bold: "Edge Computing",
+            text: "Molecule processes navigation and AI decision-making locally, ensuring millisecond-level response times for obstacle avoidance.",
+          },
+          {
+            bold: "Machine Learning",
+            text: "The system utilizes a hybrid learning model, evolving through a combination of autonomous exploration and human-in-the-loop tele-operation.",
+          },
+        ],
+      },
+      { type: "h2", text: "The Economic Case Study: NIT Rourkela and the Campus Economy" },
+      {
+        type: "p",
+        text: "The viability of this model is best demonstrated by the informal logistics economies emerging in closed campuses. At NIT Rourkela—a campus housing thousands of students—a significant logistical friction point existed: students were forced to walk to the main gate to collect parcels and food.",
+      },
+      {
+        type: "p",
+        text: "Enterprising students identified this \"Last Leg\" gap and began offering internal delivery services. In over a month, this peer-to-peer delivery network generated over 50,000 INR in revenue. This is a micro-market proof of concept. If a manual internal delivery system can generate such value in a single campus, an autonomous fleet like Zooty—operating 24/7 with zero labor cost—represents a massive untapped utility for the millions of people living in gated communities and tech parks.",
+      },
+      { type: "h2", text: "The Scale of Opportunity" },
+      {
+        type: "p",
+        text: "The market for in-premise autonomous delivery is vast. India alone possesses:",
+      },
+      {
+        type: "ul",
+        items: [
+          { bold: "2,500+", text: "Large-scale gated residential societies." },
+          { bold: "800+", text: "Integrated Tech Parks and SEZs." },
+          { bold: "1,000+", text: "University and Institutional campuses." },
+        ],
+      },
+      {
+        type: "p",
+        text: "By restricting outside personnel movement at the perimeter and allowing Zooty to handle the internal distribution, facilities can simultaneously enhance security and improve delivery speed.",
+      },
+      { type: "h2", text: "Conclusion: The Autonomous Inevitability" },
+      {
+        type: "p",
+        text: "The transition from human-delivered parcels to autonomous last-leg fulfillment is not a matter of \"if,\" but \"when.\" As the cost of Molecule-based hardware continues to drop and AI navigation matures, the economic argument becomes undeniable.",
+      },
+      {
+        type: "p",
+        text: "The future of logistics is not just about moving goods from Point A to Point B; it is about the \"Last Leg\"—the invisible, autonomous, and secure movement of essentials right to your doorstep. Zooty is the physical manifestation of this logical evolution.",
+      },
     ],
   },
   "patrolling-demonstration": {
@@ -508,6 +611,44 @@ const BlogPost = () => {
                             </div>
                           )}
                         </a>
+                      );
+                    case "table":
+                      return (
+                        <figure key={i} className="my-8 overflow-x-auto rounded-xl border border-border">
+                          <table className="w-full text-sm border-collapse">
+                            <thead>
+                              <tr className="bg-muted/20">
+                                {block.headers.map((h, j) => (
+                                  <th
+                                    key={j}
+                                    className="text-left text-foreground font-medium px-4 py-3 border-b border-border"
+                                  >
+                                    {h}
+                                  </th>
+                                ))}
+                              </tr>
+                            </thead>
+                            <tbody>
+                              {block.rows.map((row, r) => (
+                                <tr key={r} className="border-b border-border last:border-b-0">
+                                  {row.map((cell, c) => (
+                                    <td
+                                      key={c}
+                                      className="text-muted-foreground px-4 py-3 align-top"
+                                    >
+                                      {cell}
+                                    </td>
+                                  ))}
+                                </tr>
+                              ))}
+                            </tbody>
+                          </table>
+                          {block.caption && (
+                            <figcaption className="text-muted-foreground text-sm italic px-4 py-2 text-center">
+                              {block.caption}
+                            </figcaption>
+                          )}
+                        </figure>
                       );
                     default:
                       return null;
