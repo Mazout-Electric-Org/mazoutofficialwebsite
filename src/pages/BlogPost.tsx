@@ -51,6 +51,11 @@ const blogContent: Record<string, BlogEntry> = {
     blocks: [
       { type: "h2", text: "Overview" },
       {
+        type: "image",
+        src: "https://zooty.mazoutelectric.com/assets/fig1.1-CQoUQqo1.webp",
+        alt: "Why could EVs be the next big computing platform?",
+      },
+      {
         type: "p",
         text: "Electric Vehicle's numbers have been strongly growing year-on-year in India with over a 1.2 million sales crossing in FY23 and is expected to cross 1.5 million in FY24. Coupled with the infrastructure to make it the next big computing platform, the potential of EVs would not be restricted just to hardware sales.",
       },
