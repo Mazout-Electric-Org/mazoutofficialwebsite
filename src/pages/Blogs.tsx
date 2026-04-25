@@ -71,7 +71,7 @@ const Blogs = () => {
                   <span className="text-muted-foreground font-sans text-sm mb-3">
                     {blog.date}
                   </span>
-                  <h2 className="text-foreground font-sans font-light text-xl leading-snug group-hover:text-secondary-foreground transition-colors duration-300">
+                  <h2 className="text-foreground font-sans text-xl leading-snug group-hover:text-secondary-foreground transition-colors duration-300 font-normal">
                     {blog.title}
                   </h2>
                 </Link>
