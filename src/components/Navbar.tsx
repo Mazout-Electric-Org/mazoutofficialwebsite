@@ -24,7 +24,7 @@ const Navbar = () => {
           <img
             src={ComLogo1}
             alt="Mazout Logo"
-            className="h-10 w-auto"
+            className="h-10 w-auto [.light_&]:invert"
           />
         </Link>
 
