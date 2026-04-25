@@ -48,10 +48,6 @@ const blogContent: Record<string, BlogEntry> = {
     title: "Why could EVs be the next big computing platform?",
     date: "2025-12-12",
     readTime: "3 min read",
-    hero: {
-      src: "https://zooty.mazoutelectric.com/assets/fig1.1-CQoUQqo1.webp",
-      alt: "Why could EVs be the next big computing platform?",
-    },
     blocks: [
       { type: "h2", text: "Overview" },
       {
