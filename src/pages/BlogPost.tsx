@@ -289,7 +289,7 @@ const BlogPost = () => {
                       return (
                         <h2
                           key={i}
-                          className="text-foreground text-2xl lg:text-3xl font-light mt-12 mb-2"
+                          className="text-foreground text-2xl lg:text-3xl mt-12 mb-2 font-normal"
                         >
                           {block.text}
                         </h2>
@@ -298,7 +298,7 @@ const BlogPost = () => {
                       return (
                         <h3
                           key={i}
-                          className="text-foreground text-xl lg:text-2xl font-light mt-8 mb-1"
+                          className="text-foreground text-xl lg:text-2xl mt-8 mb-1 font-normal"
                         >
                           {block.text}
                         </h3>
