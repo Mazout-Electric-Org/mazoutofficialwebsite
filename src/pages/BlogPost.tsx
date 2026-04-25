@@ -6,6 +6,7 @@ import Footer from "@/components/Footer";
 import patrollingCover from "@/assets/blog-patrolling-cover.png";
 import patrollingRoute from "@/assets/blog-patrolling-route.png";
 import patrollingCollage from "@/assets/blog-patrolling-collage.png";
+import sdvArchitecture from "@/assets/sdv-architecture.png";
 
 type BlogBlock =
   | { type: "p"; text: string }
@@ -313,7 +314,7 @@ const blogContent: Record<string, BlogEntry> = {
       },
       {
         type: "image",
-        src: "https://zooty.mazoutelectric.com/assets/fig1.2-DCV912O2.webp",
+        src: sdvArchitecture,
         alt: "iCommuteX Visualized",
         caption: "Figure 2: iCommuteX Visualized",
       },
