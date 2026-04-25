@@ -450,6 +450,40 @@ const BlogPost = () => {
                           {block.text}
                         </blockquote>
                       );
+                    case "ul":
+                      return (
+                        <ul key={i} className="space-y-3 pl-6 list-disc marker:text-muted-foreground/60">
+                          {block.items.map((item, j) => (
+                            <li key={j} className="text-muted-foreground text-lg leading-relaxed">
+                              {item.bold && (
+                                <span className="text-foreground font-medium">{item.bold}. </span>
+                              )}
+                              {item.text}
+                            </li>
+                          ))}
+                        </ul>
+                      );
+                    case "divider":
+                      return <hr key={i} className="my-12 border-t border-border" />;
+                    case "link":
+                      return (
+                        <a
+                          key={i}
+                          href={block.href}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="group block rounded-xl border border-border bg-muted/10 px-6 py-5 hover:bg-muted/20 transition-colors"
+                        >
+                          <div className="text-foreground text-lg font-medium group-hover:text-secondary-foreground transition-colors">
+                            {block.label} →
+                          </div>
+                          {block.description && (
+                            <div className="text-muted-foreground text-sm mt-1">
+                              {block.description}
+                            </div>
+                          )}
+                        </a>
+                      );
                     default:
                       return null;
                   }
