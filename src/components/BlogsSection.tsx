@@ -78,7 +78,7 @@ const BlogsSection = () => {
             <div className="mt-12">
               <Link
                 to="/blogs"
-                className="group inline-flex items-center gap-3 whitespace-nowrap bg-white px-6 py-3 text-black font-sans text-sm uppercase tracking-[0.22em] border border-white transition-colors duration-300 hover:bg-white/90"
+                className="group inline-flex items-center gap-3 whitespace-nowrap px-6 py-3 font-sans text-sm uppercase tracking-[0.22em] border transition-colors duration-300 bg-white text-black border-white hover:bg-white/90 dark:bg-white dark:text-black dark:border-white [.light_&]:bg-black [.light_&]:text-white [.light_&]:border-black [.light_&]:hover:bg-black/90"
               >
                 <span>All blogs</span>
                 <span className="text-lg transition-transform duration-300 group-hover:translate-x-1">→</span>
