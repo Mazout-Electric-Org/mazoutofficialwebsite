@@ -18,6 +18,7 @@ const blogs = [
     id: "software-defined-vehicles",
     date: "2023-12-12",
     title: "Why could EVs be the next big computing platform?",
+    cover: "https://zooty.mazoutelectric.com/assets/fig1.1-CQoUQqo1.webp",
   },
   {
     id: "autonomous-navigation",
@@ -53,9 +54,18 @@ const Blogs = () => {
               >
                 <Link to={`/blog/${blog.id}`} className="flex flex-col">
                   <div className="aspect-[4/3] border border-border rounded-xl mb-6 flex items-center justify-center bg-muted/20 overflow-hidden">
-                    <span className="text-foreground/10 font-sans text-7xl font-bold transition-transform duration-500 group-hover:scale-110">
-                      {String(i + 1).padStart(2, "0")}
-                    </span>
+                    {blog.cover ? (
+                      <img
+                        src={blog.cover}
+                        alt={blog.title}
+                        loading="lazy"
+                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                      />
+                    ) : (
+                      <span className="text-foreground/10 font-sans text-7xl font-bold transition-transform duration-500 group-hover:scale-110">
+                        {String(i + 1).padStart(2, "0")}
+                      </span>
+                    )}
                   </div>
                   <span className="text-muted-foreground font-sans text-sm mb-3">
                     {blog.date}
