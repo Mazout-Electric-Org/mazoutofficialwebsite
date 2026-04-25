@@ -1,3 +1,4 @@
+import { Fragment } from "react";
 import { motion } from "framer-motion";
 import { Link, useParams } from "react-router-dom";
 import Navbar from "@/components/Navbar";
@@ -412,15 +413,21 @@ const BlogPost = () => {
           >
             {blog.blocks
               ? blog.blocks.map((block, i) => {
+                  const autoDivider =
+                    block.type === "h2" && i > 0 && blog.blocks![i - 1].type !== "divider" ? (
+                      <hr key={`div-${i}`} className="my-12 border-t border-border" />
+                    ) : null;
                   switch (block.type) {
                     case "h2":
                       return (
-                        <h2
-                          key={i}
-                          className="text-foreground text-2xl lg:text-3xl mt-12 mb-2 font-normal"
-                        >
-                          {block.text}
-                        </h2>
+                        <Fragment key={i}>
+                          {autoDivider}
+                          <h2
+                            className="text-foreground text-2xl lg:text-3xl mt-12 mb-2 font-normal"
+                          >
+                            {block.text}
+                          </h2>
+                        </Fragment>
                       );
                     case "h3":
                       return (
