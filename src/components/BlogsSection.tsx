@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Bike, Package, Shield } from "lucide-react";
 import { Link } from "react-router-dom";
+import patrollingCover from "@/assets/blog-patrolling-cover.png";
 
 const caseStudies = [
   {
@@ -8,12 +9,14 @@ const caseStudies = [
     title: "Reinventing Last-Mile Logistics for Indian Cities",
     description:
       "India's last-mile problem is unique. Here's how software-defined micro-mobility can cut delivery costs by 40% while improving reliability.",
+    cover: "https://zooty.mazoutelectric.com/assets/blogs-2B_OONlg.jpg",
   },
   {
     id: "patrolling-demonstration",
     title: "Zooty with YSC, Delhi for Patrolling & Utility Demonstration",
     description:
       "Experience how Zooty is transforming safety and utility at YSC Delhi with autonomous patrolling and real-time responsiveness.",
+    cover: patrollingCover,
   },
 ];
 
@@ -58,10 +61,21 @@ const BlogsSection = () => {
                 transition={{ duration: 0.5, delay: i * 0.1 }}
                 className="group flex flex-col"
               >
-                <div className="aspect-square border border-border rounded-xl mb-6 flex items-center justify-center bg-muted/20">
-                  <span className="text-foreground/10 font-sans text-6xl font-bold">
-                    {String(i + 1).padStart(2, "0")}
-                  </span>
+                <div className="aspect-square border border-border rounded-xl mb-6 overflow-hidden bg-muted/20">
+                  {blog.cover ? (
+                    <img
+                      src={blog.cover}
+                      alt={blog.title}
+                      loading="lazy"
+                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    />
+                  ) : (
+                    <div className="w-full h-full flex items-center justify-center">
+                      <span className="text-foreground/10 font-sans text-6xl font-bold">
+                        {String(i + 1).padStart(2, "0")}
+                      </span>
+                    </div>
+                  )}
                 </div>
                 <h3 className="text-foreground font-sans font-light text-lg mb-4 leading-snug">
                   {blog.title}
