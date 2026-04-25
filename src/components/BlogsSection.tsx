@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { Bike, Package, Shield } from "lucide-react";
 import { Link } from "react-router-dom";
-import patrollingCover from "@/assets/blog-patrolling-cover.png";
+import patrollingCover from "@/assets/blog-patrolling-cover-new.png";
 
 const caseStudies = [
   {
@@ -67,7 +67,7 @@ const BlogsSection = () => {
                       src={blog.cover}
                       alt={blog.title}
                       loading="lazy"
-                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                      className="w-full h-full transition-transform duration-500 group-hover:scale-105 object-contain"
                     />
                   ) : (
                     <div className="w-full h-full flex items-center justify-center">
