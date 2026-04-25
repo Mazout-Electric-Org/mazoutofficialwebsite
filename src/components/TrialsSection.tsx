@@ -40,7 +40,7 @@ const TrialsSection = () => {
               <span className="text-3xl lg:text-4xl font-bold text-gradient-cyan block mb-2">
                 {m.metric}
               </span>
-              <span className="text-foreground font-medium text-sm block mb-1">{m.label}</span>
+              <span className="text-foreground font-semibold font-medium text-sm block mb-1">{m.label}</span>
               <span className="text-muted-foreground text-xs">{m.period}</span>
             </motion.div>
           ))}
