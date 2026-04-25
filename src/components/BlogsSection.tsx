@@ -5,15 +5,14 @@ import patrollingCover from "@/assets/blog-patrolling-cover-new.png";
 
 const caseStudies = [
   {
-    id: "last-mile-logistics",
-    title: "Reinventing Last-Mile Logistics for Indian Cities",
+    id: "autonomous-navigation",
+    title: "The Future of Autonomous Navigation in Dense Urban Environments",
     description:
       "India's last-mile problem is unique. Here's how software-defined micro-mobility can cut delivery costs by 40% while improving reliability.",
-    cover: "https://zooty.mazoutelectric.com/assets/blogs-2B_OONlg.jpg",
   },
   {
     id: "patrolling-demonstration",
-    title: "Zooty with YSC, Delhi for Patrolling & Utility Demonstration",
+    title: "Safeguarding Your Facility With in-Campus Mobility",
     description:
       "Experience how Zooty is transforming safety and utility at YSC Delhi with autonomous patrolling and real-time responsiveness.",
     cover: patrollingCover,
