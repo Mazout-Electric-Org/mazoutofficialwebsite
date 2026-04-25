@@ -8,7 +8,10 @@ type BlogBlock =
   | { type: "h2"; text: string }
   | { type: "h3"; text: string }
   | { type: "image"; src: string; alt: string; caption?: string }
-  | { type: "quote"; text: string };
+  | { type: "quote"; text: string }
+  | { type: "ul"; items: { text: string; bold?: string }[] }
+  | { type: "divider" }
+  | { type: "link"; href: string; label: string; description?: string };
 
 type BlogEntry = {
   title: string;
@@ -29,11 +32,119 @@ const blogContent: Record<string, BlogEntry> = {
     ],
   },
   "patrolling-demonstration": {
-    title: "Zooty with YSC, Delhi for Patrolling & Utility Demonstration",
-    body: [
-      "Zooty's recent collaboration with YSC, Delhi showcases the practical application of autonomous mobility in high-security environments. By integrating advanced sensors and AI-driven navigation, we've demonstrated a robust solution for continuous patrolling and utility support.",
-      "The demonstration highlights how autonomous systems can operate reliably within complex campus settings, providing 24x7 vigilance while reducing manual overhead. This represents a significant step towards more efficient and automated facility management.",
-      "With every mile covered, Zooty continues to refine its ability to navigate and respond to dynamic environments, ensuring safety and utility are never compromised.",
+    title: "Zooty with YSC, Delhi for Patrolling & Utility",
+    date: "2026-02-08",
+    readTime: "4 min read",
+    blocks: [
+      {
+        type: "p",
+        text: "Large public gatherings demand more than planning—they require real-time adaptability, mobility, and control.",
+      },
+      {
+        type: "p",
+        text: "On 8th February 2026, 6:00 AM, Mazout Electric deployed Zooty at the Super Hero Run, a community-driven event organized at Yamuna Sports Complex, one of the premier facilities managed by the Delhi Development Authority.",
+      },
+      {
+        type: "p",
+        text: "The event, hosted by Daud-è-Dilli, brought together 300+ participants to promote Clean Air and Drug-Free Living. With roads sealed and a defined event perimeter in place, the challenge was clear: ensure seamless monitoring, crowd management, and security—without disrupting the environment or experience.",
+      },
+      { type: "divider" },
+      { type: "h2", text: "Deployment Objective" },
+      {
+        type: "p",
+        text: "Mazout Electric partnered with the organizers to demonstrate Zooty as a real-world patrolling and utility solution, purpose-built for controlled environments like campuses, societies, and event zones.",
+      },
+      {
+        type: "p",
+        text: "This was not a pilot in isolation—it was a live operational deployment under real conditions.",
+      },
+      { type: "divider" },
+      { type: "h2", text: "On-Ground Impact with Zooty" },
+      {
+        type: "p",
+        text: "Zooty enabled security teams to operate with greater efficiency and presence:",
+      },
+      {
+        type: "ul",
+        items: [
+          {
+            bold: "Active perimeter control",
+            text: "Guards could quickly identify and alert unauthorized individuals attempting to enter the restricted zone.",
+          },
+          {
+            bold: "High-frequency coverage",
+            text: "The entire perimeter was patrolled multiple times, significantly improving monitoring compared to static guarding.",
+          },
+          {
+            bold: "Reduced manpower dependency",
+            text: "A single Zooty replaced the need for multiple guards covering the same area manually.",
+          },
+          {
+            bold: "Enhanced authority & visibility",
+            text: "The upright, standing design gave personnel a commanding field of view—improving both awareness and perception.",
+          },
+          {
+            bold: "Zero-emission operation",
+            text: "Fully electric mobility ensured no pollution, aligning perfectly with the event's Clean Air mission.",
+          },
+        ],
+      },
+      { type: "divider" },
+      { type: "h2", text: "Data-Driven Operations" },
+      {
+        type: "p",
+        text: "Throughout the deployment, vehicle performance, usage patterns, and control data were continuously monitored using Mazout's proprietary IoT system, MZ-01.",
+      },
+      { type: "p", text: "This allowed:" },
+      {
+        type: "ul",
+        items: [
+          { text: "Real-time insights into operational efficiency" },
+          { text: "Post-event analysis for product optimization" },
+          { text: "Continuous improvement of Zooty's capabilities for similar use cases" },
+        ],
+      },
+      { type: "divider" },
+      { type: "h2", text: "Scalability Insights" },
+      {
+        type: "p",
+        text: "The deployment validated Zooty's effectiveness in real-world crowd management:",
+      },
+      {
+        type: "ul",
+        items: [
+          { text: "1 Zooty effectively supported an event of 300+ participants within a controlled perimeter" },
+          { text: "For larger or more distributed environments, 2–3 units can be deployed for optimal coverage" },
+        ],
+      },
+      {
+        type: "p",
+        text: "This demonstrates a clear, scalable model for security mobility across events, campuses, and public infrastructure.",
+      },
+      { type: "divider" },
+      { type: "h2", text: "Proof Through Demonstration" },
+      {
+        type: "p",
+        text: "This event served as a live proof of concept—showing that Zooty is not just a product, but a practical solution for patrolling, monitoring, and utility operations in dynamic environments.",
+      },
+      {
+        type: "link",
+        href: "https://youtu.be/FDfa2Gtp64M",
+        label: "🎥 Watch the deployment in action",
+        description: "youtu.be/FDfa2Gtp64M",
+      },
+      { type: "divider" },
+      { type: "h2", text: "Looking Ahead" },
+      {
+        type: "p",
+        text: "Mazout Electric is building technology for use cases of national importance—where mobility, efficiency, and sustainability intersect.",
+      },
+      { type: "p", text: "Zooty is already transforming how patrolling is done." },
+      { type: "p", text: "The next step is inevitable: Autonomous patrolling." },
+      {
+        type: "p",
+        text: "Imagine Zooty performing perimeter monitoring, anomaly detection, and crowd management—without human intervention.",
+      },
     ],
   },
   "last-mile-logistics": {
