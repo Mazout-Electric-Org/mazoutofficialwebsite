@@ -442,7 +442,7 @@ const BlogPost = () => {
                       return (
                         <p
                           key={i}
-                          className="text-muted-foreground text-lg leading-relaxed"
+                          className="text-muted-foreground leading-relaxed text-sm"
                         >
                           {block.text}
                         </p>
@@ -478,7 +478,7 @@ const BlogPost = () => {
                       return (
                         <ul key={i} className="space-y-3 pl-6 list-disc marker:text-muted-foreground/60">
                           {block.items.map((item, j) => (
-                            <li key={j} className="text-muted-foreground text-lg leading-relaxed">
+                            <li key={j} className="text-muted-foreground leading-relaxed text-sm">
                               {item.bold && (
                                 <span className="text-foreground font-medium">{item.bold}. </span>
                               )}
@@ -513,7 +513,7 @@ const BlogPost = () => {
                   }
                 })
               : blog.body?.map((paragraph, i) => (
-                  <p key={i} className="text-muted-foreground text-lg leading-relaxed">
+                  <p key={i} className="text-muted-foreground leading-relaxed text-sm">
                     {paragraph}
                   </p>
                 ))}
