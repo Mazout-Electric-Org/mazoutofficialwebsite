@@ -17,7 +17,7 @@ const RevolutionSection = () => {
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.7 }}
         >
-          <h2 className="text-4xl lg:text-6xl font-light tracking-tight mb-8 leading-[1.1]">
+          <h2 className="lg:text-6xl font-light tracking-tight mb-8 leading-[1.1] text-5xl">
             Be part of the <span className="text-primary">revolution</span>
           </h2>
           <p className="text-muted-foreground text-base lg:text-lg leading-relaxed mb-12">
