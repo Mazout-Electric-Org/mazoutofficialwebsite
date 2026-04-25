@@ -41,12 +41,12 @@ const blogContent: Record<string, BlogEntry> = {
     date: "2025-07-23",
     readTime: "5 min read",
     blocks: [
-      { type: "h2", text: "Overview" },
       {
         type: "image",
         src: "https://zooty.mazoutelectric.com/assets/blogs-2B_OONlg.jpg",
         alt: "Effective fleet management with IOT in Q-commerce era",
       },
+      { type: "h2", text: "Overview" },
       {
         type: "p",
         text: "The Q-commerce or quick commerce field has grown significantly in recent years as it, in effect, favors the entire ecosystem. Brands get faster insights on better product propositions as D2C, stores have to maintain less inventory with faster movement of goods, aggregators and dark stores creating profitable hubs closer to consumers and end consumers getting products faster (as fast as within 10 minutes) at the comfort of their home/office. The market is already worth more than $5 billion in India and poised to grow to $10 billion by 2029.",
@@ -135,12 +135,12 @@ const blogContent: Record<string, BlogEntry> = {
     date: "2025-12-12",
     readTime: "3 min read",
     blocks: [
-      { type: "h2", text: "Overview" },
       {
         type: "image",
         src: "https://zooty.mazoutelectric.com/assets/fig1.1-CQoUQqo1.webp",
         alt: "Why could EVs be the next big computing platform?",
       },
+      { type: "h2", text: "Overview" },
       {
         type: "p",
         text: "Electric Vehicle's numbers have been strongly growing year-on-year in India with over a 1.2 million sales crossing in FY23 and is expected to cross 1.5 million in FY24. Coupled with the infrastructure to make it the next big computing platform, the potential of EVs would not be restricted just to hardware sales.",
