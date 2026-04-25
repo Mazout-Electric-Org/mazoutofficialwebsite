@@ -10,6 +10,11 @@ const blogs = [
     title: "Safeguarding Your Facility With in-Campus Mobility",
   },
   {
+    id: "autonomous-navigation",
+    date: "2024-05-04",
+    title: "The Future of Autonomous Navigation in Dense Urban Environments",
+  },
+  {
     id: "last-mile-logistics",
     date: "2025-07-23",
     title: "Effective fleet management with IOT in Q-commerce era",
@@ -20,11 +25,6 @@ const blogs = [
     date: "2023-12-12",
     title: "Why could EVs be the next big computing platform?",
     cover: "https://zooty.mazoutelectric.com/assets/fig1.1-CQoUQqo1.webp",
-  },
-  {
-    id: "autonomous-navigation",
-    date: "2024-05-04",
-    title: "The Future of Autonomous Navigation in Dense Urban Environments",
   },
 ];
 
