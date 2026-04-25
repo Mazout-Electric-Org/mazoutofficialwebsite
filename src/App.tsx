@@ -9,6 +9,7 @@ import Patrolling from "./pages/Patrolling.tsx";
 import Taxi from "./pages/Taxi.tsx";
 import Vision from "./pages/Vision.tsx";
 import BlogPost from "./pages/BlogPost.tsx";
+import Blogs from "./pages/Blogs.tsx";
 import Privacy from "./pages/Privacy.tsx";
 import Terms from "./pages/Terms.tsx";
 import Cookies from "./pages/Cookies.tsx";
@@ -29,6 +30,7 @@ const App = () => (
           <Route path="/taxi" element={<Taxi />} />
           <Route path="/vision" element={<Vision />} />
           <Route path="/blog/:slug" element={<BlogPost />} />
+          <Route path="/blogs" element={<Blogs />} />
           <Route path="/privacy" element={<Privacy />} />
           <Route path="/terms" element={<Terms />} />
           <Route path="/cookies" element={<Cookies />} />
