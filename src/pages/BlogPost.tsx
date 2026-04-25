@@ -147,7 +147,7 @@ const blogContent: Record<string, BlogEntry> = {
         type: "link",
         href: "https://youtu.be/FDfa2Gtp64M",
         label: "🎥 Watch the deployment in action",
-        description: "youtu.be/FDfa2Gtp64M",
+        description: "https://youtu.be/FDfa2Gtp64M",
       },
       { type: "divider" },
       { type: "h2", text: "Looking Ahead" },
