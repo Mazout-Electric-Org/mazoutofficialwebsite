@@ -40,6 +40,7 @@ const blogContent: Record<string, BlogEntry> = {
     readTime: "4 min read",
     hero: { src: patrollingCover, alt: "Zooty x Daud-è-Dilli — Smart patrolling assistant for your facility" },
     blocks: [
+      { type: "h2", text: "Overview" },
       {
         type: "p",
         text: "Large public gatherings demand more than planning—they require real-time adaptability, mobility, and control.",
