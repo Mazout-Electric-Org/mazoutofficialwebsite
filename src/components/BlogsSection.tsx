@@ -12,7 +12,7 @@ const caseStudies = [
   },
   {
     id: "patrolling-demonstration",
-    title: "Safeguarding Your Facility With in-Campus Mobility",
+    title: "Zooty with YSC, Delhi for Patrolling & Utility",
     description:
       "Experience how Zooty is transforming safety and utility at YSC Delhi with autonomous patrolling and real-time responsiveness.",
     cover: patrollingCover,
