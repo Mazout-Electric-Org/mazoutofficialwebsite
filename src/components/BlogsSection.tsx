@@ -47,7 +47,8 @@ const BlogsSection = () => {
         </div>
 
         <div className="grid lg:grid-cols-[minmax(0,0.9fr)_minmax(420px,1.1fr)] gap-16 lg:gap-20 items-start">
-          <div className="grid grid-cols-2 gap-6">
+          <div className="flex flex-col">
+            <div className="grid grid-cols-2 gap-6">
             {caseStudies.map((blog, i) => (
               <motion.div
                 key={blog.id}
@@ -73,6 +74,16 @@ const BlogsSection = () => {
                 </Link>
               </motion.div>
             ))}
+            </div>
+            <div className="mt-12 flex justify-start">
+              <Link
+                to="/blogs"
+                className="group inline-flex items-center gap-2 border border-border px-6 py-3 text-foreground font-sans text-sm uppercase tracking-[0.22em] transition-colors duration-300 hover:border-secondary-foreground hover:text-secondary-foreground"
+              >
+                Show all blogs
+                <span className="text-lg transition-transform duration-300 group-hover:translate-x-1">→</span>
+              </Link>
+            </div>
           </div>
 
           <motion.div
