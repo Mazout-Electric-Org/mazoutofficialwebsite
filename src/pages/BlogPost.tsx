@@ -45,7 +45,7 @@ const blogContent: Record<string, BlogEntry> = {
       },
       {
         type: "p",
-        text: "The resolution to this friction lies not in more labor, but in the autonomous compartmentalization of the final 500 meters. This is the \"Last Leg\"—the most expensive, volatile, and sensitive segment of the supply chain.",
+        text: "The resolution to this friction lies not in more labor, but in the autonomous compartmentalization of the final 500 meters. This is the \"Last Leg\"—the most time consuming and sensitive segment of the supply chain.",
       },
       { type: "h2", text: "The Macro Trend: The Rise of the Dark Store Economy" },
       {
@@ -63,9 +63,9 @@ const blogContent: Record<string, BlogEntry> = {
           "Order Frequency Increase",
         ],
         rows: [
-          ["Blinkit", "~150", "750+", "12", "4.2x"],
-          ["Zepto", "~40", "480+", "10", "5.8x"],
-          ["Instamart", "~180", "800+", "15", "3.5x"],
+          ["Blinkit", "~150", "1800+", "12", "4.2x"],
+          ["Zepto", "~40", "1000+", "10", "5.8x"],
+          ["Instamart", "~180", "1000+", "15", "3.5x"],
           ["Amazon Fresh", "~50", "250+", "120", "2.1x"],
         ],
       },
@@ -127,7 +127,7 @@ const blogContent: Record<string, BlogEntry> = {
         type: "ul",
         items: [
           { bold: "2,500+", text: "Large-scale gated residential societies." },
-          { bold: "800+", text: "Integrated Tech Parks and SEZs." },
+          { bold: "1000+", text: "Integrated Tech Parks and SEZs." },
           { bold: "1,000+", text: "University and Institutional campuses." },
         ],
       },
