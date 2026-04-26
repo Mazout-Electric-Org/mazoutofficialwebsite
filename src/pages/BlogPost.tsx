@@ -127,7 +127,7 @@ const blogContent: Record<string, BlogEntry> = {
         type: "ul",
         items: [
           { bold: "2,500+", text: "Large-scale gated residential societies." },
-          { bold: "800+", text: "Integrated Tech Parks and SEZs." },
+          { bold: "1000+", text: "Integrated Tech Parks and SEZs." },
           { bold: "1,000+", text: "University and Institutional campuses." },
         ],
       },
