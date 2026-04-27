@@ -26,19 +26,19 @@ const applications = [
     icon: Package,
     title: "Logistics",
     description: "Purpose-built autonomous movement for last leg of the last-mile logistics for population dense premises",
-    href: "/logistics",
+    // href: "/logistics",
   },
   {
     icon: Shield,
     title: "Patrolling",
     description: "Safeguarding the facility with in-campus mobility, enhancing vigilance with 24x7 automated operation",
-    href: "/patrolling",
+    // href: "/patrolling",
   },
   {
     icon: Bike,
     title: "Taxi",
     description: "Automated summoning of vehicle at the pick up location, giving complete freedom from fixed pick up and drop locations",
-    href: "/taxi",
+    // href: "/taxi",
   },
 ];
 
@@ -53,42 +53,42 @@ const BlogsSection = () => {
         <div className="grid lg:grid-cols-[minmax(0,0.9fr)_minmax(420px,1.1fr)] gap-16 lg:gap-20 items-start">
           <div className="flex flex-col">
             <div className="grid grid-cols-2 gap-6">
-            {caseStudies.map((blog, i) => (
-              <motion.div
-                key={blog.id}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-50px" }}
-                transition={{ duration: 0.5, delay: i * 0.1 }}
-                className="group flex flex-col"
-              >
-                <div className="aspect-square border border-border rounded-xl mb-6 overflow-hidden bg-muted/20">
-                  {blog.cover ? (
-                    <img
-                      src={blog.cover}
-                      alt={blog.title}
-                      loading="lazy"
-                      className="w-full h-full transition-transform duration-500 group-hover:scale-105 object-contain"
-                    />
-                  ) : (
-                    <div className="w-full h-full flex items-center justify-center">
-                      <span className="text-foreground/10 font-sans text-6xl font-bold">
-                        {String(i + 1).padStart(2, "0")}
-                      </span>
-                    </div>
-                  )}
-                </div>
-                <h3 className="text-foreground font-sans font-light text-lg mb-4 leading-snug">
-                  {blog.title}
-                </h3>
-                <Link
-                  to={`/blog/${blog.id}`}
-                  className="text-secondary-foreground font-semibold font-sans text-sm flex items-center gap-1.5 hover:gap-3 transition-all duration-300 mt-auto"
+              {caseStudies.map((blog, i) => (
+                <motion.div
+                  key={blog.id}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: "-50px" }}
+                  transition={{ duration: 0.5, delay: i * 0.1 }}
+                  className="group flex flex-col"
                 >
-                  Read more <span className="text-lg">→</span>
-                </Link>
-              </motion.div>
-            ))}
+                  <div className="aspect-square border border-border rounded-xl mb-6 overflow-hidden bg-muted/20">
+                    {blog.cover ? (
+                      <img
+                        src={blog.cover}
+                        alt={blog.title}
+                        loading="lazy"
+                        className="w-full h-full transition-transform duration-500 group-hover:scale-105 object-contain"
+                      />
+                    ) : (
+                      <div className="w-full h-full flex items-center justify-center">
+                        <span className="text-foreground/10 font-sans text-6xl font-bold">
+                          {String(i + 1).padStart(2, "0")}
+                        </span>
+                      </div>
+                    )}
+                  </div>
+                  <h3 className="text-foreground font-sans font-light text-lg mb-4 leading-snug">
+                    {blog.title}
+                  </h3>
+                  <Link
+                    to={`/blog/${blog.id}`}
+                    className="text-secondary-foreground font-semibold font-sans text-sm flex items-center gap-1.5 hover:gap-3 transition-all duration-300 mt-auto"
+                  >
+                    Read more <span className="text-lg">→</span>
+                  </Link>
+                </motion.div>
+              ))}
             </div>
             <div className="mt-12">
               <Link
