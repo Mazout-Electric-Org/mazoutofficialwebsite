@@ -6,6 +6,34 @@
     <changefreq>weekly</changefreq>
   </url>
   <url>
+    <loc>https://mazoutelectric.com/logistics</loc>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://mazoutelectric.com/patrolling</loc>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://mazoutelectric.com/taxi</loc>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://mazoutelectric.com/vision</loc>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://mazoutelectric.com/blogs</loc>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://mazoutelectric.com/blog/autonomous-navigation</loc>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://mazoutelectric.com/blog/patrolling-demonstration</loc>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
     <loc>https://mazoutelectric.com/privacy</loc>
     <changefreq>weekly</changefreq>
   </url>
