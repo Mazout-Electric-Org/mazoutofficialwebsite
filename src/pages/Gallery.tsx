@@ -5,30 +5,18 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
 import render1 from "@/assets/Render1.png";
-import zootyHero from "@/assets/zooty-hero.png";
 import zootyLanding from "@/assets/zooty-landing-vehicle.png";
-import zootyRender from "@/assets/zooty-render-hero.png";
-import patrollingCover from "@/assets/blog-patrolling-cover.png";
 import patrollingCoverNew from "@/assets/blog-patrolling-cover-new.png";
 import patrollingCollage from "@/assets/blog-patrolling-collage.png";
 import patrollingRoute from "@/assets/blog-patrolling-route.png";
-import logisticsApp from "@/assets/logistics-app.jpg";
-import patrollingApp from "@/assets/patrolling-app.jpg";
-import taxiApp from "@/assets/taxi-app.jpg";
 import sdvArchitecture from "@/assets/sdv-architecture.png";
 
 const images = [
-  { src: zootyHero, caption: "Zooty — Hero" },
-  { src: zootyRender, caption: "Zooty Render" },
   { src: zootyLanding, caption: "Zooty Landing Vehicle" },
   { src: render1, caption: "Industrial Render" },
   { src: patrollingCoverNew, caption: "Patrolling — YSC Delhi" },
-  { src: patrollingCover, caption: "Patrolling Cover" },
   { src: patrollingCollage, caption: "Patrolling Collage" },
   { src: patrollingRoute, caption: "Patrolling Route" },
-  { src: logisticsApp, caption: "Logistics Application" },
-  { src: patrollingApp, caption: "Patrolling Application" },
-  { src: taxiApp, caption: "Taxi Application" },
   { src: sdvArchitecture, caption: "SDV Architecture" },
 ];
 
