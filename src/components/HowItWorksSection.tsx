@@ -20,7 +20,7 @@ const steps = [
   {
     icon: Smartphone,
     title: "Unlock securely via phone",
-    description: "When Zooty arrives at your doorstep, unlock the compartment from your phone and collect your order.",
+    description: "Zooty drives autonomously and arrives at your doorstep. Unlock the compartment from your phone and collect your order.",
   },
 ];
 
