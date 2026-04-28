@@ -109,9 +109,8 @@ const BlogsSection = () => {
             className="border-y border-border"
           >
             {applications.map((app, i) => (
-              <Link
+              <div
                 key={app.title}
-                to={app.href}
                 className="group grid grid-cols-[84px_1fr] gap-8 border-b border-border py-10 last:border-b-0"
               >
                 <div className="flex h-[84px] w-[84px] items-center justify-center border border-border text-secondary-foreground transition-colors duration-300 group-hover:border-secondary-foreground">
@@ -125,7 +124,7 @@ const BlogsSection = () => {
                     {app.description}
                   </p>
                 </div>
-              </Link>
+              </div>
             ))}
           </motion.div>
         </div>
