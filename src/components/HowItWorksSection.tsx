@@ -37,7 +37,7 @@ const HowItWorksSection = () => {
         >
           <p className="text-xs uppercase tracking-[0.25em] text-primary mb-6">How it works</p>
           <h2 className="text-4xl lg:text-6xl font-light leading-tight">
-            From your tap to your <span className="text-primary">doorstep</span>
+            From one tap to your <span className="text-primary">doorstep</span>
           </h2>
         </motion.div>
 
