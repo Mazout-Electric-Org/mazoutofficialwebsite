@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { ShoppingBag, MessageCircle, Smartphone } from "lucide-react";
+import { ShoppingBag, MessageCircle, Smartphone, PackageCheck } from "lucide-react";
 
 const steps = [
   {
@@ -11,6 +11,11 @@ const steps = [
     icon: MessageCircle,
     title: "Share details on Zooty WhatsApp",
     description: "Send your order number and pick-up point to our WhatsApp chatbot. We assign a Zooty to your order.",
+  },
+  {
+    icon: PackageCheck,
+    title: "Q-commerce drops into Zooty",
+    description: "The delivery partner arrives at your society or campus gate and drops your order into the assigned Zooty's compartment.",
   },
   {
     icon: Smartphone,
