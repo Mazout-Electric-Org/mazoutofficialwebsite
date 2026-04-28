@@ -14,7 +14,7 @@ const steps = [
   },
   {
     icon: PackageCheck,
-    title: "Q-commerce drops into Zooty",
+    title: "Delivery partner drops parcel into Zooty",
     description: "The delivery partner arrives at your society or campus gate and drops your order into the assigned Zooty's compartment.",
   },
   {
