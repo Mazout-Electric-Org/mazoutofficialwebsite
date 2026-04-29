@@ -32,17 +32,16 @@ const faqs = [
 const FAQSection = () => {
   return (
     <section className="relative py-24 lg:py-32 bg-background border-t border-border">
-      <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
+      <div className="max-w-4xl mx-auto px-6 sm:px-12 lg:px-24">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7 }}
-          className="max-w-3xl mb-16 lg:mb-24"
+          className="mb-16 lg:mb-24 text-center"
         >
-          <p className="text-xs uppercase tracking-[0.25em] text-primary mb-6">FAQ</p>
           <h2 className="text-4xl lg:text-6xl font-light leading-tight">
-            Questions, <span className="text-primary">answered</span>
+            Frequently Asked <span className="text-primary">Questions</span>
           </h2>
         </motion.div>
 
