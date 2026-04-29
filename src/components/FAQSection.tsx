@@ -25,7 +25,7 @@ const faqs = [
   },
   {
     q: "Is the vehicle recording our faces and movements too?",
-    a: "The footage is captured and stored after the faces are blurred at the edge (that is at vehicle level). We do track movements for training the vehicle to avoid accidents.",
+    a: "The footage is captured and stored after the faces are blurred at the edge (that is at vehicle level). We do track movements to avoid accidents and to train the vehicle.",
   },
 ];
 
