@@ -16,7 +16,7 @@ const MeetZootySection = () => {
             Meet <span className="text-primary">Zooty</span>
           </h2>
           <p className="text-base lg:text-lg text-muted-foreground leading-relaxed mb-6">
-            Facilities must balance the diverse needs of campus security and provide utmost residents convenience.
+            When access is limited and time is critical, Zooty delivers.
           </p>
           <p className="text-base lg:text-lg text-muted-foreground leading-relaxed">
             With the penetration of dark stores, and their doorstep promises, consumers' accessibility demands are changing irreversibly. That results in authorized/unauthorized entry of gig workers inside the premises, which the facility itself is not prepared for. Zooty offers an autonomous vehicle solution that serves you at the doorstep without compromising facility and residents' security.
