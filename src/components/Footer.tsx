@@ -24,9 +24,9 @@ const Footer = () => {
             <h4 className="text-foreground font-semibold font-medium mb-6 text-base">Company</h4>
             <ul className="space-y-3">
               {[
-                { label: "Vision", href: "#", external: false },
+                { label: "Vision", href: "/vision", external: false },
                 { label: "Careers", href: "https://wellfound.com/company/mazout-electric/jobs", external: true },
-                { label: "Blogs", href: "#", external: false },
+                { label: "Blogs", href: "/blogs", external: false },
                 { label: "Gallery", href: "/gallery", external: false },
               ].map(({ label, href, external }) => (
                 <li key={label}>
@@ -44,7 +44,7 @@ const Footer = () => {
               {[
                 { label: "Documentation", href: "https://github.com/Mazout-Electric/Documentation/blob/main/README.md", external: true },
                 { label: "Dashboard", href: "https://dashboard.mazoutelectric.com/", external: true },
-                { label: "Buy Now", href: "#", external: false },
+                { label: "Demo", href: "https://youtu.be/hS5dSudMoXY", external: true },
               ].map(({ label, href, external }) => (
                 <li key={label}>
                   <a href={href} className="text-muted-foreground text-sm hover:text-foreground transition-colors duration-300 inline-flex items-center gap-1" {...(external ? { target: "_blank", rel: "noopener noreferrer" } : {})}>
