@@ -8,8 +8,8 @@ const steps = [
     description: "Use any of your favorite quick commerce apps to place your order as you normally would.",
   },
   {
-    icon: MessageCircle,
-    title: "Track your order",
+    icon: PackageCheck,
+    title: "Seamless delivery hand-off",
     description: "The delivery partner arrives at your society or campus gate and drops your order into the assigned Zooty's compartment. Track it live using the chatbot.",
   },
   {
