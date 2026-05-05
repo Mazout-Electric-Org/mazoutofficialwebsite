@@ -9,8 +9,8 @@ const steps = [
   },
   {
     icon: MessageCircle,
-    title: "Share details on Zooty WhatsApp",
-    description: "Send your order number and pick-up point to our WhatsApp chatbot. We assign a Zooty for your order and you can track it live.",
+    title: "Share details on Zooty WhatsApp bot",
+    description: "Send your order number and pick-up point to our WhatsApp chatbot and complete the payment. We then assign a Zooty for your order.",
   },
   {
     icon: PackageCheck,
