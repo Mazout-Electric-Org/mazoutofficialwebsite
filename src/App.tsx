@@ -12,6 +12,7 @@ import Vision from "./pages/Vision.tsx";
 import BlogPost from "./pages/BlogPost.tsx";
 import Blogs from "./pages/Blogs.tsx";
 import Gallery from "./pages/Gallery.tsx";
+import InvestorDeck from "./pages/InvestorDeck.tsx";
 import Privacy from "./pages/Privacy.tsx";
 import Terms from "./pages/Terms.tsx";
 import Cookies from "./pages/Cookies.tsx";
@@ -35,6 +36,7 @@ const App = () => (
           <Route path="/blog/:slug" element={<BlogPost />} />
           <Route path="/blogs" element={<Blogs />} />
           <Route path="/gallery" element={<Gallery />} />
+          <Route path="/investor-deck" element={<InvestorDeck />} />
           <Route path="/privacy" element={<Privacy />} />
           <Route path="/terms" element={<Terms />} />
           <Route path="/cookies" element={<Cookies />} />

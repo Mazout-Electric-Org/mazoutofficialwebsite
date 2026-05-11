@@ -28,6 +28,7 @@ const Footer = () => {
                 { label: "Careers", href: "https://wellfound.com/company/mazout-electric/jobs", external: true },
                 { label: "Blogs", href: "/blogs", external: false },
                 { label: "Gallery", href: "/gallery", external: false },
+                { label: "Investor's Deck", href: "/investor-deck", external: false },
               ].map(({ label, href, external }) => (
                 <li key={label}>
                   <a href={href} className="text-muted-foreground text-sm hover:text-foreground transition-colors duration-300 inline-flex items-center gap-1" {...(external ? { target: "_blank", rel: "noopener noreferrer" } : {})}>
