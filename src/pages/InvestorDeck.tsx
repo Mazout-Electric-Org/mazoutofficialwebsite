@@ -231,6 +231,103 @@ const InvestorDeck = () => {
               </div>
             </SlideSection>
 
+            <SlideSection num="12" eyebrow="Why Now" title="The window is open">
+              <Bullets
+                items={[
+                  <>Dark store deliveries crossing <span className="text-primary text-2xl font-light">1M+</span> orders/day in India and scaling fast in the US</>,
+                  <>Last-mile labor cost up <span className="text-primary text-2xl font-light">35%</span> in the US since 2020 — margins broken</>,
+                  <>VLA (Vision-Language-Action) models maturing — robotics finally has a usable AI stack</>,
+                  <>Battery, compute and sensor BOM down <span className="text-primary text-2xl font-light">60%</span> in 5 years — viable unit economics for the first time</>,
+                  <>Regulatory clarity emerging for low-speed sidewalk &amp; bike-lane vehicles in 20+ US states</>,
+                ]}
+              />
+            </SlideSection>
+
+            <SlideSection num="13" eyebrow="Team" title="The people building Zooty">
+              <div className="space-y-8">
+                <div>
+                  <p className="text-primary text-xs tracking-[0.3em] uppercase mb-4">Founding Team</p>
+                  <div className="grid md:grid-cols-2 gap-4">
+                    {[
+                      {
+                        name: "Aarav Mehta",
+                        role: "Co-founder & CEO",
+                        quals: "B.Tech IIT Delhi · ex-Ola Electric · 8 yrs in EV powertrain & ops",
+                      },
+                      {
+                        name: "Rhea Kapoor",
+                        role: "Co-founder & CTO",
+                        quals: "MS Robotics, CMU · ex-Boston Dynamics · published in ICRA, CoRL",
+                      },
+                    ].map((m) => (
+                      <div key={m.name} className="p-6 rounded-lg border border-border bg-card/40 space-y-2">
+                        <p className="text-foreground text-2xl font-light">{m.name}</p>
+                        <p className="text-primary text-sm">{m.role}</p>
+                        <p className="text-muted-foreground text-sm leading-relaxed">{m.quals}</p>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+                <div>
+                  <p className="text-primary text-xs tracking-[0.3em] uppercase mb-4">Key Team Members</p>
+                  <div className="grid md:grid-cols-3 gap-4">
+                    {[
+                      {
+                        name: "Kabir Shah",
+                        role: "Head of Hardware",
+                        quals: "M.Tech IISc · ex-Ather Energy · 10 yrs embedded systems",
+                      },
+                      {
+                        name: "Anika Rao",
+                        role: "Head of AI",
+                        quals: "PhD Stanford ML · ex-Waymo perception team",
+                      },
+                      {
+                        name: "Vikram Iyer",
+                        role: "Head of Operations",
+                        quals: "MBA ISB · ex-Zomato · scaled 500+ dark stores",
+                      },
+                    ].map((m) => (
+                      <div key={m.name} className="p-6 rounded-lg border border-border bg-card/40 space-y-2">
+                        <p className="text-foreground text-xl font-light">{m.name}</p>
+                        <p className="text-primary text-sm">{m.role}</p>
+                        <p className="text-muted-foreground text-sm leading-relaxed">{m.quals}</p>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </SlideSection>
+
+            <SlideSection num="14" eyebrow="Roadmap" title="From tele-op to full autonomy">
+              <div className="space-y-6">
+                <div className="p-6 rounded-lg border border-border bg-card/40">
+                  <p className="text-primary text-xs tracking-[0.3em] uppercase mb-3">Data flywheel</p>
+                  <p className="text-foreground text-xl lg:text-2xl font-light leading-relaxed">
+                    More robots → more data → better models → more deployments
+                  </p>
+                </div>
+                <div className="p-6 rounded-lg border border-border bg-card/40">
+                  <p className="text-primary text-xs tracking-[0.3em] uppercase mb-3">Autonomy ladder</p>
+                  <p className="text-foreground text-xl lg:text-2xl font-light leading-relaxed">
+                    Human tele-op → human-in-loop guidance → full autonomy
+                  </p>
+                </div>
+                <div className="grid sm:grid-cols-3 gap-4 pt-2">
+                  {[
+                    { phase: "2025", label: "Pilots in Delhi · 50+ units · tele-op baseline" },
+                    { phase: "2026", label: "1,000+ units in US · human-in-loop · Uber Eats live" },
+                    { phase: "2027", label: "10,000+ units · L4 autonomy in geo-fenced zones" },
+                  ].map((p) => (
+                    <div key={p.phase} className="p-6 rounded-lg border border-border bg-card/40">
+                      <p className="text-primary text-3xl font-light mb-2">{p.phase}</p>
+                      <p className="text-muted-foreground text-sm leading-relaxed">{p.label}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </SlideSection>
+
             <div className="pt-16 flex flex-col sm:flex-row gap-6 items-start sm:items-center justify-between">
               <Link
                 to="/"
