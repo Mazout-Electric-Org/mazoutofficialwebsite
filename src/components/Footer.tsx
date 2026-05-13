@@ -46,6 +46,7 @@ const Footer = () => {
                 { label: "Documentation", href: "https://github.com/Mazout-Electric/Documentation/blob/main/README.md", external: true },
                 { label: "Dashboard", href: "https://dashboard.mazoutelectric.com/", external: true },
                 { label: "Demo", href: "https://youtu.be/_yAwl3LMnLI", external: true },
+                { label: "Training Platform", href: "/training-platform", external: false },
               ].map(({ label, href, external }) => (
                 <li key={label}>
                   <a href={href} className="text-muted-foreground text-sm hover:text-foreground transition-colors duration-300 inline-flex items-center gap-1" {...(external ? { target: "_blank", rel: "noopener noreferrer" } : {})}>
