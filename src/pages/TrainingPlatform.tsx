@@ -1,6 +1,4 @@
-import { useState } from "react";
-import { Helmet } from "react-helmet-async";
-import { Link } from "react-router-dom";
+import { useEffect, useState } from "react";
 import { Minus, Plus, ArrowUpRight, Github, BookOpen, ShieldCheck, Cpu, Wrench, GraduationCap, FileText, MapPin } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -64,6 +62,25 @@ const TrainingPlatform = () => {
   const [qty, setQty] = useState(1);
   const [contactOpen, setContactOpen] = useState(false);
 
+  useEffect(() => {
+    const prevTitle = document.title;
+    document.title = "Zooty — Training and Development Platform | Mazout Electric";
+    const meta = document.createElement("meta");
+    meta.name = "description";
+    meta.content = "Zooty is a road-ready EV platform for ADAS, autonomy, and robotics training. Sensors, compute, drive-by-wire, SDK, training, and manuals included. Made in India.";
+    document.head.appendChild(meta);
+    const ld = document.createElement("script");
+    ld.type = "application/ld+json";
+    ld.text = JSON.stringify(productJsonLd);
+    document.head.appendChild(ld);
+    return () => {
+      document.title = prevTitle;
+      meta.remove();
+      ld.remove();
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
   const productJsonLd = {
     "@context": "https://schema.org",
     "@type": "Product",
@@ -81,17 +98,6 @@ const TrainingPlatform = () => {
 
   return (
     <div className="min-h-screen bg-background text-foreground">
-      <Helmet>
-        <title>Zooty — Training and Development Platform | Mazout Electric</title>
-        <meta name="description" content="Zooty is a road-ready EV platform for ADAS, autonomy, and robotics training. Sensors, compute, drive-by-wire, SDK, training, and manuals included. Made in India." />
-        <link rel="canonical" href="https://zootyweb.lovable.app/training-platform" />
-        <meta property="og:title" content="Zooty — Training and Development Platform" />
-        <meta property="og:description" content="A road-ready EV platform for ADAS, autonomy, and robotics R&D. Made in India." />
-        <meta property="og:url" content="https://zootyweb.lovable.app/training-platform" />
-        <meta property="og:type" content="product" />
-        <script type="application/ld+json">{JSON.stringify(productJsonLd)}</script>
-      </Helmet>
-
       <Navbar />
 
       <main className="pt-24 lg:pt-32">
