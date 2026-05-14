@@ -34,7 +34,7 @@ const peripherals = [
   "MYIR Myd-ld25x SOM",
   "Drive-by-wire steering, throttle, brake",
   "CAN-FD + OBD harness",
-  "4G/5G modem with dual-SIM failover",
+  "4G/5G modem and Wi-fi compatible",
   "Tele-operation dashboard access",
 ];
 
