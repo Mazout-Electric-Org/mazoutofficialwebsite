@@ -28,18 +28,15 @@ const applications = [
 ];
 
 const peripherals = [
-  "Stereo front camera (1080p, 60fps)",
-  "360° surround camera kit (4×)",
-  "Solid-state LiDAR (front-facing)",
-  "mmWave radar (forward + corner)",
-  "GNSS + RTK module with IMU",
-  "Ultrasonic ring (8 sensors)",
-  "NVIDIA Jetson Orin compute",
+  "Stereo Cameras (640×480p, 15fps)",
+  "360° camera coverage",
+  "GNSS module and IMU",
+  "MYIR Myd-ld25x SOM",
   "Drive-by-wire steering, throttle, brake",
-  "CAN-FD breakout + OBD harness",
+  "CAN-FD + OBD harness",
   "4G/5G modem with dual-SIM failover",
-  "Tele-op joystick + pedal kit",
-  "Charging cable (Type-2, 3.3 kW)",
+  "Tele-operation dashboard access",
+];
 ];
 
 const included = [
