@@ -24,7 +24,7 @@ const applications = [
   { title: "Obstacle Avoidance", desc: "Reactive planning with LiDAR + camera sensor fusion." },
   { title: "Tele-operation", desc: "Remote drive over 4G/5G with sub-200ms control loop." },
    { title: "Fleet Telemetry", desc: "Stream CAN, GPS, IMU, and battery data to the cloud dashboard." },
-   { title: "Remote Control", desc: "In-cabin computer vision for attention and fatigue detection." },
+  { title: "Remote Control", desc: "Drive and supervise the vehicle remotely over 4G/5G with low-latency video and command channels." },
 ];
 
 const peripherals = [
