@@ -37,7 +37,6 @@ const peripherals = [
   "4G/5G modem with dual-SIM failover",
   "Tele-operation dashboard access",
 ];
-];
 
 const included = [
   { icon: GraduationCap, title: "Hands-on Training", desc: "2-day onboarding with our engineers — hardware, SDK, and your first deployment." },
