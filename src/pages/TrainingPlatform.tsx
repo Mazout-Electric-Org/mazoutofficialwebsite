@@ -31,7 +31,7 @@ const peripherals = [
   "Stereo Cameras (640×480p, 15fps)",
   "360° camera coverage",
   "GNSS module and IMU",
-  "MYIR Myd-ld25x SOM",
+  "Lockable compartment box",
   "Drive-by-wire steering, throttle, brake",
   "CAN-FD + OBD harness",
   "4G/5G modem and Wi-fi compatible",
