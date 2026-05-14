@@ -17,7 +17,7 @@ const gallery = [
 ];
 
 const applications = [
-   { title: "Adaptive Cruise Control", desc: "Tele-operate vehicle and manage vehicle controls using tele-op dashboard" },
+  { title: "Adaptive Cruise Control", desc: "Maintain safe following distance and target speed using radar and vision fusion for longitudinal control." },
   { title: "Indicator-on-Steering", desc: "Auto-trigger turn indicators based on steering angle thresholds." },
   { title: "Lane Keep Assist", desc: "Build and deploy LKA pipelines with HD perception data." },
   { title: "Autonomous Parking", desc: "Develop parking maneuvers with low-speed control and ultrasonic sensing." },
