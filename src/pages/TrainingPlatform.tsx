@@ -142,7 +142,7 @@ const TrainingPlatform = () => {
               </h1>
               <p className="text-muted-foreground text-base lg:text-lg leading-relaxed mb-8">
                 Zooty is a compact, road-ready electric vehicle engineered as a full-stack
-                research and training platform. Drive-by-wire chassis, sensor suite,
+                research and training platform. Drive-by-wire chassis, extensive sensor suite,
                 and an open SDK let teams move from idea to on-road
                 deployment in weeks — not years. Built for institutes, OEM R&D groups,
                 and autonomy startups.
