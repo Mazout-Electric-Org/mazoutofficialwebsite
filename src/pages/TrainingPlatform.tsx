@@ -21,7 +21,7 @@ const applications = [
   { title: "Indicator-on-Steering", desc: "Auto-trigger turn indicators based on steering angle thresholds." },
   { title: "Lane Keep Assist", desc: "Build and deploy LKA pipelines with HD perception data." },
   { title: "Autonomous Parking", desc: "Develop parking maneuvers with low-speed control and ultrasonic sensing." },
-  { title: "Obstacle Avoidance", desc: "Reactive planning with LiDAR + camera sensor fusion." },
+  { title: "Obstacle Avoidance", desc: "Reactive planning with camera sensor fusion." },
   { title: "Tele-operation", desc: "Remote drive over 4G/5G with sub-200ms control loop." },
   { title: "Fleet Telemetry", desc: "Stream data from CAN, battery, peripherals and more to the cloud dashboard." },
   { title: "Remote Control", desc: "Drive and supervise the vehicle remotely over 4G/5G with low-latency video and command channels." },
