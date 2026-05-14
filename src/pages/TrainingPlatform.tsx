@@ -267,9 +267,9 @@ const TrainingPlatform = () => {
           <div className="max-w-[1400px] mx-auto px-6 lg:px-12 py-16 grid grid-cols-2 lg:grid-cols-4 gap-8">
             {[
               { v: "60 km", l: "Range per charge" },
-              { v: "40 km/h", l: "Top speed" },
+              { v: "25 km/h", l: "Top speed" },
               { v: "275 kg", l: "Payload" },
-              { v: "ROS 2", l: "Native SDK" },
+              { v: "Linux", l: "Native SDK" },
             ].map((s) => (
               <div key={s.l}>
                 <div className="text-3xl lg:text-5xl font-serif text-foreground">{s.v}</div>
