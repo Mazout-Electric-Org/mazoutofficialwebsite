@@ -23,7 +23,7 @@ const applications = [
   { title: "Autonomous Parking", desc: "Develop parking maneuvers with low-speed control and ultrasonic sensing." },
   { title: "Obstacle Avoidance", desc: "Reactive planning with LiDAR + camera sensor fusion." },
   { title: "Tele-operation", desc: "Remote drive over 4G/5G with sub-200ms control loop." },
-   { title: "Fleet Telemetry", desc: "Stream CAN, GPS, IMU, and battery data to the cloud dashboard." },
+  { title: "Fleet Telemetry", desc: "Stream data from CAN, battery, peripherals and more to the cloud dashboard." },
   { title: "Remote Control", desc: "Drive and supervise the vehicle remotely over 4G/5G with low-latency video and command channels." },
 ];
 
