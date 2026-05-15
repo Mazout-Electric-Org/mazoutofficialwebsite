@@ -48,7 +48,7 @@ const included = [
 const faqs = [
   { q: "Who is the Zooty platform for?", a: "Universities, R&D labs, OEMs, and startups building autonomy, ADAS, or robotics applications who need a road-ready vehicle platform out of the box." },
   { q: "Is it road-legal?", a: "Zooty is delivered as a research and training platform. Public-road operation depends on your jurisdiction; we support homologation paperwork for partners." },
-  { q: "What software stack is supported?", a: "ROS 2 Humble, Autoware, CARLA bridge, Python and C++ SDKs, and a REST/MQTT cloud API." },
+  { q: "What software stack is supported?", a: "Linux, Autoware, CARLA bridge, Python and C++ SDKs, and a REST/MQTT cloud API." },
   { q: "What's the lead time?", a: "Next batch ships in June. Order now to reserve a unit." },
   { q: "Do you offer custom configurations?", a: "Yes — sensor stack, compute, and drive-by-wire options can be tailored. Talk to sales." },
 ];
@@ -115,9 +115,8 @@ const TrainingPlatform = () => {
                     key={i}
                     onClick={() => setActiveImage(i)}
                     aria-label={`Show ${img.alt}`}
-                    className={`aspect-square overflow-hidden rounded-md border bg-card transition-all ${
-                      activeImage === i ? "border-primary ring-1 ring-primary" : "border-border opacity-70 hover:opacity-100"
-                    }`}
+                    className={`aspect-square overflow-hidden rounded-md border bg-card transition-all ${activeImage === i ? "border-primary ring-1 ring-primary" : "border-border opacity-70 hover:opacity-100"
+                      }`}
                   >
                     <img src={img.src} alt={img.alt} className="h-full w-full object-cover" />
                   </button>
