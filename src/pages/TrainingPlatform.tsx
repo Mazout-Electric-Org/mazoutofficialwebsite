@@ -17,24 +17,24 @@ const gallery = [
 ];
 
 const applications = [
-  { title: "Adaptive Cruise Control", desc: "Train longitudinal control models with on-board radar and vision fusion." },
+  { title: "Adaptive Cruise Control", desc: "Maintain safe following distance and target speed using depth camera for longitudinal control." },
   { title: "Indicator-on-Steering", desc: "Auto-trigger turn indicators based on steering angle thresholds." },
   { title: "Lane Keep Assist", desc: "Build and deploy LKA pipelines with HD perception data." },
   { title: "Autonomous Parking", desc: "Develop parking maneuvers with low-speed control and ultrasonic sensing." },
-  { title: "Obstacle Avoidance", desc: "Reactive planning with LiDAR + camera sensor fusion." },
+  { title: "Obstacle Avoidance", desc: "Reactive planning with camera sensor fusion." },
   { title: "Tele-operation", desc: "Remote drive over 4G/5G with sub-200ms control loop." },
-  { title: "Fleet Telemetry", desc: "Stream CAN, GPS, IMU, and battery data to the cloud dashboard." },
-  { title: "Driver Monitoring", desc: "In-cabin computer vision for attention and fatigue detection." },
+  { title: "Fleet Telemetry", desc: "Stream data from CAN, battery, peripherals and more to the cloud dashboard." },
+  { title: "Remote Control", desc: "Drive and supervise the vehicle remotely over 4G/5G with low-latency video and command channels." },
 ];
 
 const peripherals = [
   "Stereo Cameras (640×480p, 15fps)",
   "360° camera coverage",
   "GNSS module and IMU",
-  "MYIR Myd-ld25x SOM",
+  "Lockable compartment box",
   "Drive-by-wire steering, throttle, brake",
   "CAN-FD + OBD harness",
-  "4G/5G modem with dual-SIM failover",
+  "4G/5G modem and Wi-fi compatible",
   "Tele-operation dashboard access",
 ];
 
@@ -141,9 +141,9 @@ const TrainingPlatform = () => {
               </h1>
               <p className="text-muted-foreground text-base lg:text-lg leading-relaxed mb-8">
                 Zooty is a compact, road-ready electric vehicle engineered as a full-stack
-                research and training platform. Drive-by-wire chassis, an automotive-grade
-                sensor suite, and an open SDK let teams move from idea to on-road
-                deployment in weeks — not years. Built for universities, OEM R&D groups,
+                research and training platform. Drive-by-wire chassis, extensive sensor suite,
+                and an open SDK let teams move from idea to on-road
+                deployment in weeks — not years. Built for institutes, OEM R&D groups,
                 and autonomy startups.
               </p>
 
