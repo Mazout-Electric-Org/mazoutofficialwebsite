@@ -9,6 +9,7 @@ const BASE_URL = "https://mazoutelectric.com";
 
 const STATIC_PATHS = [
     "/",
+    "/training-platform",
     "/gallery",
     "/vision",
     "/blogs",
@@ -16,10 +17,6 @@ const STATIC_PATHS = [
     "/blog/patrolling-demonstration",
     "/blog/last-mile-logistics",
     "/blog/software-defined-vehicles",
-    "/training-platform",
-    "/logistics",
-    "/patrolling",
-    "/taxi",
     "/privacy",
     "/terms",
     "/cookies"
