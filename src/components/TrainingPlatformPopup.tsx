@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { X, Minus, ArrowUpRight, Zap } from "lucide-react";
-import zootyRender from "@/assets/zooty-render-hero.png";
 
 const TrainingPlatformPopup = () => {
   const [open, setOpen] = useState(false);
