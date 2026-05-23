@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { X, Minus, ArrowUpRight, Zap } from "lucide-react";
-import zootyHero from "@/assets/zooty-render-hero.png";
 
 const TrainingPlatformPopup = () => {
   const [open, setOpen] = useState(false);
@@ -25,7 +24,7 @@ const TrainingPlatformPopup = () => {
     return (
       <button
         onClick={() => setMinimized(false)}
-        className="fixed bottom-6 right-6 z-[60] inline-flex items-center gap-2 rounded-full border border-primary/40 bg-background/95 backdrop-blur px-4 py-3 font-sans text-sm text-foreground shadow-lg hover:border-primary transition-colors"
+        className="fixed bottom-6 right-6 z-[60] inline-flex items-center gap-2 rounded-full border border-primary/40 bg-background/95 backdrop-blur px-4 py-3 text-sm text-foreground shadow-lg hover:border-primary transition-colors"
         aria-label="Expand Zooty training platform popup"
       >
         <Zap size={14} className="text-primary" />
@@ -36,7 +35,7 @@ const TrainingPlatformPopup = () => {
 
   return (
     <div className="fixed bottom-6 right-6 z-[60] w-[calc(100vw-3rem)] max-w-sm animate-in fade-in slide-in-from-bottom-4 duration-300">
-      <div className="relative overflow-hidden rounded-xl border border-primary/30 bg-background/95 backdrop-blur shadow-2xl font-sans">
+      <div className="relative overflow-hidden rounded-xl border border-primary/30 bg-background/95 backdrop-blur shadow-2xl">
         <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-transparent pointer-events-none" />
 
         <div className="absolute top-3 right-3 z-10 flex items-center gap-1">
@@ -56,17 +55,7 @@ const TrainingPlatformPopup = () => {
           </button>
         </div>
 
-        <div className="relative h-32 w-full overflow-hidden bg-gradient-to-b from-card to-background">
-          <img
-            src={zootyHero}
-            alt="Zooty autonomous EV platform"
-            className="absolute inset-0 h-full w-full object-cover object-center"
-            loading="lazy"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent" />
-        </div>
-
-        <div className="relative p-5 pt-3">
+        <div className="relative p-5">
           <p className="text-[10px] uppercase tracking-[0.24em] text-primary mb-2">New stock — June</p>
           <h3 className="font-serif text-2xl leading-tight mb-2">
             Drive the future. <span className="text-primary">Build on Zooty.</span>
