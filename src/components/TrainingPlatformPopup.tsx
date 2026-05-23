@@ -74,7 +74,8 @@ const TrainingPlatformPopup = () => {
               Experience Zooty <ArrowUpRight size={14} />
             </Link>
             <button
-              onClick={close}
+              onClick={() => setMinimized(true)}
+              aria-label="Minimize"
               className="text-xs text-muted-foreground hover:text-foreground transition-colors"
             >
               Maybe later
