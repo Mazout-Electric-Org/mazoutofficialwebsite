@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Minus, Plus, ArrowUpRight, Github, BookOpen, ShieldCheck, Cpu, Wrench, GraduationCap, FileText, MapPin } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
