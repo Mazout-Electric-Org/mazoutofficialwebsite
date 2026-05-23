@@ -9,10 +9,6 @@ const TrainingPlatformPopup = () => {
   const [dismissed, setDismissed] = useState(false);
 
   useEffect(() => {
-    if (sessionStorage.getItem("zooty_training_popup_dismissed") === "1") {
-      setDismissed(true);
-      return;
-    }
     const t = setTimeout(() => setOpen(true), 2000);
     return () => clearTimeout(t);
   }, []);
@@ -20,7 +16,6 @@ const TrainingPlatformPopup = () => {
   const close = () => {
     setOpen(false);
     setDismissed(true);
-    sessionStorage.setItem("zooty_training_popup_dismissed", "1");
   };
 
   if (dismissed && !open) return null;
