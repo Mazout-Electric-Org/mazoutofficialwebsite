@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { Link, useParams } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import SEO from "@/components/SEO";
 import patrollingCover from "@/assets/blog-patrolling-cover.png";
 import patrollingRoute from "@/assets/blog-patrolling-route.png";
 import patrollingCollage from "@/assets/blog-patrolling-collage.png";
@@ -462,6 +463,25 @@ const BlogPost = () => {
 
   return (
     <div className="min-h-screen bg-background text-foreground">
+      <SEO
+        title={`${blog.title} | Mazout Electric`}
+        description={
+          (blog.blocks?.find((b) => b.type === "p") as { text?: string } | undefined)?.text?.slice(0, 155) ||
+          blog.body?.[0]?.slice(0, 155) ||
+          "Insights from Mazout Electric on autonomous vehicles, EVs, and mobility."
+        }
+        path={`/blog/${slug}`}
+        type="article"
+        keywords="mazout, zooty, autonomous vehicle, electric vehicle, EV, mobility, logistics, ADAS"
+        jsonLd={{
+          "@context": "https://schema.org",
+          "@type": "Article",
+          headline: blog.title,
+          datePublished: blog.date,
+          author: { "@type": "Organization", name: "Mazout Electric" },
+          publisher: { "@type": "Organization", name: "Mazout Electric" },
+        }}
+      />
       <Navbar />
       <article className="pt-32 pb-24 lg:pt-48 lg:pb-40">
         <div className="max-w-3xl mx-auto px-6">

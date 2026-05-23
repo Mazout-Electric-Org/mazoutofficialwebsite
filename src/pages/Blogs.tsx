@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import SEO from "@/components/SEO";
 
 import patrollingCover from "@/assets/blog-patrolling-cover.png";
 import autonomousCover from "@/assets/blog-autonomous-cover.png";
@@ -36,6 +37,12 @@ const blogs = [
 const Blogs = () => {
   return (
     <div className="min-h-screen bg-background text-foreground">
+      <SEO
+        title="Blogs — Autonomous EVs, Logistics & Mobility | Mazout Electric"
+        description="Insights from Mazout Electric on autonomous vehicles, last-mile logistics, software-defined EVs, patrolling, and the future of urban mobility."
+        path="/blogs"
+        keywords="mazout blog, zooty blog, autonomous vehicle blog, electric vehicle India, last mile logistics, software defined vehicle"
+      />
       <Navbar />
       <section className="pt-32 pb-24 lg:pt-48 lg:pb-40">
         <div className="max-w-[1400px] mx-auto px-6 lg:px-12">

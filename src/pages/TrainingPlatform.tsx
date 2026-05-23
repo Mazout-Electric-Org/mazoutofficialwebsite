@@ -1,8 +1,9 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Minus, Plus, ArrowUpRight, Github, BookOpen, ShieldCheck, Cpu, Wrench, GraduationCap, FileText, MapPin } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ContactDialog from "@/components/ContactDialog";
+import SEO from "@/components/SEO";
 import { Button } from "@/components/ui/button";
 import zootyHero from "@/assets/zooty-hero.png";
 import zootyRender from "@/assets/zooty-render-hero.png";
@@ -58,25 +59,6 @@ const TrainingPlatform = () => {
   const [qty, setQty] = useState(1);
   const [contactOpen, setContactOpen] = useState(false);
 
-  useEffect(() => {
-    const prevTitle = document.title;
-    document.title = "Zooty — Training and Development Platform | Mazout Electric";
-    const meta = document.createElement("meta");
-    meta.name = "description";
-    meta.content = "Zooty is a road-ready EV platform for ADAS, autonomy, and robotics training. Sensors, compute, drive-by-wire, SDK, training, and manuals included. Made in India.";
-    document.head.appendChild(meta);
-    const ld = document.createElement("script");
-    ld.type = "application/ld+json";
-    ld.text = JSON.stringify(productJsonLd);
-    document.head.appendChild(ld);
-    return () => {
-      document.title = prevTitle;
-      meta.remove();
-      ld.remove();
-    };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
-
   const productJsonLd = {
     "@context": "https://schema.org",
     "@type": "Product",
@@ -88,12 +70,20 @@ const TrainingPlatform = () => {
       "@type": "Offer",
       availability: "https://schema.org/PreOrder",
       priceCurrency: "INR",
-      url: "https://zootyweb.lovable.app/training-platform",
+      url: "https://mazoutelectric.com/training-platform",
     },
   };
 
   return (
     <div className="min-h-screen bg-background text-foreground">
+      <SEO
+        title="Zooty Training Platform — Autonomous EV for ADAS & Robotics R&D"
+        description="Zooty by Mazout Electric is a road-ready autonomous electric vehicle training platform for ADAS, autonomy and robotics research. Sensors, compute, drive-by-wire and open SDK included. Made in India."
+        path="/training-platform"
+        type="product"
+        keywords="zooty, mazout, mazout electric, training platform, autonomous vehicle training, ADAS development platform, autonomy research vehicle, drive by wire EV, self driving research kit, robotics EV platform, electric vehicle R&D"
+        jsonLd={productJsonLd}
+      />
       <Navbar />
 
       <main className="pt-24 lg:pt-32">

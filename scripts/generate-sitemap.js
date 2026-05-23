@@ -14,6 +14,12 @@ const STATIC_PATHS = [
     "/blogs",
     "/blog/autonomous-navigation",
     "/blog/patrolling-demonstration",
+    "/blog/last-mile-logistics",
+    "/blog/software-defined-vehicles",
+    "/training-platform",
+    "/logistics",
+    "/patrolling",
+    "/taxi",
     "/privacy",
     "/terms",
     "/cookies"
