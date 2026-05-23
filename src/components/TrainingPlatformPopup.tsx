@@ -56,10 +56,6 @@ const TrainingPlatformPopup = () => {
           </button>
         </div>
 
-        <div className="aspect-[16/9] w-full overflow-hidden bg-card">
-          <img src={zootyRender} alt="Zooty training and development platform" className="h-full w-full object-cover" />
-        </div>
-
         <div className="relative p-5">
           <p className="text-[10px] uppercase tracking-[0.24em] text-primary mb-2">New stock — June</p>
           <h3 className="font-serif text-2xl leading-tight mb-2">
