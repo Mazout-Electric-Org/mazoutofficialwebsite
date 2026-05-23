@@ -2,10 +2,17 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import SEO from "@/components/SEO";
 
 const Vision = () => {
   return (
     <div className="min-h-screen bg-background text-foreground">
+      <SEO
+        title="Vision — Building the Rails for Autonomous Commerce | Mazout Electric"
+        description="Mazout Electric is building the operating system for urban movement — autonomous EV fleets, networked intelligence, and infrastructure for the next era of mobility."
+        path="/vision"
+        keywords="mazout vision, autonomous mobility, autonomous commerce, autonomous EV fleet, urban mobility OS, mazout electric vision"
+      />
       <Navbar />
       <section className="pt-32 pb-24 lg:pt-48 lg:pb-40">
         <div className="max-w-3xl mx-auto px-6">
