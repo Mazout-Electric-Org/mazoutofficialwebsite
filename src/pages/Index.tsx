@@ -7,6 +7,7 @@ import BlogsSection from "@/components/BlogsSection";
 import RevolutionSection from "@/components/RevolutionSection";
 import FAQSection from "@/components/FAQSection";
 import Footer from "@/components/Footer";
+import TrainingPlatformPopup from "@/components/TrainingPlatformPopup";
 
 const Index = () => {
   return (
@@ -20,6 +21,7 @@ const Index = () => {
       <RevolutionSection />
       <FAQSection />
       <Footer />
+      <TrainingPlatformPopup />
     </div>
   );
 };
