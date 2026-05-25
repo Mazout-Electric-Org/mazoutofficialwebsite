@@ -10,14 +10,32 @@ import patrollingCoverNew from "@/assets/blog-patrolling-cover-new.png";
 import patrollingCollage from "@/assets/blog-patrolling-collage.png";
 import patrollingRoute from "@/assets/blog-patrolling-route.png";
 import sdvArchitecture from "@/assets/sdv-architecture.png";
+import IPTIFExhibition from "@/assets/IIT-ACB_IPTIF_Exhibition.jpg";
+import Molecule from "@/assets/Molecule.jpeg";
+import ZootyTream from "@/assets/Zooty_team.jpg";
+import presentations from "@/assets/presentations.jpg";
+import zootyTaxi from "@/assets/zooty_taxi.jpg";
+import teleoperationTest from "@/assets/Road-teleoperation-test.png";
+import Teleoperate from "@/assets/Teleoperate.png";
+import Zooty from "@/assets/Zooty.jpg";
+import zootyoffice from "@/assets/zooty-design.png";
 
 const images = [
-  { src: zootyLanding, caption: "Zooty Landing Vehicle" },
+  { src: Zooty, caption: "Zooty in Action" },
   { src: render1, caption: "Industrial Render" },
-  { src: patrollingCoverNew, caption: "Patrolling — YSC Delhi" },
   { src: patrollingCollage, caption: "Patrolling Collage" },
   { src: patrollingRoute, caption: "Patrolling Route" },
   { src: sdvArchitecture, caption: "SDV Architecture" },
+  { src: Teleoperate, caption: "Teleoperation Interface" },
+  { src: ZootyTream, caption: "Team Zooty" },
+  { src: presentations, caption: "Zooty Presentations" },
+  { src: IPTIFExhibition, caption: "IPTIF Exhibition" },
+  { src: Molecule, caption: "Molecule Structure" },
+  { src: zootyLanding, caption: "Zooty Landing Vehicle" },
+  { src: teleoperationTest, caption: "Teleoperation Test" },
+  { src: patrollingCoverNew, caption: "Patrolling — YSC Delhi" },
+  { src: zootyTaxi, caption: "Zooty Taxi" },
+  { src: zootyoffice, caption: "Zooty Design Office" },
 ];
 
 const PAGE_SIZE = 10;
