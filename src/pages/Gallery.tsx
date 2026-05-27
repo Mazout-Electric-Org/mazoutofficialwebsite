@@ -19,6 +19,8 @@ import teleoperationTest from "@/assets/Road-teleoperation-test.png";
 import Teleoperate from "@/assets/Teleoperate.png";
 import Zooty from "@/assets/Zooty.jpg";
 import zootyoffice from "@/assets/zooty-design.png";
+import zootyRender from "@/assets/Zooty_render.jpeg";
+import products from "@/assets/Elements.png";
 
 const images = [
   { src: Zooty, caption: "Zooty in Action" },
@@ -36,6 +38,8 @@ const images = [
   { src: patrollingCoverNew, caption: "Patrolling — YSC Delhi" },
   { src: zootyTaxi, caption: "Zooty Taxi" },
   { src: zootyoffice, caption: "Zooty Design Office" },
+  { src: zootyRender, caption: "Zooty Render" },
+  { src: products, caption: "Zooty Product Lineup" },
 ];
 
 const PAGE_SIZE = 10;
