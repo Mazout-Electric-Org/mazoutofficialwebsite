@@ -17,6 +17,7 @@ const STATIC_PATHS = [
     "/blog/patrolling-demonstration",
     "/blog/last-mile-logistics",
     "/blog/software-defined-vehicles",
+    "/blog/Building-autonomous-vehicles-with-Zooty-Platform",
     "/privacy",
     "/terms",
     "/cookies"

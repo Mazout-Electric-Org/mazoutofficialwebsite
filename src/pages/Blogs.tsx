@@ -6,8 +6,15 @@ import SEO from "@/components/SEO";
 
 import patrollingCover from "@/assets/blog-patrolling-cover.png";
 import autonomousCover from "@/assets/blog-autonomous-cover.png";
+import protypingCover from "@/assets/Render1.png";
 
 const blogs = [
+  {
+    id: "Building-autonomous-vehicles-with-Zooty-Platform",
+    date: "2026-05-26",
+    title: "Building autonomous vehicles with Zooty Platform",
+    cover: protypingCover,
+  },
   {
     id: "autonomous-navigation",
     date: "2026-04-05",

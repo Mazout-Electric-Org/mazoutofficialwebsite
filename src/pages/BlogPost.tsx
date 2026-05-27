@@ -9,6 +9,9 @@ import patrollingRoute from "@/assets/blog-patrolling-route.png";
 import patrollingCollage from "@/assets/blog-patrolling-collage.png";
 import sdvArchitecture from "@/assets/sdv-architecture.png";
 import autonomousCover from "@/assets/blog-autonomous-cover.png";
+import protypingCover from "@/assets/Render1.png";
+import zooty from "@/assets/Zooty.jpg"
+import molecule from "@/assets/Molecule.jpeg";
 
 type BlogBlock =
   | { type: "p"; text: string }
@@ -31,8 +34,79 @@ type BlogEntry = {
 };
 
 const blogContent: Record<string, BlogEntry> = {
+  "Building-autonomous-vehicles-with-Zooty-Platform": {
+    title: "Building autonomous vehicles with Zooty Platform",
+    date: "2026-05-26",
+    readTime: "3 min read",
+    hero: { src: protypingCover, alt: "Zooty : Tele-op vehicle platform" },
+    blocks: [
+      { type: "h2", text: "Overview" },
+      {
+        type: "p",
+        text: "In the fast-paced automotive industry, software features act as the primary driver of innovation. Major automakers are aggressively focusing on decoupling hardware from software, paving the way for the <strong>Software-Defined Vehicle (SDV)</strong>.",
+      },
+      {
+        type: "p",
+        text: "To innovate at the speed of software, developers need to be able to write code for a vehicle feature—like a battery optimization algorithm—without needing to know exactly which wire, CAN bus, or microcontroller is physically executing the command. They need an abstraction layer that lets them forget the lower levels and focus entirely on the high-level logic.",
+      },
+      {
+        type: "image",
+        src: zooty,
+        alt: "Zooty",
+        caption: "Zooty autonomous vehicle",
+      },
+      {
+        type: "h3",
+        text: "That’s where Zooty comes in:",
+      },
+      {
+        type: "p",
+        text: "Zooty platform is the foundational SDK for SDVs and Autonomous vehicles. The technology inside, called Molecule, acts as a robust base for developers to innovate in the growing fields of robotics and automotive engineering.",
+      },
+      {
+        type: "image",
+        src: molecule,
+        alt: "Molecule",
+        caption: "Molecule — Development kit for robotics",
+      },
+      {
+        type: "p",
+        text: "In the highly regulated automotive space, jumping straight into a production Adaptive AUTOSAR environment to test a new idea is expensive, slow, and requires massive overhead. <strong>Molecule acts as a high-speed prototyping abstraction layer</strong>.",
+      },
+      {
+        type: "p",
+        text: "Built on standard POSIX-compliant Linux, and utilizing lightweight, real-time, industry standard protocols, MOLECULE mimics the design patterns of a production Service-Oriented Architecture. It handles the translation between high-level application logic and low-level hardware components.",
+      },
+      {
+        type: "p",
+        text: "By providing this abstraction layer, Zooty and Molecule, together, allow developers to test the math, logic, and behavior of SDV applications in a forgiving sandbox. Because it aligns with the POSIX and SOA prerequisites of modern vehicle architectures, the logic built on the platform is highly transferable to formal production environments.",
+      },
+      { type: "h2", text: "What Can Developers Build on Zooty as a Platform?" },
+      {
+        type: "p",
+        text: "By sitting securely on top of the deterministic systems, it allows developers to treat a vehicle like a highly advanced edge-computing device. Because the hardware is abstracted, developers can rapidly build smart applications and features.",
+      },
+      { type: "p", text: "Using the open-source SDK, developers can build:" },
+      {
+        type: "ul",
+        items: [
+          { type: "li", bold: "Real Time Fleet Telemetry", text: "Developers can easily build applications that package vehicle data into secure payloads, sending them to cloud dashboards. This allows for advanced battery analytics, geo-fencing for fleet managers, and test temporary performance boosts." },
+          { type: "li", bold: "Autonomous Vehicle Systems", text: "With growing interest in autonomous vehicles, developers can build Computer vision applications which bridge the gap between high level artificial intelligence applications running on servers ( eg. VLA models, YOLO models ) to low level physical hardware execution." },
+          { type: "li", bold: "Adaptive Cruise Control", text: "Developers can write Adaptive Cruise Control algorithms using the data coming from various sensors ( cameras, IMU, GPS etc. ) to trigger the physical hardware ensuring complete end to end implementation." },
+          { type: "li", bold: "Lane following Algorithms", text: "Developers can build lane-following algorithms using OpenCV, AI models to detect lane boundaries using the camera streams." },
+        ],
+      },
+      { type: "h2", text: "Conclusion:" },
+      {
+        type: "p",
+        text: "As the automotive industry transitions from hardware-centric manufacturing to software-first ecosystems, the barrier to entry for innovation has never been higher. Zooty platform lowers that barrier, providing developers with the abstraction layer they need to build the next generation of Autonomous Vehicles.",
+      },
+    ],
+  },
   "autonomous-navigation": {
     title: "The Compression of the Last Leg: The Autonomous Imperative in Hyper-Local Logistics",
+    date: "2026-04-05",
+    readTime: "6 min read",
     blocks: [
       {
         type: "image",
@@ -544,148 +618,149 @@ const BlogPost = () => {
           >
             {blog.blocks
               ? blog.blocks.map((block, i) => {
-                  const autoDivider =
-                    block.type === "h2" && i > 0 && blog.blocks![i - 1].type !== "divider" ? (
-                      <hr key={`div-${i}`} className="my-12 border-t border-border" />
-                    ) : null;
-                  switch (block.type) {
-                    case "h2":
-                      return (
-                        <Fragment key={i}>
-                          {autoDivider}
-                          <h2
-                            className="text-foreground text-2xl lg:text-3xl mt-12 mb-2 font-normal"
-                          >
-                            {block.text}
-                          </h2>
-                        </Fragment>
-                      );
-                    case "h3":
-                      return (
-                        <h3
-                          key={i}
-                          className="text-foreground text-xl lg:text-2xl mt-8 mb-1 font-normal"
+                const autoDivider =
+                  block.type === "h2" && i > 0 && blog.blocks![i - 1].type !== "divider" ? (
+                    <hr key={`div-${i}`} className="my-12 border-t border-border" />
+                  ) : null;
+                switch (block.type) {
+                  case "h2":
+                    return (
+                      <Fragment key={i}>
+                        {autoDivider}
+                        <h2
+                          className="text-foreground text-2xl lg:text-3xl mt-12 mb-2 font-normal"
                         >
                           {block.text}
-                        </h3>
-                      );
-                    case "p":
-                      return (
-                        <p
-                          key={i}
-                          className="text-muted-foreground leading-relaxed text-sm"
-                        >
-                          {block.text}
-                        </p>
-                      );
-                    case "image":
-                      return (
-                        <figure key={i} className="my-10">
-                          <div className="overflow-hidden rounded-xl border border-border">
-                            <img
-                              src={block.src}
-                              alt={block.alt}
-                              loading="lazy"
-                              className="w-full h-auto object-cover"
-                            />
+                        </h2>
+                      </Fragment>
+                    );
+                  case "h3":
+                    return (
+                      <h3
+                        key={i}
+                        className="text-foreground text-xl lg:text-2xl mt-8 mb-1 font-normal"
+                      >
+                        {block.text}
+                      </h3>
+                    );
+                  case "p":
+                    return (
+                      <p
+                        key={i}
+                        className="text-muted-foreground leading-relaxed text-sm"
+                        dangerouslySetInnerHTML={{ __html: block.text }}
+                      />
+                    );
+                  case "image":
+                    return (
+                      <figure key={i} className="my-10">
+                        <div className="overflow-hidden rounded-xl border border-border">
+                          <img
+                            src={block.src}
+                            alt={block.alt}
+                            loading="lazy"
+                            className="w-full h-auto object-cover"
+                          />
+                        </div>
+                        {block.caption && (
+                          <figcaption className="text-muted-foreground text-sm italic mt-3 text-center">
+                            {block.caption}
+                          </figcaption>
+                        )}
+                      </figure>
+                    );
+                  case "quote":
+                    return (
+                      <blockquote
+                        key={i}
+                        className="border-l-2 border-border pl-6 italic text-muted-foreground text-lg"
+                      >
+                        {block.text}
+                      </blockquote>
+                    );
+                  case "ul":
+                    return (
+                      <ul key={i} className="space-y-3 pl-6 list-disc marker:text-muted-foreground/60">
+                        {block.items.map((item, j) => (
+                          <li key={j} className="text-muted-foreground leading-relaxed text-sm">
+                            {item.bold && (
+                              <span className="text-foreground font-medium">{item.bold}. </span>
+                            )}
+                            {item.text}
+                          </li>
+                        ))}
+                      </ul>
+                    );
+                  case "divider":
+                    return <hr key={i} className="my-12 border-t border-border" />;
+                  case "link":
+                    return (
+                      <a
+                        key={i}
+                        href={block.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="group block rounded-xl border border-border bg-muted/10 px-6 py-5 hover:bg-muted/20 transition-colors"
+                      >
+                        <div className="text-foreground text-lg font-medium group-hover:text-secondary-foreground transition-colors">
+                          {block.label} →
+                        </div>
+                        {block.description && (
+                          <div className="text-muted-foreground text-sm mt-1">
+                            {block.description}
                           </div>
-                          {block.caption && (
-                            <figcaption className="text-muted-foreground text-sm italic mt-3 text-center">
-                              {block.caption}
-                            </figcaption>
-                          )}
-                        </figure>
-                      );
-                    case "quote":
-                      return (
-                        <blockquote
-                          key={i}
-                          className="border-l-2 border-border pl-6 italic text-muted-foreground text-lg"
-                        >
-                          {block.text}
-                        </blockquote>
-                      );
-                    case "ul":
-                      return (
-                        <ul key={i} className="space-y-3 pl-6 list-disc marker:text-muted-foreground/60">
-                          {block.items.map((item, j) => (
-                            <li key={j} className="text-muted-foreground leading-relaxed text-sm">
-                              {item.bold && (
-                                <span className="text-foreground font-medium">{item.bold}. </span>
-                              )}
-                              {item.text}
-                            </li>
-                          ))}
-                        </ul>
-                      );
-                    case "divider":
-                      return <hr key={i} className="my-12 border-t border-border" />;
-                    case "link":
-                      return (
-                        <a
-                          key={i}
-                          href={block.href}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="group block rounded-xl border border-border bg-muted/10 px-6 py-5 hover:bg-muted/20 transition-colors"
-                        >
-                          <div className="text-foreground text-lg font-medium group-hover:text-secondary-foreground transition-colors">
-                            {block.label} →
-                          </div>
-                          {block.description && (
-                            <div className="text-muted-foreground text-sm mt-1">
-                              {block.description}
-                            </div>
-                          )}
-                        </a>
-                      );
-                    case "table":
-                      return (
-                        <figure key={i} className="my-8 overflow-x-auto rounded-xl border border-border">
-                          <table className="w-full text-sm border-collapse">
-                            <thead>
-                              <tr className="bg-muted/20">
-                                {block.headers.map((h, j) => (
-                                  <th
-                                    key={j}
-                                    className="text-left text-foreground font-medium px-4 py-3 border-b border-border"
+                        )}
+                      </a>
+                    );
+                  case "table":
+                    return (
+                      <figure key={i} className="my-8 overflow-x-auto rounded-xl border border-border">
+                        <table className="w-full text-sm border-collapse">
+                          <thead>
+                            <tr className="bg-muted/20">
+                              {block.headers.map((h, j) => (
+                                <th
+                                  key={j}
+                                  className="text-left text-foreground font-medium px-4 py-3 border-b border-border"
+                                >
+                                  {h}
+                                </th>
+                              ))}
+                            </tr>
+                          </thead>
+                          <tbody>
+                            {block.rows.map((row, r) => (
+                              <tr key={r} className="border-b border-border last:border-b-0">
+                                {row.map((cell, c) => (
+                                  <td
+                                    key={c}
+                                    className="text-muted-foreground px-4 py-3 align-top"
                                   >
-                                    {h}
-                                  </th>
+                                    {cell}
+                                  </td>
                                 ))}
                               </tr>
-                            </thead>
-                            <tbody>
-                              {block.rows.map((row, r) => (
-                                <tr key={r} className="border-b border-border last:border-b-0">
-                                  {row.map((cell, c) => (
-                                    <td
-                                      key={c}
-                                      className="text-muted-foreground px-4 py-3 align-top"
-                                    >
-                                      {cell}
-                                    </td>
-                                  ))}
-                                </tr>
-                              ))}
-                            </tbody>
-                          </table>
-                          {block.caption && (
-                            <figcaption className="text-muted-foreground text-sm italic px-4 py-2 text-center">
-                              {block.caption}
-                            </figcaption>
-                          )}
-                        </figure>
-                      );
-                    default:
-                      return null;
-                  }
-                })
+                            ))}
+                          </tbody>
+                        </table>
+                        {block.caption && (
+                          <figcaption className="text-muted-foreground text-sm italic px-4 py-2 text-center">
+                            {block.caption}
+                          </figcaption>
+                        )}
+                      </figure>
+                    );
+                  default:
+                    return null;
+                }
+              })
               : blog.body?.map((paragraph, i) => (
-                  <p key={i} className="text-muted-foreground leading-relaxed text-sm">
-                    {paragraph}
-                  </p>
-                ))}
+                <p
+                  key={i}
+                  className="text-muted-foreground leading-relaxed text-sm"
+                  dangerouslySetInnerHTML={{ __html: paragraph }}
+                />
+              ))}
 
             <div className="mt-16 pt-8 border-t border-border">
               <Link
