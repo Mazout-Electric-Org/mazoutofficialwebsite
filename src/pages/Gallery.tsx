@@ -23,6 +23,8 @@ import zootyRender from "@/assets/Zooty_render.jpeg";
 import products from "@/assets/Elements.png";
 
 const images = [
+  { src: zootyRender, caption: "Zooty Render" },
+  { src: products, caption: "Zooty Product Lineup" },
   { src: Zooty, caption: "Zooty in Action" },
   { src: render1, caption: "Industrial Render" },
   { src: patrollingCollage, caption: "Patrolling Collage" },
@@ -38,8 +40,6 @@ const images = [
   { src: patrollingCoverNew, caption: "Patrolling — YSC Delhi" },
   { src: zootyTaxi, caption: "Zooty Taxi" },
   { src: zootyoffice, caption: "Zooty Design Office" },
-  { src: zootyRender, caption: "Zooty Render" },
-  { src: products, caption: "Zooty Product Lineup" },
 ];
 
 const PAGE_SIZE = 10;
