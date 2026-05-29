@@ -12,6 +12,9 @@ import autonomousCover from "@/assets/blog-autonomous-cover.png";
 import protypingCover from "@/assets/Render1.png";
 import zooty from "@/assets/Zooty.jpg"
 import molecule from "@/assets/Molecule.jpeg";
+import trainingPlatform from "@/assets/Zooty_render.jpeg"
+import roboticsElement from "@/assets/Elements.png";
+import teleoperate from "@/assets/Teleoperate.png"
 
 type BlogBlock =
   | { type: "p"; text: string }
@@ -34,6 +37,176 @@ type BlogEntry = {
 };
 
 const blogContent: Record<string, BlogEntry> = {
+  "Hidden-challenges-of-building-a-teleop-robotic-vehicle": {
+    title: "Hidden Challenges of building a Tele-operatable Robotic Vehicle",
+    date: "2026-05-27",
+    readTime: "5 min read",
+    hero: { src: trainingPlatform, alt: "Robotic Module" },
+    blocks: [
+      { type: "h2", text: "Overview" },
+      {
+        type: "p",
+        text: "Creating a tele-op robotic vehicle sounds straightforward on paper: mount a camera, add remote control, integrate actuators, and let an operator take command from afar. In practice, the path from prototype to reliable deployment is filled with subtle, expensive, and often frustrating challenges."
+      },
+      {
+        type: "p",
+        text: "As the embedded developer behind <strong>Zooty</strong> — a compact teleoperated utility vehicle designed for last-mile logistics and industrial logistics — I’ve faced these issues firsthand. Zooty is powered by an <strong>STM32 microcontroller</strong> and uses <strong>ST3215 serial bus servos</strong> and actuators to actuate custom mechanisms for throttle, brakes, steering, and compartments. What follows are the real hidden challenges we encountered, far beyond the glossy marketing renderings."
+      },
+      { type: "h2", text: "Real-Time Control vs Linux Comfort: The Dual-Core Dilemma" },
+      {
+        type: "p",
+        text: "The STM32MP2 combines dual-core Cortex-A7 processors running Linux with a Cortex-M33 microcontroller optimized for real-time tasks. While this heterogeneous architecture is powerful, integrating it effectively is far from trivial."
+      },
+      {
+        type: "p",
+        text: "We required a deterministic, low-jitter response for throttle and brake actuation. Running the entire system on Linux introduced unacceptable latency spikes from the scheduler, networking stack, and user-space drivers. Our solution involved:"
+      },
+      {
+        type: "ul",
+        items: [
+          { type: "li", text: "Running the safety-critical control loop on the M33 core using bare-metal firmware or a lightweight RTOS." },
+          { type: "li", text: "Leveraging the Cortex-A7 cores for video streaming, 4G/5G telemetry, and the operator interface." }
+        ]
+      },
+      {
+        type: "p",
+        text: "Prototyping was initially done entirely on the Cortex-A7 cores for faster development and maximum capability, while later transitioning to proper dual-core partitioning."
+      },
+      {
+        type: "quote",
+        text: "Lesson: Heterogeneous SoCs are excellent, but they demand expertise in both embedded Linux and real-time systems. Underestimating this split can derail timelines quickly."
+      },
+      {
+        type: "image",
+        src: roboticsElement,
+        alt: "Robotics Module",
+      },
+      { type: "h2", text: "STM3215s Are Powerful but Demanding" },
+      {
+        type: "p",
+        text: "The ST3215 serial servos offer impressive performance — up to 30kg·cm torque, metal gears, and daisy-chain capability over a single bus. Zooty currently uses four of them for:"
+      },
+      {
+        type: "ul",
+        items: [
+          { type: "li", text: "Custom steering actuator (converted from a steering rack)" },
+          { type: "li", text: "Electronic throttke body control" },
+          { type: "li", text: "Dual braking calipers" },
+          { type: "li", text: "Compartment control with position feedback" },
+        ]
+      },
+      {
+        type: "p",
+        text: "However, several hidden issues emerged during development:"
+      },
+      {
+        type: "ul",
+        items: [
+          { type: "li", bold: "Bus Contention and Timing", text: "Even with only four servos, command latency increases under load. A single servo timeout can momentarily freeze steering response." },
+          { type: "li", bold: "Power Glitches", text: "Sudden high-torque movements (espically braking) caused voltage dips that reset servos mid-command. We solved this by providing the servo driver with a didicated, well-decoupled power rail." },
+          { type: "li", bold: "Feedback Integrity", text: "Electromagnetic interference from the vehicle’s motors corrupted position feedback packets over UART. We switched to CAN bus for significantly improved reliability." }
+        ]
+      },
+      {
+        type: "quote",
+        text: "Pro Tip: Always implement redundant mechanical limits and independent emergency stop circuits that completely bypass the servo bus."
+      },
+      { type: "h2", text: "Teleoperation Latency" },
+      {
+        type: "p",
+        text: "Key challenges observed with Zooty include:"
+      },
+      {
+        type: "ul",
+        items: [
+          { type: "li", text: "Video feed desynchronization from control commands." },
+          { type: "li", text: "Operator disorientation when visual feedback lags behind actuator response." },
+          { type: "li", text: "Packet loss during cellular tower handoffs." }
+        ]
+      },
+      {
+        type: "p",
+        text: "Our mitigations include:"
+      },
+      {
+        type: "ul",
+        items: [
+          { type: "li", text: "Multiple network path (primary 5G +  fallback 4G + local Wi-Fi)." },
+          { type: "li", text: "Haptic feedback on the operator controller to signal rising latency." },
+          { type: "li", text: "Predictive command extrapolation on the vehicle side using dead reckoning of the operator’s last known intent." }
+        ]
+      },
+      {
+        type: "image",
+        src: teleoperate,
+        alt: "Teleoperation"
+      },
+      { type: "h2", text: "Mechanical Integration and Custom Actuation Headaches" },
+      {
+        type: "p",
+        text: "Building custom actuators quickly revealed the gap between hobby-grade components and true industrial reliability."
+      },
+      {
+        type: "p",
+        text: "The steering mechanism, in particular, demanded significantly more torque than a single ST3215 could deliver. This led us to develop a custom actuator using a <strong>BLDC motor (150KV)</strong> controlled by a custom PCB powered by the <strong>STSPIN3264</strong> microcontroller."
+      },
+      {
+        type: "p",
+        text: "Vibration, thermal expansion, dirt ingress, and cable fatigue caused repeated failures during extended field testing. Systems that performed flawlessly on the bench often broke down after long sessions of mixed-terrain driving."
+      },
+      { type: "h2", text: "Power Architecture and Thermal Management" },
+      {
+        type: "p",
+        text: "The combination of the STM32MP2, high-torque servos, cameras, and cellular modem creates highly dynamic power demands. We learned the hard way that:"
+      },
+      {
+        type: "ul",
+        items: [
+          { type: "li", text: "Peak currents during simultaneous brake and steering maneuvers could brown-out the system." },
+          { type: "li", text: "Lithium battery voltage sag under load degraded servo performance." },
+          { type: "li", text: "Heat generated by the STM32MP2 during video encoding required active cooling in enclosed compartments." }
+        ]
+      },
+      {
+        type: "p",
+        text: "Our final design incorporates careful load balancing across multiple power domains and a dedicated monitoring system for temperature and voltage health."
+      },
+      { type: "h2", text: "Safety, Redundancy, and Regulatory Reality" },
+      {
+        type: "p",
+        text: "Teleoperated vehicles still occupy a regulatory gray area in many regions. To address this, we implemented:"
+      },
+      {
+        type: "ul",
+        items: [
+          { type: "li", text: "Manual override switches (both physical and remote)." },
+          { type: "li", text: "Comprehensive real-time logging for post-incident analysis." },
+          { type: "li", text: "Independent watchdog timers and fail-safe mechanisms." }
+        ]
+      },
+      {
+        type: "p",
+        text: "Even with these measures, liability concerns remain significant. Every teleoperated vehicle must undergo rigorous auditing and validation to meet acceptable safety standards."
+      },
+      { type: "h2", text: "Final Thoughts for someone building in this space" },
+      {
+        type: "p",
+        text: "Building Zooty has shown that a successful teleoperated vehicle is far more than bolting servos onto a chassis and adding a camera. It demands deep integration across mechanical, electrical, firmware, and software domains."
+      },
+      {
+        type: "p",
+        text: "The STM32MP2’s dual-core flexibility and the ST3215 servos provided a strong foundation, but the real differentiator was relentless attention to edge cases, redundancy, and real-world testing."
+      },
+      {
+        type: "p",
+        text: "If you’re starting your own robotic vehicle project, here’s my strongest advice: <strong>prototype the worst-case scenarios first</strong> — maximum load, minimum signal strength, highest vibration, and longest latency. Everything looks easy until you test those conditions."
+      },
+      {
+        type: "p",
+        text: "Zooty is now ready to be deployed in pilot programs, successfully handling repetitive and hazardous tasks that humans prefer to avoid. The hidden challenges were numerous, but solving them has been deeply rewarding."
+      }
+    ]
+  },
   "Building-autonomous-vehicles-with-Zooty-Platform": {
     title: "Building autonomous vehicles with Zooty Platform",
     date: "2026-05-26",

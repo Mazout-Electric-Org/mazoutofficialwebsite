@@ -7,8 +7,16 @@ import SEO from "@/components/SEO";
 import patrollingCover from "@/assets/blog-patrolling-cover.png";
 import autonomousCover from "@/assets/blog-autonomous-cover.png";
 import protypingCover from "@/assets/Render1.png";
+import roboticsElement from "@/assets/Elements.png";
+import { title } from "process";
 
 const blogs = [
+  {
+    id: "Hidden-challenges-of-building-a-teleop-robotic-vehicle",
+    date: "2026-05-27",
+    title: "Hidden Challenges of Building a Tele-op Robotic Vehicle",
+    cover: roboticsElement,
+  },
   {
     id: "Building-autonomous-vehicles-with-Zooty-Platform",
     date: "2026-05-26",
