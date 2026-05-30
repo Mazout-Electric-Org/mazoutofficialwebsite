@@ -14,7 +14,8 @@ import zooty from "@/assets/Zooty.jpg"
 import molecule from "@/assets/Molecule.jpeg";
 import trainingPlatform from "@/assets/Zooty_render.jpeg"
 import roboticsElement from "@/assets/Elements.png";
-import teleoperate from "@/assets/Teleoperate.png"
+import teleoperate from "@/assets/Teleoperate.png";
+import linuxAndAutosar from "@/assets/Linux_and_AUTOSAR.png";
 
 type BlogBlock =
   | { type: "p"; text: string }
@@ -37,6 +38,159 @@ type BlogEntry = {
 };
 
 const blogContent: Record<string, BlogEntry> = {
+  "How-Linux-Enable-Scalability-in-Zooty-Towards-AUTOSAR": {
+    title: "How Linux Enable Scalability in Zooty: Towards AUTOSAR",
+    date: "2026-05-28",
+    readTime: "5 min read",
+    hero: { src: linuxAndAutosar, alt: "Linux and AUTOSAR" },
+    blocks: [
+      { type: "h2", text: "Overview" },
+      {
+        type: "p",
+        text: "The automotive industry is rapidly moving toward software-defined vehicles, where software platforms are as critical as mechanical systems. At the center of this transformation is AUTOSAR, a standardized software architecture designed to simplify automotive software development and integration."
+      },
+      {
+        type: "p",
+        text: "At the same time, Linux has become a key platform for advanced automotive applications such as infotainment, ADAS, autonomous driving, and centralized vehicle computing."
+      },
+
+      { type: "h2", text: "What is AUTOSAR?" },
+      {
+        type: "p",
+        text: "AUTOSAR was created to reduce complexity in automotive Electronic Control Units (ECUs) by introducing standardized software layers and interfaces."
+      },
+      {
+        type: "p",
+        text: "It mainly exists in two forms:"
+      },
+      {
+        type: "ul",
+        items: [
+          {
+            type: "li",
+            text: "Classic AUTOSAR for real-time, safety-critical systems like braking and engine control."
+          },
+          {
+            type: "li",
+            text: "Adaptive AUTOSAR for high-performance computing, dynamic applications, and connected vehicle services."
+          }
+        ]
+      },
+      {
+        type: "p",
+        text: "Adaptive AUTOSAR is especially compatible with Linux-based systems, which is why we chose an MPU running Embedded Linux."
+      },
+
+      { type: "h2", text: "Why Linux is Chosen for Zooty" },
+
+      { type: "h3", text: "Modular and Portable" },
+      {
+        type: "p",
+        text: "Linux supports multiple hardware platforms including ARM and x86, allowing software reuse across different vehicle architectures. Its modular architecture enabled us to include only the components required for our specific controllers."
+      },
+
+      { type: "h3", text: "Supports Centralized Vehicle Architectures" },
+      {
+        type: "p",
+        text: "Modern vehicles are shifting from many small ECUs to centralized computing platforms, which is why we developed Zooty on Linux."
+      },
+      {
+        type: "p",
+        text: "Linux can handle:"
+      },
+      {
+        type: "ul",
+        items: [
+          { type: "li", text: "Virtualization" },
+          { type: "li", text: "Containers" },
+          { type: "li", text: "Service-based applications" },
+          { type: "li", text: "Dynamic resource management" }
+        ]
+      },
+      {
+        type: "p",
+        text: "This aligns well with our goal of building a system compatible with Adaptive AUTOSAR’s service-oriented architecture."
+      },
+
+      { type: "h3", text: "Large Open-Source Ecosystem" },
+      {
+        type: "p",
+        text: "Linux provides access to mature ecosystems for:"
+      },
+      {
+        type: "ul",
+        items: [
+          { type: "li", text: "AI and machine learning" },
+          { type: "li", text: "Networking" },
+          { type: "li", text: "Cybersecurity" },
+          { type: "li", text: "Cloud connectivity" },
+          { type: "li", text: "OTA updates" }
+        ]
+      },
+      {
+        type: "p",
+        text: "Platforms such as Automotive Grade Linux (AGL) and Yocto help accelerate automotive software development."
+      },
+
+      { type: "h3", text: "Improved Real-Time Performance" },
+      {
+        type: "p",
+        text: "Although Linux was not originally designed for real-time systems, technologies like PREEMPT_RT and real-time kernels have improved deterministic performance significantly. This makes Linux suitable for many high-performance automotive workloads."
+      },
+
+      { type: "h2", text: "Linux and Adaptive AUTOSAR" },
+      {
+        type: "p",
+        text: "Adaptive AUTOSAR uses POSIX-based interfaces, making Linux a natural platform for deployment."
+      },
+      {
+        type: "p",
+        text: "Together they support:"
+      },
+      {
+        type: "ul",
+        items: [
+          { type: "li", text: "High-performance applications" },
+          { type: "li", text: "Scalable middleware" },
+          { type: "li", text: "Continuous software updates" },
+          { type: "li", text: "Cloud-integrated vehicle services" }
+        ]
+      },
+      {
+        type: "p",
+        text: "This combination also enables modern software engineering practices such as CI/CD pipelines and remote diagnostics."
+      },
+
+      { type: "h2", text: "Challenges" },
+      {
+        type: "p",
+        text: "Despite its advantages, Linux still is not perfect for automotive systems. It faces challenges such as:"
+      },
+      {
+        type: "ul",
+        items: [
+          { type: "li", text: "Functional safety certification" },
+          { type: "li", text: "Cybersecurity risks" },
+          { type: "li", text: "Increased software complexity" },
+          { type: "li", text: "Limited native determinism" }
+        ]
+      },
+      {
+        type: "p",
+        text: "To address this, we designed Zooty by augmenting the MPU running Linux with a dedicated MCU running the deterministic control loop. This provides deterministic behavior for safety-critical functions while retaining Linux's flexibility for modern vehicle requirements."
+      },
+
+      { type: "h2", text: "Conclusion" },
+      {
+        type: "p",
+        text: "AUTOSAR provides the standardized architecture modern vehicles need, while Linux delivers scalability, flexibility, and access to advanced software ecosystems."
+      },
+      {
+        type: "p",
+        text: "As the industry moves toward connected and autonomous vehicles, Linux-based Adaptive AUTOSAR platforms are becoming a strong foundation for future automotive software development."
+      }
+    ]
+  },
   "Hidden-challenges-of-building-a-teleop-robotic-vehicle": {
     title: "Hidden Challenges of building a Tele-operatable Robotic Vehicle",
     date: "2026-05-27",
@@ -717,7 +871,7 @@ const BlogPost = () => {
           blog.body?.[0]?.slice(0, 155) ||
           "Insights from Mazout Electric on autonomous vehicles, EVs, and mobility."
         }
-        path={`/blog/${slug}`}
+        path={`/ blog / ${slug}`}
         type="article"
         keywords="mazout, zooty, autonomous vehicle, electric vehicle, EV, mobility, logistics, ADAS"
         jsonLd={{
@@ -793,7 +947,7 @@ const BlogPost = () => {
               ? blog.blocks.map((block, i) => {
                 const autoDivider =
                   block.type === "h2" && i > 0 && blog.blocks![i - 1].type !== "divider" ? (
-                    <hr key={`div-${i}`} className="my-12 border-t border-border" />
+                    <hr key={`div - ${i}`} className="my-12 border-t border-border" />
                   ) : null;
                 switch (block.type) {
                   case "h2":

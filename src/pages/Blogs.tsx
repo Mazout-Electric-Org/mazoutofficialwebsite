@@ -8,9 +8,15 @@ import patrollingCover from "@/assets/blog-patrolling-cover.png";
 import autonomousCover from "@/assets/blog-autonomous-cover.png";
 import protypingCover from "@/assets/Render1.png";
 import roboticsElement from "@/assets/Elements.png";
-import { title } from "process";
+import linuxAndAutosar from "@/assets/Linux_and_AUTOSAR.png";
 
 const blogs = [
+  {
+    id: "How-Linux-Enable-Scalability-in-Zooty-Towards-AUTOSAR",
+    date: "2026-05-28",
+    title: "How Linux Enable Scalability in Zooty: Towards AUTOSAR",
+    cover: linuxAndAutosar,
+  },
   {
     id: "Hidden-challenges-of-building-a-teleop-robotic-vehicle",
     date: "2026-05-27",
