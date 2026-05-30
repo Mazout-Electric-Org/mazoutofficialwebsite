@@ -8,6 +8,7 @@ import { useTheme } from "@/hooks/use-theme";
 
 const navLinks = [
   { label: "Vision", href: "/vision" },
+  { label: "Blogs", href: "/blogs" },
 ];
 
 import { Button } from "./ui/button";
