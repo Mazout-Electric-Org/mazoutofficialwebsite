@@ -9,8 +9,15 @@ import autonomousCover from "@/assets/blog-autonomous-cover.png";
 import protypingCover from "@/assets/Render1.png";
 import roboticsElement from "@/assets/Elements.png";
 import linuxAndAutosar from "@/assets/Linux_and_AUTOSAR.png";
+import commProtocolZooty from "@/assets/Communication_protocols_Zooty.png";
 
 const blogs = [
+  {
+    id: "CAN_vs_UART_vs_I2C_for_Automotive_Subsystems_What_We_Used_and_Why",
+    date: "2026-05-29",
+    title: "CAN vs UART vs I2C for Automotive Subsystems: What We Used and Why",
+    cover: commProtocolZooty,
+  },
   {
     id: "How-Linux-Enable-Scalability-in-Zooty-Towards-AUTOSAR",
     date: "2026-05-28",

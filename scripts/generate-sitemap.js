@@ -20,6 +20,7 @@ const STATIC_PATHS = [
     "/blog/Building-autonomous-vehicles-with-Zooty-Platform",
     "/blog/Hidden-challenges-of-building-a-teleop-robotic-vehicle",
     "/blog/How-Linux-Enable-Scalability-in-Zooty-Towards-AUTOSAR",
+    "/blog/CAN_vs_UART_vs_I2C_for_Automotive_Subsystems_What_We_Used_and_Why",
     "/privacy",
     "/terms",
     "/cookies"
