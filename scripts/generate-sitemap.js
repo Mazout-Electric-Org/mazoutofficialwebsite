@@ -19,6 +19,7 @@ const STATIC_PATHS = [
     "/blog/software-defined-vehicles",
     "/blog/Building-autonomous-vehicles-with-Zooty-Platform",
     "/blog/Hidden-challenges-of-building-a-teleop-robotic-vehicle",
+    "/blog/How-Linux-Enable-Scalability-in-Zooty-Towards-AUTOSAR",
     "/privacy",
     "/terms",
     "/cookies"
