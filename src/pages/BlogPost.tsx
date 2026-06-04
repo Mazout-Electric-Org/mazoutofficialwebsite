@@ -42,7 +42,7 @@ type BlogEntry = {
 };
 
 const blogContent: Record<string, BlogEntry> = {
-  "Building_a_Real_Time_EV_Teleoperation_Platform": {
+  "building-a-real-time-ev-teleoperation-platform": {
     title: "Building a Real-Time EV Teleoperation Platform",
     date: "2026-06-02",
     readTime: "7 min read",
@@ -262,7 +262,7 @@ const blogContent: Record<string, BlogEntry> = {
       }
     ]
   },
-  "CAN_vs_UART_vs_I2C_for_Automotive_Subsystems_What_We_Used_and_Why": {
+  "can-vs-uart-vs-i2c-for-automotive-subsystems-what-we-used-and-why": {
     title: "CAN vs UART vs I2C for Automotive Subsystems: What We Used and Why",
     date: "2026-05-29",
     readTime: "3 min read",
@@ -344,7 +344,7 @@ const blogContent: Record<string, BlogEntry> = {
       }
     ]
   },
-  "How-Linux-Enable-Scalability-in-Zooty-Towards-AUTOSAR": {
+  "how-linux-enable-scalability-in-zooty-towards-autosar": {
     title: "How Linux Enable Scalability in Zooty: Towards AUTOSAR",
     date: "2026-05-28",
     readTime: "5 min read",
@@ -497,7 +497,7 @@ const blogContent: Record<string, BlogEntry> = {
       }
     ]
   },
-  "Hidden-challenges-of-building-a-teleop-robotic-vehicle": {
+  "hidden-challenges-of-building-a-teleop-robotic-vehicle": {
     title: "Hidden Challenges of building a Tele-operatable Robotic Vehicle",
     date: "2026-05-27",
     readTime: "5 min read",
@@ -667,7 +667,7 @@ const blogContent: Record<string, BlogEntry> = {
       }
     ]
   },
-  "Building-autonomous-vehicles-with-Zooty-Platform": {
+  "building-autonomous-vehicles-with-zooty-platform": {
     title: "Building autonomous vehicles with Zooty Platform",
     date: "2026-05-26",
     readTime: "3 min read",

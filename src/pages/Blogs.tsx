@@ -15,31 +15,31 @@ import teleoperationDash from "@/assets/dashboard_stream.png";
 
 const blogs = [
   {
-    id: "Building_a_Real_Time_EV_Teleoperation_Platform",
+    id: "building-a-real-time-ev-teleoperation-platform",
     date: "2026-06-02",
     title: "Building a Real-Time EV Teleoperation Platform",
     cover: teleoperationDash,
   },
   {
-    id: "CAN_vs_UART_vs_I2C_for_Automotive_Subsystems_What_We_Used_and_Why",
+    id: "can-vs-uart-vs-i2c-for-automotive-subsystems-what-we-used-and-why",
     date: "2026-05-29",
     title: "CAN vs UART vs I2C for Automotive Subsystems: What We Used and Why",
     cover: commProtocolZooty,
   },
   {
-    id: "How-Linux-Enable-Scalability-in-Zooty-Towards-AUTOSAR",
+    id: "how-linux-enable-scalability-in-zooty-towards-autosar",
     date: "2026-05-28",
     title: "How Linux Enable Scalability in Zooty: Towards AUTOSAR",
     cover: linuxAndAutosar,
   },
   {
-    id: "Hidden-challenges-of-building-a-teleop-robotic-vehicle",
+    id: "hidden-challenges-of-building-a-teleop-robotic-vehicle",
     date: "2026-05-27",
     title: "Hidden Challenges of Building a Tele-op Robotic Vehicle",
     cover: roboticsElement,
   },
   {
-    id: "Building-autonomous-vehicles-with-Zooty-Platform",
+    id: "building-autonomous-vehicles-with-zooty-platform",
     date: "2026-05-26",
     title: "Building autonomous vehicles with Zooty Platform",
     cover: protypingCover,
