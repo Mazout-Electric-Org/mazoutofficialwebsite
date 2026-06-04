@@ -50,14 +50,6 @@
     <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>https://mazoutelectric.com/blog/CAN_vs_UART_vs_I2C_for_Automotive_Subsystems_What_We_Used_and_Why</loc>
-    <changefreq>weekly</changefreq>
-  </url>
-  <url>
-    <loc>https://mazoutelectric.com/blog/Building_a_Real_Time_EV_Teleoperation_Platform</loc>
-    <changefreq>weekly</changefreq>
-  </url>
-  <url>
     <loc>https://mazoutelectric.com/privacy</loc>
     <changefreq>weekly</changefreq>
   </url>
