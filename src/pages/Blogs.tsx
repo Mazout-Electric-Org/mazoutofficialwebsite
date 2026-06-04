@@ -71,6 +71,37 @@ const blogs = [
 ];
 
 const Blogs = () => {
+  const collectionJsonLd = [
+    {
+      "@context": "https://schema.org",
+      "@type": "CollectionPage",
+      name: "Mazout Electric Blog",
+      description:
+        "Insights from Mazout Electric on autonomous vehicles, last-mile logistics, software-defined EVs, patrolling, and the future of urban mobility.",
+      url: "https://mazoutelectric.com/blogs",
+      isPartOf: { "@type": "WebSite", name: "Mazout Electric", url: "https://mazoutelectric.com/" },
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        { "@type": "ListItem", position: 1, name: "Home", item: "https://mazoutelectric.com/" },
+        { "@type": "ListItem", position: 2, name: "Blogs", item: "https://mazoutelectric.com/blogs" },
+      ],
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      itemListOrder: "https://schema.org/ItemListOrderDescending",
+      numberOfItems: blogs.length,
+      itemListElement: blogs.map((b, i) => ({
+        "@type": "ListItem",
+        position: i + 1,
+        url: `https://mazoutelectric.com/blog/${b.id}`,
+        name: b.title,
+      })),
+    },
+  ];
   return (
     <div className="min-h-screen bg-background text-foreground">
       <SEO
@@ -78,6 +109,7 @@ const Blogs = () => {
         description="Insights from Mazout Electric on autonomous vehicles, last-mile logistics, software-defined EVs, patrolling, and the future of urban mobility."
         path="/blogs"
         keywords="mazout blog, zooty blog, autonomous vehicle blog, electric vehicle India, last mile logistics, software defined vehicle"
+        jsonLd={collectionJsonLd}
       />
       <Navbar />
       <section className="pt-32 pb-24 lg:pt-48 lg:pb-40">
