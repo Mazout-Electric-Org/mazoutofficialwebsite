@@ -1168,6 +1168,10 @@ const BlogPost = () => {
     );
   }
 
+  const heroImage = blog.hero?.src
+    ? `https://mazoutelectric.com${blog.hero.src}`
+    : undefined;
+
   return (
     <div className="min-h-screen bg-background text-foreground">
       <SEO
@@ -1177,7 +1181,8 @@ const BlogPost = () => {
           blog.body?.[0]?.slice(0, 155) ||
           "Insights from Mazout Electric on autonomous vehicles, EVs, and mobility."
         }
-        path={`/ blog / ${slug}`}
+        path={`/blog/${slug}`}
+        image={heroImage}
         type="article"
         keywords="mazout, zooty, autonomous vehicle, electric vehicle, EV, mobility, logistics, ADAS"
         jsonLd={{
@@ -1185,8 +1190,15 @@ const BlogPost = () => {
           "@type": "Article",
           headline: blog.title,
           datePublished: blog.date,
+          dateModified: blog.date,
+          image: heroImage,
+          mainEntityOfPage: `https://mazoutelectric.com/blog/${slug}`,
           author: { "@type": "Organization", name: "Mazout Electric" },
-          publisher: { "@type": "Organization", name: "Mazout Electric" },
+          publisher: {
+            "@type": "Organization",
+            name: "Mazout Electric",
+            logo: { "@type": "ImageObject", url: "https://mazoutelectric.com/og-image.jpg" },
+          },
         }}
       />
       <Navbar />
