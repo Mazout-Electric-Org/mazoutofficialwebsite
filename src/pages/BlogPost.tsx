@@ -1185,21 +1185,35 @@ const BlogPost = () => {
         image={heroImage}
         type="article"
         keywords="mazout, zooty, autonomous vehicle, electric vehicle, EV, mobility, logistics, ADAS"
-        jsonLd={{
-          "@context": "https://schema.org",
-          "@type": "Article",
-          headline: blog.title,
-          datePublished: blog.date,
-          dateModified: blog.date,
-          image: heroImage,
-          mainEntityOfPage: `https://mazoutelectric.com/blog/${slug}`,
-          author: { "@type": "Organization", name: "Mazout Electric" },
-          publisher: {
-            "@type": "Organization",
-            name: "Mazout Electric",
-            logo: { "@type": "ImageObject", url: "https://mazoutelectric.com/og-image.jpg" },
+        jsonLd={[
+          {
+            "@context": "https://schema.org",
+            "@type": "Article",
+            headline: blog.title,
+            datePublished: blog.date,
+            dateModified: blog.date,
+            image: heroImage,
+            mainEntityOfPage: `https://mazoutelectric.com/blog/${slug}`,
+            author: { "@type": "Organization", name: "Mazout Electric", url: "https://mazoutelectric.com/" },
+            publisher: {
+              "@type": "Organization",
+              name: "Mazout Electric",
+              logo: { "@type": "ImageObject", url: "https://mazoutelectric.com/og-image.jpg" },
+            },
+            keywords: "mazout, zooty, autonomous vehicle, electric vehicle, EV, training platform, ADAS, mobility",
+            inLanguage: "en",
+            isAccessibleForFree: true,
           },
-        }}
+          {
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            itemListElement: [
+              { "@type": "ListItem", position: 1, name: "Home", item: "https://mazoutelectric.com/" },
+              { "@type": "ListItem", position: 2, name: "Blogs", item: "https://mazoutelectric.com/blogs" },
+              { "@type": "ListItem", position: 3, name: blog.title, item: `https://mazoutelectric.com/blog/${slug}` },
+            ],
+          },
+        ]}
       />
       <Navbar />
       <article className="pt-32 pb-24 lg:pt-48 lg:pb-40">
