@@ -21,8 +21,10 @@ import Zooty from "@/assets/Zooty.jpg";
 import zootyoffice from "@/assets/zooty-design.png";
 import zootyRender from "@/assets/Zooty_render.jpeg";
 import products from "@/assets/Elements.png";
+import dashStream from "@/assets/dashboard_stream.png";
 
 const images = [
+  { src: dashStream, caption: "Teleoperation Dashboard Stream" },
   { src: zootyRender, caption: "Zooty Render" },
   { src: products, caption: "Zooty Product Lineup" },
   { src: Zooty, caption: "Zooty in Action" },

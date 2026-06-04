@@ -21,6 +21,7 @@ const STATIC_PATHS = [
     "/blog/Hidden-challenges-of-building-a-teleop-robotic-vehicle",
     "/blog/How-Linux-Enable-Scalability-in-Zooty-Towards-AUTOSAR",
     "/blog/CAN_vs_UART_vs_I2C_for_Automotive_Subsystems_What_We_Used_and_Why",
+    "/blog/Building_a_Real_Time_EV_Teleoperation_Platform",
     "/privacy",
     "/terms",
     "/cookies"

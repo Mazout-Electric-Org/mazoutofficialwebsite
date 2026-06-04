@@ -17,6 +17,9 @@ import roboticsElement from "@/assets/Elements.png";
 import teleoperate from "@/assets/Teleoperate.png";
 import linuxAndAutosar from "@/assets/Linux_and_AUTOSAR.png";
 import commProtocolZooty from "@/assets/Communication_protocols_Zooty.png";
+import teleoperationHero from "@/assets/vehicle_overview.png";
+import teleoperationDash from "@/assets/dashboard_stream.png";
+import architure from "@/assets/architure-diagram.png";
 
 type BlogBlock =
   | { type: "p"; text: string }
@@ -39,10 +42,230 @@ type BlogEntry = {
 };
 
 const blogContent: Record<string, BlogEntry> = {
+  "Building_a_Real_Time_EV_Teleoperation_Platform": {
+    title: "Building a Real-Time EV Teleoperation Platform",
+    date: "2026-06-02",
+    readTime: "7 min read",
+    hero: { src: teleoperationHero, alt: "EV Teleoperation Platform" },
+    blocks: [
+      { type: "h2", text: "Overview" },
+      {
+        type: "p",
+        text: "Remote vehicle operation sounds simple in theory: press a button, send a command, and move the vehicle. In reality, building a reliable <strong>EV teleoperation platform</strong> requires solving challenges across embedded systems, networking, video streaming, cloud infrastructure, and real-time control systems. Over the past several months, we developed a complete remote operation ecosystem capable of controlling an electric vehicle while simultaneously processing telemetry, diagnostics, and multiple live video streams."
+      },
+      { type: "h2", text: "More Than a Dashboard" },
+      {
+        type: "p",
+        text: "Most people imagine teleoperation as a vehicle controlled from a laptop. The reality is much closer to a <strong>gaming console</strong>. The operator continuously receives information from multiple sources and makes driving decisions based on what appears on screen. Every steering correction, braking input, or directional adjustment depends on accurate and timely feedback."
+      },
+      {
+        type: "p",
+        text: "The dashboard was designed to provide complete situational awareness through live camera feeds, vehicle telemetry, battery information, GPS data, system diagnostics, and control feedback — all within a single interface."
+      },
+      { type: "h2", text: "The Importance of Latency" },
+      {
+        type: "p",
+        text: "In traditional web applications, a delay of a few hundred milliseconds is rarely noticeable. In a teleoperated vehicle, the same delay becomes immediately apparent. Every command issued by the operator enters a continuous feedback cycle that directly impacts physical movement."
+      },
+      {
+        type: "quote",
+        text: "Separating real-time state from long-term storage helped reduce unnecessary database load while maintaining fast dashboard responsiveness."
+      },
+      {
+        type: "ul",
+        items: [
+          {
+            type: "li",
+            bold: "Operator Input",
+            text: "A steering, braking, or movement command is initiated."
+          },
+          {
+            type: "li",
+            bold: "Command Delivery",
+            text: "The instruction travels through the communication infrastructure to the vehicle."
+          },
+          {
+            type: "li",
+            bold: "Physical Response",
+            text: "Actuators execute the command and the vehicle reacts."
+          },
+          {
+            type: "li",
+            bold: "Visual Feedback",
+            text: "Cameras capture the movement and stream it back to the operator."
+          },
+          {
+            type: "li",
+            bold: "Decision Update",
+            text: "The operator evaluates the new vehicle state and makes the next decision."
+          }
+        ]
+      },
+      {
+        type: "p",
+        text: "This entire process repeats continuously while the vehicle is being driven. Even small increases in latency affect how natural and responsive the system feels, making low-latency communication one of the most critical engineering challenges in the project."
+      },
+      { type: "h2", text: "The Closed-Loop Control System" },
+      {
+        type: "p",
+        text: "Unlike simple remote control devices, a teleoperation platform functions as a closed-loop control system. Commands alone are not enough. The operator must continuously receive updated information about the vehicle's condition, location, and response to previous actions."
+      },
+      {
+        type: "image",
+        src: architure,
+        alt: "Teleoperation Platform Architecture",
+        caption: "High-level architecture of the teleoperation platform."
+      },
+      {
+        type: "p",
+        text: "To achieve this, the platform combines real-time telemetry, command acknowledgements, diagnostic feedback, and live video streams into a synchronized control environment."
+      },
+
+      { type: "h2", text: "Inside the Vehicle" },
+      {
+        type: "p",
+        text: "The vehicle integrates multiple software-controlled subsystems that can be operated remotely. These include drive control, steering mechanisms, braking systems, locking systems, battery monitoring, diagnostics, and environmental sensors."
+      },
+      {
+        type: "ul",
+        items: [
+          {
+            type: "li",
+            bold: "Drive Control",
+            text: "Forward and reverse movement commands."
+          },
+          {
+            type: "li",
+            bold: "Steering Control",
+            text: "Actuator-driven left and right directional movement."
+          },
+          {
+            type: "li",
+            bold: "Braking System",
+            text: "Servo-controlled braking with calibrated response characteristics."
+          },
+          {
+            type: "li",
+            bold: "Lockbox Control",
+            text: "Remote operation of secured storage mechanisms."
+          },
+          {
+            type: "li",
+            bold: "Diagnostics",
+            text: "Continuous monitoring of sensors and onboard modules."
+          }
+        ]
+      },
+      { type: "h2", text: "Streaming Four Cameras Simultaneously" },
+      {
+        type: "p",
+        text: "One of the most demanding parts of the platform was the video infrastructure. The vehicle streams live video from four separate cameras simultaneously, providing operators with front, rear, and situational awareness views."
+      },
+      {
+        type: "p",
+        text: "Maintaining stable frame rates while minimizing latency required repeated optimization of the streaming pipeline. Camera synchronization, network conditions, encoding performance, and rendering efficiency all played significant roles in overall operator experience."
+      },
+      {
+        type: "image",
+        src: teleoperationDash,
+        alt: "Teleoperation Dashboard Overview"
+      },
+      { type: "h2", text: "Real-Time Telemetry and Monitoring" },
+      {
+        type: "p",
+        text: "Operating a vehicle remotely requires far more than video. The dashboard continuously receives telemetry data that allows operators to understand vehicle health and operational status in real time."
+      },
+      {
+        type: "ul",
+        items: [
+          {
+            type: "li",
+            bold: "Vehicle Speed",
+            text: "Live movement and speed information."
+          },
+          {
+            type: "li",
+            bold: "GPS Tracking",
+            text: "Location and route visibility."
+          },
+          {
+            type: "li",
+            bold: "Battery Monitoring",
+            text: "State-of-charge and power system information."
+          },
+          {
+            type: "li",
+            bold: "BMS Data",
+            text: "Battery Management System diagnostics."
+          },
+          {
+            type: "li",
+            bold: "Temperature Monitoring",
+            text: "Internal module thermal information."
+          },
+          {
+            type: "li",
+            bold: "System Diagnostics",
+            text: "Sensor health and connectivity status."
+          }
+        ]
+      },
+      { type: "h2", text: "Engineering Challenges" },
+      {
+        type: "p",
+        text: "Building software that directly affects physical movement introduces challenges rarely encountered in traditional web applications."
+      },
+      {
+        type: "ul",
+        items: [
+          {
+            type: "li",
+            bold: "Steering Calibration",
+            text: "Multiple tuning cycles were required to achieve precise and repeatable actuator behavior."
+          },
+          {
+            type: "li",
+            bold: "Brake Tuning",
+            text: "Servo response characteristics had to be calibrated for predictable braking performance."
+          },
+          {
+            type: "li",
+            bold: "Communication Reliability",
+            text: "Real-time command delivery required robust low-latency communication channels."
+          },
+          {
+            type: "li",
+            bold: "Video Optimization",
+            text: "Streaming performance had to remain stable while the vehicle was in motion."
+          },
+          {
+            type: "li",
+            bold: "System Synchronization",
+            text: "Telemetry, commands, and video streams needed to remain closely aligned."
+          }
+        ]
+      },
+      { type: "h2", text: "The Foundation for Physical AI" },
+      {
+        type: "p",
+        text: "Teleoperation platforms are becoming increasingly important in the development of physical AI systems. Before vehicles can operate autonomously, they require vast amounts of real-world operational data and robust control infrastructure."
+      },
+      {
+        type: "p",
+        text: "By combining remote control, telemetry collection, diagnostics, and real-time monitoring, teleoperation creates the foundation for future autonomous vehicles, robotic systems, and human-in-the-loop control architectures."
+      },
+
+      { type: "h2", text: "Conclusion" },
+      {
+        type: "p",
+        text: "Building a real-time EV teleoperation platform required integrating embedded systems, cloud infrastructure, live streaming, diagnostics, telemetry processing, and low-latency communication into a single ecosystem. The result is a platform capable of remotely operating and monitoring a vehicle while maintaining the responsiveness, reliability, and visibility required for real-world deployment."
+      }
+    ]
+  },
   "CAN_vs_UART_vs_I2C_for_Automotive_Subsystems_What_We_Used_and_Why": {
     title: "CAN vs UART vs I2C for Automotive Subsystems: What We Used and Why",
     date: "2026-05-29",
-    readTime: "5 min read",
+    readTime: "3 min read",
     hero: { src: commProtocolZooty, alt: "Communication Protocols" },
     blocks: [
       { type: "h2", text: "Overview" },

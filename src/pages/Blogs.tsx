@@ -10,8 +10,16 @@ import protypingCover from "@/assets/Render1.png";
 import roboticsElement from "@/assets/Elements.png";
 import linuxAndAutosar from "@/assets/Linux_and_AUTOSAR.png";
 import commProtocolZooty from "@/assets/Communication_protocols_Zooty.png";
+import teleoperationHero from "@/assets/vehicle_overview.png";
+import teleoperationDash from "@/assets/dashboard_stream.png";
 
 const blogs = [
+  {
+    id: "Building_a_Real_Time_EV_Teleoperation_Platform",
+    date: "2026-06-02",
+    title: "Building a Real-Time EV Teleoperation Platform",
+    cover: teleoperationDash,
+  },
   {
     id: "CAN_vs_UART_vs_I2C_for_Automotive_Subsystems_What_We_Used_and_Why",
     date: "2026-05-29",
