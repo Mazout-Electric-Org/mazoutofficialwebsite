@@ -74,8 +74,6 @@
     <priority>0.7</priority>
   </url>
   <url>
-<<<<<<< HEAD
-=======
     <loc>https://mazoutelectric.com/blog/last-mile-logistics</loc>
     <lastmod>2025-07-23</lastmod>
     <changefreq>monthly</changefreq>
@@ -88,7 +86,6 @@
     <priority>0.6</priority>
   </url>
   <url>
->>>>>>> d0f76a5c3d86d4fef69d3084df96cc360a3290cf
     <loc>https://mazoutelectric.com/privacy</loc>
     <lastmod>2026-06-04</lastmod>
     <changefreq>yearly</changefreq>
