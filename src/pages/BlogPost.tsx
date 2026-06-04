@@ -27,7 +27,7 @@ type BlogBlock =
   | { type: "h3"; text: string }
   | { type: "image"; src: string; alt: string; caption?: string }
   | { type: "quote"; text: string }
-  | { type: "ul"; items: { text: string; bold?: string }[] }
+  | { type: "ul"; items: { text: string; bold?: string; type?: string }[] }
   | { type: "divider" }
   | { type: "link"; href: string; label: string; description?: string }
   | { type: "table"; headers: string[]; rows: string[][]; caption?: string };
