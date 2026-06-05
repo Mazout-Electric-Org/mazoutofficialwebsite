@@ -20,6 +20,7 @@ import commProtocolZooty from "@/assets/Communication_protocols_Zooty.png";
 import teleoperationHero from "@/assets/vehicle_overview.png";
 import teleoperationDash from "@/assets/dashboard_stream.png";
 import architure from "@/assets/architure-diagram.png";
+import futureZooty from "@/assets/Future_with_Zooty.png";
 
 type BlogBlock =
   | { type: "p"; text: string }
@@ -42,6 +43,115 @@ type BlogEntry = {
 };
 
 const blogContent: Record<string, BlogEntry> = {
+  "meet-zooty-a-software-defined-vehicle-platform-built-for-rapid-innovation": {
+    title: "Meet Zooty: A Software-defined Vehicle Platform Built for Rapid Innovation",
+    date: "2026-06-04",
+    readTime: "5 min read",
+    hero: { src: futureZooty, alt: "Future Zooty" },
+    blocks: [
+      { type: "h2", text: "Overview" },
+      {
+        type: "p",
+        text: "The future of mobility is autonomous, connected, and intelligent. Yet for many developers and organizations, building autonomous vehicle applications remains a complex and time-consuming challenge."
+      },
+      {
+        type: "p",
+        text: "<strong>Zooty</strong> changes that!"
+      },
+      {
+        type: "p",
+        text: "While the vehicle is currently teleoperated with a strong focus on autonomous vehicle development, Zooty is designed as a complete platform that enables developers, researchers, and businesses to start building real-world autonomous applications from day one. Instead of spending months integrating sensors, control systems, and connectivity infrastructure, teams can focus on creating solutions that deliver immediate value."
+      },
+      {
+        type: "p",
+        text: "Whether you're working on advanced driver assistance systems, fleet management, remote operations, or autonomous navigation, Zooty provides the foundation needed to accelerate development and deployment."
+      },
+      { type: "h2", text: "Why Zooty?" },
+      {
+        type: "p",
+        text: "Modern autonomous systems require a combination of perception, decision-making, control, and communication technologies working seamlessly together. Zooty integrates these capabilities into a single platform, enabling developers to rapidly prototype, test, and deploy for their applications."
+      },
+      {
+        type: "p",
+        text: "With built-in support for cameras, vehicle control systems, cloud connectivity, and remote operations, Zooty transforms complex vehicle automation challenges into manageable development opportunities."
+      },
+      { type: "h2", text: "Applications You Can Develop from Day One" },
+      { type: "h3", text: "Adaptive Cruise Control" },
+      {
+        type: "p",
+        text: "Maintain safe following distances and target speeds using depth-camera-based perception and intelligent longitudinal control. Adaptive Cruise Control improves driving safety while reducing operator workload, making it one of the foundational building blocks of autonomous mobility in Zooty."
+      },
+      { type: "h3", text: "Indicator-on-Steering" },
+      {
+        type: "p",
+        text: "Automatically activate turn indicators based on steering wheel angle thresholds and vehicle behavior. This simple yet practical automation improves signaling consistency and enhances overall road safety."
+      },
+      { type: "h3", text: "Autonomous Parking" },
+      {
+        type: "p",
+        text: "Zooty identifies parking spaces and executes precise parking maneuvers using low-speed control and ultrasonic sensing. Autonomous parking reduces driver effort while improving efficiency in urban and commercial environments."
+      },
+      { type: "h3", text: "Obstacle Avoidance" },
+      {
+        type: "p",
+        text: "Detect and respond to unexpected obstacles through camera-based perception and sensor fusion. Developers can implement intelligent path-planning systems that continuously adapt to changing environments and maintain safe navigation."
+      },
+      { type: "h3", text: "Tele-operation" },
+      {
+        type: "p",
+        text: "Tele-operation provides an additional layer of safety and flexibility for autonomous systems operating in complex or unpredictable environments, which is why Zooty operates on 5G network capability with 4G as fallback, to ensure smooth and reliable operation."
+      },
+      { type: "h3", text: "Fleet Telemetry" },
+      {
+        type: "p",
+        text: "Stream real-time data from vehicle systems, including CAN networks, batteries, sensors, and peripherals, directly to cloud dashboards. Fleet operators gain valuable insights into vehicle performance, health monitoring, energy consumption, and operational efficiency."
+      },
+      { type: "h3", text: "Remote Control" },
+      {
+        type: "p",
+        text: "Drive and monitor Zooty remotely using live video feeds and command channels. Remote control capabilities unlock new opportunities in logistics, industrial automation, security operations, and smart mobility solutions, making Zooty a natural choice."
+      },
+      { type: "h2", text: "Accelerating Autonomous Innovation" },
+      {
+        type: "p",
+        text: "Zooty is more than a vehicle—it is a development platform designed to accelerate innovation. By providing ready-to-use capabilities and SDKs, developers can spend less time building infrastructure and more time creating solutions that solve real-world problems."
+      },
+      {
+        type: "p",
+        text: "Potential applications include:"
+      },
+      {
+        type: "ul",
+        items: [
+          { type: "li", text: "Smart transportation" },
+          { type: "li", text: "Autonomous logistics" },
+          { type: "li", text: "Industrial automation" },
+          { type: "li", text: "Campus mobility" },
+          { type: "li", text: "Agricultural robotics" },
+          { type: "li", text: "Smart city services" },
+          { type: "li", text: "Fleet intelligence" },
+          { type: "li", text: "Remote operations" },
+        ]
+      },
+      { type: "h2", text: "The Road Ahead" },
+      {
+        type: "p",
+        text: "The next generation of mobility will be defined by intelligent, connected, and autonomous systems."
+      },
+      {
+        type: "p",
+        text: "With Zooty, organizations can move from concept to deployment faster than ever before. Whether you're building adaptive cruise control, autonomous parking systems, tele-operation platforms, or large-scale fleet solutions, Zooty provides the tools needed to bring innovative ideas to life."
+      },
+      {
+        type: "p",
+        text: "The future of autonomous mobility is here, and it starts with Zooty."
+      },
+      {
+        type: "quote",
+        text: "Zooty is designed to empower developers and organizations to innovate faster, build smarter, and deploy real-world autonomous solutions with confidence."
+      }
+    ],
+  },
   "building-a-real-time-ev-teleoperation-platform": {
     title: "Building a Real-Time EV Teleoperation Platform",
     date: "2026-06-02",

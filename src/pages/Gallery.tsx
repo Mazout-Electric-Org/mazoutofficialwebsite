@@ -22,23 +22,25 @@ import zootyoffice from "@/assets/zooty-design.png";
 import zootyRender from "@/assets/Zooty_render.jpeg";
 import products from "@/assets/Elements.png";
 import dashStream from "@/assets/dashboard_stream.png";
+import futureZooty from "@/assets/Future_with_Zooty.png";
 
 const images = [
+  { src: futureZooty, caption: "Future with Zooty" },
   { src: dashStream, caption: "Teleoperation Dashboard Stream" },
   { src: zootyRender, caption: "Zooty Render" },
   { src: products, caption: "Zooty Product Lineup" },
   { src: Zooty, caption: "Zooty in Action" },
-  { src: render1, caption: "Industrial Render" },
-  { src: patrollingCollage, caption: "Patrolling Collage" },
-  { src: patrollingRoute, caption: "Patrolling Route" },
-  { src: sdvArchitecture, caption: "SDV Architecture" },
+  { src: Molecule, caption: "Molecule Structure" },
   { src: Teleoperate, caption: "Teleoperation Interface" },
   { src: ZootyTream, caption: "Team Zooty" },
   { src: presentations, caption: "Zooty Presentations" },
   { src: IPTIFExhibition, caption: "IPTIF Exhibition" },
-  { src: Molecule, caption: "Molecule Structure" },
+  { src: render1, caption: "Industrial Render" },
   { src: zootyLanding, caption: "Zooty Landing Vehicle" },
   { src: teleoperationTest, caption: "Teleoperation Test" },
+  { src: patrollingCollage, caption: "Patrolling Collage" },
+  { src: patrollingRoute, caption: "Patrolling Route" },
+  { src: sdvArchitecture, caption: "SDV Architecture" },
   { src: patrollingCoverNew, caption: "Patrolling — YSC Delhi" },
   { src: zootyTaxi, caption: "Zooty Taxi" },
   { src: zootyoffice, caption: "Zooty Design Office" },

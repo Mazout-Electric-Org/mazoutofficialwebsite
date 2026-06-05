@@ -16,6 +16,7 @@ const ENTRIES = [
     { path: "/vision", priority: "0.8", changefreq: "monthly", lastmod: today },
     { path: "/gallery", priority: "0.7", changefreq: "monthly", lastmod: today },
     { path: "/blogs", priority: "0.9", changefreq: "weekly", lastmod: today },
+    { path: "/blog/meet-zooty-a-software-defined-vehicle-platform-built-for-rapid-innovation", priority: "0.8", changefreq: "monthly", lastmod: "2026-06-04" },
     { path: "/blog/building_a_real_time_ev_teleoperation_platform", priority: "0.8", changefreq: "monthly", lastmod: "2026-06-02" },
     { path: "/blog/can-vs-uart-vs-i2c-for-automotive-subsystems-what-we-used-and-why", priority: "0.8", changefreq: "monthly", lastmod: "2026-05-29" },
     { path: "/blog/how-linux-enable-scalability-in-zooty-towards-autosar", priority: "0.8", changefreq: "monthly", lastmod: "2026-05-28" },

@@ -10,10 +10,16 @@ import protypingCover from "@/assets/Render1.png";
 import roboticsElement from "@/assets/Elements.png";
 import linuxAndAutosar from "@/assets/Linux_and_AUTOSAR.png";
 import commProtocolZooty from "@/assets/Communication_protocols_Zooty.png";
-import teleoperationHero from "@/assets/vehicle_overview.png";
 import teleoperationDash from "@/assets/dashboard_stream.png";
+import futureZooty from "@/assets/Future_with_Zooty.png";
 
 const blogs = [
+  {
+    id: "meet-zooty-a-software-defined-vehicle-platform-built-for-rapid-innovation",
+    date: "2026-06-04",
+    title: "Meet Zooty: A Software-defined Vehicle Platform Built for Rapid Innovation",
+    cover: futureZooty,
+  },
   {
     id: "building-a-real-time-ev-teleoperation-platform",
     date: "2026-06-02",
