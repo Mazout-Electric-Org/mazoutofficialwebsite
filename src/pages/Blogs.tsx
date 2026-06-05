@@ -17,7 +17,7 @@ const blogs = [
   {
     id: "meet-zooty-a-software-defined-vehicle-platform-built-for-rapid-innovation",
     date: "2026-06-04",
-    title: "Meet Zooty: A Software-defined Vehicle Platform Built for Rapid Innovation",
+    title: "A Software-defined Vehicle Platform Built for Rapid Innovation",
     cover: futureZooty,
   },
   {

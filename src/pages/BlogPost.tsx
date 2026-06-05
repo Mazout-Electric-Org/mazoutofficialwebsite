@@ -44,7 +44,7 @@ type BlogEntry = {
 
 const blogContent: Record<string, BlogEntry> = {
   "meet-zooty-a-software-defined-vehicle-platform-built-for-rapid-innovation": {
-    title: "Meet Zooty: A Software-defined Vehicle Platform Built for Rapid Innovation",
+    title: "A Software-defined Vehicle Platform Built for Rapid Innovation",
     date: "2026-06-04",
     readTime: "5 min read",
     hero: { src: futureZooty, alt: "Future Zooty" },
