@@ -1,6 +1,7 @@
 # Mazout Electric Website
 
-Official website repository for **Mazout Electric**
+Official website repository for **Mazout Electric**.
+
 This repository contains the source code for the company's public-facing website, built to showcase Mazout Electric's products, technologies, and innovations in autonomous mobility, IoT, robotics, and software-defined vehicles.
 
 ---
