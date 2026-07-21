@@ -18,35 +18,39 @@ import Privacy from "./pages/Privacy.tsx";
 import Terms from "./pages/Terms.tsx";
 import Cookies from "./pages/Cookies.tsx";
 import NotFound from "./pages/NotFound.tsx";
+import RoboticActuators from "./pages/RoboticActuators.tsx";
+import Shop from "./pages/Shop.tsx";
 
 const queryClient = new QueryClient();
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <ThemeProvider>
-    <TooltipProvider>
-      <Toaster />
-      <Sonner />
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Index />} />
-          <Route path="/logistics" element={<Logistics />} />
-          <Route path="/patrolling" element={<Patrolling />} />
-          <Route path="/taxi" element={<Taxi />} />
-          <Route path="/vision" element={<Vision />} />
-          <Route path="/blog/:slug" element={<BlogPost />} />
-          <Route path="/blogs" element={<Blogs />} />
-          <Route path="/gallery" element={<Gallery />} />
-          <Route path="/investor-deck" element={<InvestorDeck />} />
-          <Route path="/training-platform" element={<TrainingPlatform />} />
-          <Route path="/privacy" element={<Privacy />} />
-          <Route path="/terms" element={<Terms />} />
-          <Route path="/cookies" element={<Cookies />} />
-          {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-      </BrowserRouter>
-    </TooltipProvider>
+      <TooltipProvider>
+        <Toaster />
+        <Sonner />
+        <BrowserRouter>
+          <Routes>
+            <Route path="/" element={<Index />} />
+            <Route path="/logistics" element={<Logistics />} />
+            <Route path="/patrolling" element={<Patrolling />} />
+            <Route path="/taxi" element={<Taxi />} />
+            <Route path="/vision" element={<Vision />} />
+            <Route path="/blog/:slug" element={<BlogPost />} />
+            <Route path="/blogs" element={<Blogs />} />
+            <Route path="/gallery" element={<Gallery />} />
+            <Route path="/investor-deck" element={<InvestorDeck />} />
+            <Route path="/training-platform" element={<TrainingPlatform />} />
+            <Route path="/privacy" element={<Privacy />} />
+            <Route path="/robotic-actuators" element={<RoboticActuators />} />
+            <Route path="/shop" element={<Shop />} />
+            <Route path="/terms" element={<Terms />} />
+            <Route path="/cookies" element={<Cookies />} />
+            {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </BrowserRouter>
+      </TooltipProvider>
     </ThemeProvider>
   </QueryClientProvider>
 );
