@@ -1,5 +1,6 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import SEO from "@/components/SEO";
 
 const sections = [
   {
@@ -162,6 +163,11 @@ const sections = [
 const Terms = () => {
   return (
     <div className="min-h-screen bg-background text-foreground">
+      <SEO
+        title="Terms & Conditions | Mazout Electric"
+        description="Terms and conditions governing your use of the Mazout Electric website and services."
+        path="/terms"
+      />
       <Navbar />
       <main className="max-w-[800px] mx-auto px-6 pt-32 pb-20">
         <div className="mb-12">

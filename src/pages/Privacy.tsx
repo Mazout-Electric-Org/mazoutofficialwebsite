@@ -1,5 +1,6 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import SEO from "@/components/SEO";
 
 const sections = [
   {
@@ -80,6 +81,11 @@ const sections = [
 const Privacy = () => {
   return (
     <div className="min-h-screen bg-background text-foreground">
+      <SEO
+        title="Privacy Policy | Mazout Electric"
+        description="How Mazout Electric collects, uses, and protects your information when you use our website and services."
+        path="/privacy"
+      />
       <Navbar />
       <main className="max-w-[800px] mx-auto px-6 pt-32 pb-20">
         <div className="mb-12">

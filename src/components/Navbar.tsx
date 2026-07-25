@@ -1,10 +1,37 @@
-import { useState } from "react";
+import { Fragment, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, Sun, Moon } from "lucide-react";
+import { Menu, X, Sun, Moon, ChevronDown, Bot, GraduationCap, Cog } from "lucide-react";
 import { Link } from "react-router-dom";
 import ContactDialog from "./ContactDialog";
 import ComLogo1 from "@/assets/ComLogo1.png";
 import { useTheme } from "@/hooks/use-theme";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "./ui/dropdown-menu";
+
+const productLinks = [
+  {
+    label: "Zooty",
+    href: "/",
+    description: "Micro-mobility robot platform",
+    icon: Bot,
+  },
+  {
+    label: "Training Platform",
+    href: "/training-platform",
+    description: "Hands-on robotics learning",
+    icon: GraduationCap,
+  },
+  {
+    label: "Robotic Actuators",
+    href: "/robotic-actuators",
+    description: "Precision motion hardware",
+    icon: Cog,
+  },
+];
 
 const navLinks = [
   { label: "Vision", href: "/vision" },
@@ -30,25 +57,64 @@ const Navbar = () => {
         </Link>
 
         <div className="hidden md:flex items-center gap-10">
-          {navLinks.map((link) =>
-            link.href.startsWith("/") ? (
-              <Link
-                key={link.label}
-                to={link.href}
-                className="text-muted-foreground hover:text-foreground text-sm transition-colors duration-300"
-              >
-                {link.label}
-              </Link>
-            ) : (
-              <a
-                key={link.label}
-                href={link.href}
-                className="text-muted-foreground hover:text-foreground text-sm transition-colors duration-300"
-              >
-                {link.label}
-              </a>
-            )
-          )}
+          {navLinks.map((link, i) => (
+            <Fragment key={link.label}>
+              {link.href.startsWith("/") ? (
+                <Link
+                  key={link.label}
+                  to={link.href}
+                  className="text-muted-foreground hover:text-foreground text-sm transition-colors duration-300"
+                >
+                  {link.label}
+                </Link>
+              ) : (
+                <a
+                  key={link.label}
+                  href={link.href}
+                  className="text-muted-foreground hover:text-foreground text-sm transition-colors duration-300"
+                >
+                  {link.label}
+                </a>
+              )}
+              {i === 0 && (
+                <DropdownMenu key="products">
+                  <DropdownMenuTrigger className="group flex items-center gap-1 text-muted-foreground hover:text-foreground text-sm transition-colors duration-300 outline-none">
+                    Products
+                    <ChevronDown
+                      size={14}
+                      className="transition-transform duration-300 group-data-[state=open]:rotate-180"
+                    />
+                  </DropdownMenuTrigger>
+                  <DropdownMenuContent
+                    align="start"
+                    sideOffset={16}
+                    className="w-80 rounded-xl border border-border bg-popover/95 backdrop-blur-md p-2 shadow-xl"
+                  >
+                    {productLinks.map((product) => (
+                      <DropdownMenuItem key={product.label} asChild className="rounded-none p-0 focus:bg-transparent">
+                        <Link
+                          to={product.href}
+                          className="group/item flex items-start gap-3 px-3 py-3 rounded-lg hover:bg-accent transition-colors duration-200"
+                        >
+                          <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-md border border-border bg-muted/40 text-muted-foreground group-hover/item:text-primary group-hover/item:border-primary/40 transition-colors duration-200">
+                            <product.icon size={16} />
+                          </span>
+                          <span className="flex flex-col gap-0.5">
+                            <span className="text-foreground text-sm font-medium group-hover/item:text-primary transition-colors duration-200">
+                              {product.label}
+                            </span>
+                            <span className="text-muted-foreground text-xs leading-snug">
+                              {product.description}
+                            </span>
+                          </span>
+                        </Link>
+                      </DropdownMenuItem>
+                    ))}
+                  </DropdownMenuContent>
+                </DropdownMenu>
+              )}
+            </Fragment>
+          ))}
           <Button size="sm" variant="ghost" onClick={() => setContactOpen(true)} className="text-muted-foreground hover:text-foreground text-sm">Contact</Button>
           <button
             onClick={toggleTheme}
@@ -90,27 +156,57 @@ const Navbar = () => {
             className="md:hidden bg-background border-b border-border"
           >
             <div className="px-6 py-6 flex flex-col gap-4">
-              {navLinks.map((link) =>
-                link.href.startsWith("/") ? (
-                  <Link
-                    key={link.label}
-                    to={link.href}
-                    onClick={() => setMobileOpen(false)}
-                    className="text-muted-foreground hover:text-foreground text-lg transition-colors"
-                  >
-                    {link.label}
-                  </Link>
-                ) : (
-                  <a
-                    key={link.label}
-                    href={link.href}
-                    onClick={() => setMobileOpen(false)}
-                    className="text-muted-foreground hover:text-foreground text-lg transition-colors"
-                  >
-                    {link.label}
-                  </a>
-                )
-              )}
+              {navLinks.map((link, i) => (
+                <Fragment key={link.label}>
+                  {link.href.startsWith("/") ? (
+                    <Link
+                      to={link.href}
+                      onClick={() => setMobileOpen(false)}
+                      className="text-muted-foreground hover:text-foreground text-lg transition-colors"
+                    >
+                      {link.label}
+                    </Link>
+                  ) : (
+                    <a
+                      href={link.href}
+                      onClick={() => setMobileOpen(false)}
+                      className="text-muted-foreground hover:text-foreground text-lg transition-colors"
+                    >
+                      {link.label}
+                    </a>
+                  )}
+                  {i === 0 && (
+                    <div className="flex flex-col gap-3 border-t border-border pt-4">
+                      <span className="text-muted-foreground text-xs uppercase tracking-wider">
+                        Products
+                      </span>
+                      <div className="flex flex-col gap-1 -mx-2">
+                        {productLinks.map((product) => (
+                          <Link
+                            key={product.label}
+                            to={product.href}
+                            onClick={() => setMobileOpen(false)}
+                            className="group/item flex items-center gap-3 rounded-lg px-2 py-2 hover:bg-accent transition-colors"
+                          >
+                            <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-md border border-border bg-muted/40 text-muted-foreground group-hover/item:text-primary group-hover/item:border-primary/40 transition-colors">
+                              <product.icon size={16} />
+                            </span>
+                            <span className="flex flex-col">
+                              <span className="text-foreground text-base font-medium">
+                                {product.label}
+                              </span>
+                              <span className="text-muted-foreground text-xs">
+                                {product.description}
+                              </span>
+                            </span>
+                          </Link>
+                        ))}
+                      </div>
+                      <div className="border-b border-border pt-1" />
+                    </div>
+                  )}
+                </Fragment>
+              ))}
               <button
                 onClick={() => { setContactOpen(true); setMobileOpen(false); }}
                 className="text-muted-foreground hover:text-foreground text-lg transition-colors text-left"

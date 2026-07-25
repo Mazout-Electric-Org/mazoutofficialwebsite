@@ -1,10 +1,27 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import SEO from "@/components/SEO";
 import { ArrowLeft } from "lucide-react";
 import { Link } from "react-router-dom";
 
+const breadcrumbJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://mazoutelectric.com/" },
+    { "@type": "ListItem", position: 2, name: "Patrolling", item: "https://mazoutelectric.com/patrolling" },
+  ],
+};
+
 const Patrolling = () => (
   <div className="min-h-screen bg-background text-foreground">
+    <SEO
+      title="Zooty for Patrolling — Campus & Security Surveillance EV | Mazout Electric"
+      description="Zooty for patrolling: an electric vehicle for campus, industrial, and municipal surveillance deployments, with connected fleet intelligence for real-time coverage mapping and incident response."
+      path="/patrolling"
+      keywords="zooty patrolling, campus security EV, electric patrol vehicle, surveillance EV India, municipal patrolling vehicle, security fleet EV"
+      jsonLd={breadcrumbJsonLd}
+    />
     <Navbar />
     <div className="max-w-[1400px] mx-auto px-6 lg:px-12 pt-32 pb-20">
       <Link to="/" className="text-primary text-sm flex items-center gap-2 mb-12 hover:gap-3 transition-all duration-300">

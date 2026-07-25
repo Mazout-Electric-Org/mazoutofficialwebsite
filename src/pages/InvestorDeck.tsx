@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import SEO from "@/components/SEO";
 
 type Slide = {
   num: string;
@@ -59,6 +60,12 @@ const SlideSection = ({
 const InvestorDeck = () => {
   return (
     <div className="min-h-screen bg-background text-foreground">
+      <SEO
+        title="Investor Deck | Mazout Electric"
+        description="Mazout Electric investor overview."
+        path="/investor-deck"
+        noindex
+      />
       <Navbar />
       <section className="pt-32 pb-24 lg:pt-48 lg:pb-40">
         <div className="max-w-4xl mx-auto px-6">

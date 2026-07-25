@@ -1,9 +1,15 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import SEO from "@/components/SEO";
 
 const Cookies = () => {
   return (
     <div className="min-h-screen bg-background text-foreground">
+      <SEO
+        title="Cookie Policy | Mazout Electric"
+        description="How Mazout Electric uses cookies to make the website work and improve your browsing experience."
+        path="/cookies"
+      />
       <Navbar />
       <main className="max-w-[800px] mx-auto px-6 pt-32 pb-20">
         <h1 className="text-4xl font-bold mb-8">Cookie Policy</h1>

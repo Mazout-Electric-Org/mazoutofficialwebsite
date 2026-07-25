@@ -4,45 +4,43 @@ interface SEOProps {
   title: string;
   description: string;
   path: string;
-  image?: string;
   keywords?: string;
-  type?: "website" | "article" | "product";
   jsonLd?: Record<string, unknown> | Record<string, unknown>[];
+  /** Keep the page out of search results (private/utility/error pages) while still allowing crawlers to follow its links. */
+  noindex?: boolean;
 }
 
 const SITE = "https://mazoutelectric.com";
-const DEFAULT_IMAGE = `${SITE}/og-image.jpg`;
 
+// OG/Twitter tags deliberately live only as a static, site-wide block in index.html,
+// not here. Their consumers (Facebook/Twitter/LinkedIn/Slack/WhatsApp unfurlers) fetch
+// raw HTML and never run JS, so anything Helmet injects is invisible to them — it would
+// just sit alongside the static tags as an inert duplicate, which SEO audit tools flag.
 const SEO = ({
   title,
   description,
   path,
-  image = DEFAULT_IMAGE,
   keywords,
-  type = "website",
   jsonLd,
+  noindex = false,
 }: SEOProps) => {
   const url = `${SITE}${path}`;
   const schemas = Array.isArray(jsonLd) ? jsonLd : jsonLd ? [jsonLd] : [];
+  const robotsContent = noindex
+    ? "noindex, follow"
+    : "index, follow, max-image-preview:large, max-snippet:-1";
   return (
     <Helmet>
       <title>{title}</title>
       <meta name="description" content={description} />
       {keywords && <meta name="keywords" content={keywords} />}
       <link rel="canonical" href={url} />
-      <meta property="og:title" content={title} />
-      <meta property="og:description" content={description} />
-      <meta property="og:url" content={url} />
-      <meta property="og:type" content={type} />
-      <meta property="og:image" content={image} />
-      <meta property="og:site_name" content="Mazout Electric" />
-      <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:title" content={title} />
-      <meta name="twitter:description" content={description} />
-      <meta name="twitter:image" content={image} />
-      {schemas.map((s, i) => (
-        <script key={i} type="application/ld+json">{JSON.stringify(s)}</script>
-      ))}
+      <meta name="robots" content={robotsContent} />
+      <meta name="googlebot" content={robotsContent} />
+      {!noindex &&
+        schemas.map((s, i) => (
+          <script key={i} type="application/ld+json">{JSON.stringify(s)}</script>
+        ))}
     </Helmet>
   );
 };

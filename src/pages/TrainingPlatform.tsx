@@ -80,7 +80,7 @@ const TrainingPlatform = () => {
         title="Zooty Training Platform — Autonomous EV for ADAS & Robotics R&D"
         description="Zooty by Mazout Electric is a road-ready autonomous electric vehicle training platform for ADAS, autonomy and robotics research. Sensors, compute, drive-by-wire and open SDK included. Made in India."
         path="/training-platform"
-        type="product"
+
         keywords="zooty, mazout, mazout electric, training platform, autonomous vehicle training, ADAS development platform, autonomy research vehicle, drive by wire EV, self driving research kit, robotics EV platform, electric vehicle R&D"
         jsonLd={productJsonLd}
       />

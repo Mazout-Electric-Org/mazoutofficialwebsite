@@ -1,5 +1,6 @@
 import { useLayoutEffect, useMemo, useRef, useState, useEffect } from "react";
-import { motion } from "framer-motion";
+import { motion, useMotionValue, useSpring } from "framer-motion";
+import { Link } from "react-router-dom";
 import {
     Minus,
     Plus,
@@ -12,6 +13,11 @@ import {
     Battery,
     CircuitBoard,
     Gauge,
+    Bot,
+    Car,
+    PawPrint,
+    Factory,
+    type LucideIcon,
 } from "lucide-react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -42,6 +48,9 @@ import img1 from "@/assets/Render1.png";
 import img2 from "@/assets/zooty-render-hero.png";
 import img3 from "@/assets/zooty-hero.png";
 import img4 from "@/assets/actuator_mechnical_drawing.png";
+import humanoidImg from "@/assets/humanoid.png";
+import roboDogImg from "@/assets/robo-dog.png";
+import roboticArmImg from "@/assets/robotic-arm.png";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -94,22 +103,46 @@ const breakdownData = [
     },
 ];
 
-const specs: Array<[string, string]> = [
-    ["Motor type", "BLDC, sensored, FOC"],
-    ["Rated voltage", "24 – 48 V DC"],
-    ["Rated torque", "12 Nm (peak 36 Nm)"],
-    ["Reduction ratio", "1:50 harmonic"],
-    ["Encoder", "17-bit absolute magnetic"],
-    ["Communication", "CAN 2.0B, up to 1 Mbps"],
-    ["Control modes", "Position / Velocity / Torque"],
-    ["Weight", "~750 g"],
-    ["Diameter × Height", "Ø90 mm × 40 mm"],
-    ["Operating temp.", "-10 °C to +60 °C"],
-    ["Protection", "IP54"],
-    ["Firmware", "FOC, CAN, OTA capable"],
+const specHighlights: Array<{ value: string; label: string }> = [
+    { value: "0.9kg", label: "Self-Weight" },
+    { value: "62mm", label: "Minimum Diameter" },
+    { value: "557N.m", label: "Maximum Average Load Torque" },
+    { value: "<60 arcsec", label: "Repeatability" },
+    { value: "5000+", label: "Shipping Volume" },
 ];
 
-const applications = ["Humanoid robots", "Autonomous vehicles", "Robotic arms", "Robot dogs"];
+const applications: Array<{
+    title: string;
+    desc: string;
+    icon: LucideIcon;
+    image: string;
+}> = [
+    {
+        title: "Humanoids",
+        desc: "Industrial and home applications, with smooth human-like motions and intelligent interaction.",
+        icon: Bot,
+        image: humanoidImg,
+    },
+    {
+        title: "Autonomous vehicles",
+        desc: "Controlling vehicle movements with enhanced precision for on-road safety.",
+        icon: Car,
+        image: img2,
+    },
+    {
+        title: "Robot dogs",
+        desc: "Surveillance applications in high risk areas, adaptive to different terrains. Rugged for repetitive use.",
+        icon: PawPrint,
+        image: roboDogImg,
+    },
+    {
+        title: "Robotic arms",
+        desc: "Factory applications, beyond just pick and place, learns from training data to automate assembly lines.",
+        icon: Factory,
+        image: roboticArmImg,
+    },
+];
+
 const customers = ["Starforge", "ETA"];
 
 const faqs = [
@@ -118,6 +151,10 @@ const faqs = [
     { q: "Can I customize the actuator?", a: "Absolutely. Reduction ratio, motor winding, connector type, housing, and controller peripherals can all be tailored to your robot. Use the Enquire form to share your requirements." },
     { q: "What is the control loop latency?", a: "Torque loop runs at 20 kHz internally. Over CAN at 1 Mbps, host-to-actuator command latency is under 1 ms per frame, suitable for high-bandwidth robotics control." },
     { q: "What is the lead time and warranty?", a: "35 units are in stock for immediate dispatch. The next production batch has a 4-week lead time. All actuators ship with a 1-year manufacturer warranty." },
+    { q: "Which communication protocols are supported?", a: "Learn about supported interfaces such as CAN, UART, EtherCAT, or RS485 for seamless system integration." },
+    { q: "What robots can these actuators be used in?", a: "Suitable for robotic arms, humanoids, quadrupeds, mobile robots, exoskeletons, and custom robotic platforms." },
+    { q: "Do you provide SDKs and software examples?", a: "Access APIs, documentation, sample code, and development tools to accelerate integration." },
+    { q: "Can multiple actuators be synchronized?", a: "Yes, multiple actuators can operate together for coordinated multi-axis motion and complex robotic systems." },
 ];
 
 const upsells = [
@@ -132,6 +169,123 @@ const upsells = [
 ];
 
 const ACTUATOR_PRICE = 500;
+
+type FeatureCardProps = { icon: LucideIcon; title: string; desc: string };
+
+// Tilts toward whichever edge the cursor is nearest — that side presses in,
+// the opposite side pops forward — and follows continuously as the cursor moves.
+const FeatureCard = ({ icon: Icon, title, desc }: FeatureCardProps) => {
+    const cardRef = useRef<HTMLDivElement>(null);
+    const rotateX = useMotionValue(0);
+    const rotateY = useMotionValue(0);
+    const springConfig = { stiffness: 220, damping: 18, mass: 0.4 };
+    const springRotateX = useSpring(rotateX, springConfig);
+    const springRotateY = useSpring(rotateY, springConfig);
+
+    const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+        const rect = cardRef.current?.getBoundingClientRect();
+        if (!rect) return;
+        const px = (e.clientX - rect.left) / rect.width - 0.5; // -0.5 .. 0.5
+        const py = (e.clientY - rect.top) / rect.height - 0.5;
+        rotateY.set(px * 16);
+        rotateX.set(-py * 16);
+    };
+
+    const handleMouseLeave = () => {
+        rotateX.set(0);
+        rotateY.set(0);
+    };
+
+    return (
+        <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-80px" }}
+            transition={{ duration: 0.5 }}
+            style={{ perspective: 800 }}
+        >
+            <motion.div
+                ref={cardRef}
+                onMouseMove={handleMouseMove}
+                onMouseLeave={handleMouseLeave}
+                style={{ rotateX: springRotateX, rotateY: springRotateY }}
+                className="p-8 border border-border rounded-xl bg-background/60 hover:border-primary/50 transition-colors will-change-transform"
+            >
+                <Icon className="text-primary mb-4" size={22} />
+                <div className="text-lg font-medium mb-2">{title}</div>
+                <p className="text-sm text-muted-foreground leading-relaxed">{desc}</p>
+            </motion.div>
+        </motion.div>
+    );
+};
+
+const ApplicationFlipCard = ({
+    app,
+    i,
+}: {
+    app: (typeof applications)[number];
+    i: number;
+}) => {
+    const [hovered, setHovered] = useState(false);
+    const Icon = app.icon;
+
+    return (
+        <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-50px" }}
+            transition={{ duration: 0.5, delay: i * 0.08 }}
+            className="group aspect-[4/3] [perspective:1200px]"
+            onMouseEnter={() => setHovered(true)}
+            onMouseLeave={() => setHovered(false)}
+        >
+            <div
+                className="relative w-full h-full transition-transform duration-700 ease-in-out rounded-xl"
+                style={{
+                    transformStyle: "preserve-3d",
+                    transform: hovered ? "rotateY(180deg)" : "rotateY(0deg)",
+                }}
+            >
+                {/* Front — image */}
+                <div
+                    className="absolute inset-0 rounded-xl border border-border overflow-hidden"
+                    style={{ backfaceVisibility: "hidden" }}
+                >
+                    <img
+                        src={app.image}
+                        alt={app.title}
+                        className="w-full h-full object-cover"
+                        loading="lazy"
+                        width={800}
+                        height={600}
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/10 to-transparent" />
+                    <div className="absolute inset-x-0 bottom-0 p-6 flex items-center gap-3">
+                        <Icon className="text-primary" size={22} strokeWidth={1.5} />
+                        <span className="text-foreground text-lg font-light">{app.title}</span>
+                    </div>
+                </div>
+
+                {/* Back — description */}
+                <div
+                    className="absolute inset-0 rounded-xl border border-primary/40 bg-background p-8 flex flex-col justify-center"
+                    style={{ backfaceVisibility: "hidden", transform: "rotateY(180deg)" }}
+                >
+                    <h3 className="text-foreground text-xl font-light mb-3">{app.title}</h3>
+                    <p className="text-muted-foreground text-sm leading-relaxed mb-6">
+                        {app.desc}
+                    </p>
+                    <Link
+                        to="/blogs"
+                        className="text-primary text-sm flex items-center gap-1.5 hover:gap-3 transition-all duration-300"
+                    >
+                        Read more <span className="text-lg">→</span>
+                    </Link>
+                </div>
+            </div>
+        </motion.div>
+    );
+};
 
 const RoboticActuators = () => {
     const [actuatorQty, setActuatorQty] = useState(1);
@@ -168,6 +322,14 @@ const RoboticActuators = () => {
     const breakdownPinRef = useRef<HTMLDivElement>(null);
     const stepElsRef = useRef<(HTMLDivElement | null)[]>([]);
 
+    // The pinned 3D-model ScrollTrigger below measures element positions relative
+    // to window.scrollY at setup time. Landing on this page mid-scroll (refresh,
+    // back/forward nav) throws those measurements off and puts the model in a bad
+    // state, so force it back to the hero before that setup runs.
+    useLayoutEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
+
     const cartTotal = useMemo(() => {
         const upsellTotal = upsells.reduce((sum, u) => sum + (cart[u.name] || 0) * u.price, 0);
         return actuatorQty * ACTUATOR_PRICE + upsellTotal;
@@ -203,8 +365,21 @@ const RoboticActuators = () => {
         }
     }, [active, progress]);
 
+    useEffect(() => {
+        // Safety net: never let a slow/failed model fetch hold the whole page behind
+        // the loading overlay indefinitely. The 3D canvas has its own internal
+        // spinner/error boundary, so it's fine for the model to keep loading in the
+        // background after this fires.
+        const t = setTimeout(() => setPageReady(true), 2500);
+        return () => clearTimeout(t);
+    }, []);
+
     // ------- Toggle this to true while testing to see exact trigger boundaries -------
     const DEBUG_MARKERS = false;
+    const CROSSFADE_SCROLL_PER_STEP = 900; // single source of truth, used by BOTH triggers below
+    const CROSSFADE_TOTAL_SCROLL = CROSSFADE_SCROLL_PER_STEP * (breakdownData.length - 1);
+    const FADE_TAIL_SCROLL = 600; // extra px purely for the fade, AFTER the 6th item settles + explode completes
+    const PIN_TOTAL_SCROLL = CROSSFADE_TOTAL_SCROLL + FADE_TAIL_SCROLL;
 
     useLayoutEffect(() => {
         const ctx = gsap.context(() => {
@@ -215,6 +390,7 @@ const RoboticActuators = () => {
                     !heroRef.current ||
                     !overviewRef.current ||
                     !breakdownRef.current ||
+                    !breakdownPinRef.current ||
                     !featuresRef.current ||
                     !canvasWrapRef.current
                 ) {
@@ -238,8 +414,8 @@ const RoboticActuators = () => {
                         masterST = ScrollTrigger.create({
                             trigger: heroRef.current,
                             start: "top top",
-                            endTrigger: featuresRef.current,
-                            end: "top 70%",
+                            endTrigger: breakdownPinRef.current,
+                            end: `top+=${PIN_TOTAL_SCROLL}`,
                             scrub: true,
                             markers: DEBUG_MARKERS,
                             invalidateOnRefresh: true,
@@ -250,15 +426,18 @@ const RoboticActuators = () => {
                                 const pxOf = (el: HTMLElement) => el.getBoundingClientRect().top + window.scrollY;
 
                                 const fOverview = gsap.utils.clamp(0.02, 0.95, (pxOf(overviewRef.current!) - startPx) / totalPx);
-                                const fBreakdown = gsap.utils.clamp(fOverview + 0.02, 0.97, (pxOf(breakdownRef.current!) - startPx) / totalPx);
-                                const fFadeStart = gsap.utils.clamp(fBreakdown + 0.02, 0.98, 0.88);
+                                // breakdown pin START as a fraction (used only to know where slide-back-right finishes)
+                                const fBreakdownStart = gsap.utils.clamp(fOverview + 0.02, 0.9, (pxOf(breakdownPinRef.current!) - startPx) / totalPx);
+                                // Fade must only begin once the 6th item has settled AND the explode has fully
+                                // played out — i.e. right where the (un-extended) crossfade span would have ended.
+                                const fFadeStart = fBreakdownStart + (CROSSFADE_TOTAL_SCROLL / totalPx);
 
                                 master.clear();
                                 master.to(canvasWrapRef.current, { xPercent: 0, ease: "none", duration: fOverview }, 0);
-                                master.to(canvasWrapRef.current, { xPercent: 100, ease: "none", duration: fBreakdown - fOverview }, fOverview);
+                                master.to(canvasWrapRef.current, { xPercent: 100, ease: "none", duration: fBreakdownStart - fOverview }, fOverview);
                                 master.to(canvasWrapRef.current, { autoAlpha: 0, ease: "none", duration: 1 - fFadeStart }, fFadeStart);
                                 master.to(clipProxy, {
-                                    value: 1, ease: "none", duration: 1,
+                                    value: 1, ease: "none", duration: fFadeStart,
                                     onUpdate: () => modelRef.current?.setClipProgress(clipProxy.value),
                                 }, 0);
                                 master.progress(self.progress);
@@ -276,13 +455,14 @@ const RoboticActuators = () => {
                     masterST = ScrollTrigger.create({
                         trigger: heroRef.current,
                         start: "top top",
-                        endTrigger: featuresRef.current,
-                        end: "top 70%",
+                        endTrigger: breakdownPinRef.current,
+                        end: `top+=${PIN_TOTAL_SCROLL}`,
                         scrub: true,
                         markers: DEBUG_MARKERS,
                         invalidateOnRefresh: true,
                         onUpdate: (self) => {
-                            modelRef.current?.setClipProgress(self.progress);
+                            const crossfadeFraction = CROSSFADE_TOTAL_SCROLL / PIN_TOTAL_SCROLL;
+                            modelRef.current?.setClipProgress(Math.min(1, self.progress / crossfadeFraction));
                         },
                     });
                 }
@@ -304,55 +484,68 @@ const RoboticActuators = () => {
 
                 const N = breakdownData.length;
 
-                // Pin duration: how much scroll distance the whole cycle takes.
-                // Bump the multiplier up for a slower, more deliberate crossfade; down for snappier.
-                const scrollDistancePerStep = 450; // px, THE knob for pacing
-                const totalScroll = scrollDistancePerStep * (N - 1);
+                // ~2 scroll-wheel pages per step. Tune this by actually scrolling — mice/trackpads vary.
+                // const scrollDistancePerStep = 800;
+                // const totalScroll = scrollDistancePerStep * (N - 1);
+
+                // Each item owns an EXCLUSIVE window of localPos in [-0.5, +0.5] around its own index.
+                // Windows never overlap — item i's window ends exactly where item i+1's begins.
+                const plateau = 0.22;   // |localPos| below this: fully settled, sharp, opaque
+                const driftPx = 40;     // how far the text travels while entering/exiting
+                const maxBlur = 10;     // px, blur strength right as an item crosses out of view
 
                 ScrollTrigger.create({
                     trigger: breakdownPinRef.current,
                     start: "top top",
-                    end: `+=${totalScroll}`,
+                    end: `+=${PIN_TOTAL_SCROLL}`,
                     pin: true,
                     scrub: true,
                     anticipatePin: 1,
                     invalidateOnRefresh: true,
                     onUpdate: (self) => {
-                        const scaled = self.progress * (N - 1);
+                        // The pin now stays alive through an extra tail (model fade-out, handled by the
+                        // master ScrollTrigger above) after item 6 settles. Remap so the 6-item crossfade
+                        // itself is bit-for-bit identical to before, then holds at N-1.
+                        const crossfadeFraction = CROSSFADE_TOTAL_SCROLL / PIN_TOTAL_SCROLL;
+                        const crossfadeProgress = Math.min(1, self.progress / crossfadeFraction);
+                        const scaled = crossfadeProgress * (N - 1);
 
                         stepElsRef.current.forEach((el, i) => {
                             if (!el) return;
-                            const distance = Math.abs(scaled - i);
 
-                            // Plateau covers distance 0 -> plateauEdge, fully sharp/opaque.
-                            // Transition covers plateauEdge -> 0.5 (the midpoint to the neighbor) — completes
-                            // BEFORE reaching the neighbor's own plateau, so there's no window where both
-                            // items are simultaneously above ~0 opacity.
-                            const plateauEdge = 0.3; // portion of the half-gap that's a dead plateau
-                            const transitionEnd = 0.5;
+                            // Signed local position: negative = "not yet arrived" (below/incoming),
+                            // positive = "already passed" (above/exiting). This sign is what makes
+                            // the up/down direction — and its exact reversal on scroll-up — automatic.
+                            const localPos = scaled - i;
+                            const absPos = Math.abs(localPos);
 
                             let opacity: number;
-                            let blur: number;
+                            let fadeFactor: number; // 0 at plateau, 1 at the outer edge — drives blur
 
-                            if (distance <= plateauEdge) {
+                            if (absPos <= plateau) {
                                 opacity = 1;
-                                blur = 0;
-                            } else if (distance < transitionEnd) {
-                                const t = (distance - plateauEdge) / (transitionEnd - plateauEdge); // 0 -> 1
+                                fadeFactor = 0;
+                            } else if (absPos < 0.5) {
+                                const t = (absPos - plateau) / (0.5 - plateau); // 0 -> 1
                                 opacity = 1 - t;
-                                blur = Math.sin(t * Math.PI) * maxBlur;
+                                fadeFactor = t;
                             } else {
                                 opacity = 0;
-                                blur = 0;
+                                fadeFactor = 1;
                             }
 
-                            const y = gsap.utils.clamp(-24, 24, (scaled - i) * 24);
+                            // y: comes from below while entering (localPos negative, moving toward 0),
+                            // continues upward while exiting (localPos positive, moving away from 0).
+                            // Sign flips automatically in reverse-scroll since localPos itself flips sign
+                            // as scaled decreases — no separate "reverse" logic needed.
+                            const y = -localPos * driftPx;
+                            const blur = fadeFactor * maxBlur;
 
                             gsap.set(el, {
                                 opacity,
                                 y,
                                 filter: `blur(${blur}px)`,
-                                pointerEvents: opacity > 0.5 ? "auto" : "none",
+                                pointerEvents: opacity > 0.95 ? "auto" : "none",
                             });
                         });
                     },
@@ -414,7 +607,7 @@ const RoboticActuators = () => {
                 description="Mazout builds custom robotic actuators in India — compact BLDC motor + harmonic reducer + encoder + FOC controller in one unit. For humanoids, autonomous vehicles, robotic arms and quadrupeds."
                 path="/robotic-actuators"
                 keywords="robotic actuators in India, custom robotic actuators, BLDC actuator, robotic actuator, harmonic actuator, humanoid actuator, robot joint actuator, integrated servo actuator, Mazout actuator"
-                type="product"
+
                 jsonLd={[productJsonLd, faqJsonLd, breadcrumbJsonLd]}
             />
             <Navbar />
@@ -433,27 +626,66 @@ const RoboticActuators = () => {
 
             <section ref={heroRef} className="relative min-h-screen flex items-end overflow-hidden pt-16">
                 <div className="relative z-20 max-w-[1400px] mx-auto px-6 lg:px-12 pb-20 lg:pb-28 w-full lg:pr-[52%]">
-                    <motion.h1
-                        initial={{ opacity: 0, y: 20 }}
+                    <motion.p
+                        initial={{ opacity: 0, y: 12 }}
                         animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.8 }}
-                        className="text-4xl sm:text-5xl lg:text-6xl font-light leading-[1.05] max-w-4xl text-balance"
+                        transition={{ duration: 0.6 }}
+                        className="text-xs uppercase tracking-[0.28em] text-primary mb-5"
                     >
-                        Robotic actuators <span className="text-muted-foreground">Your Door To The World</span>{" "}
-                        <span className="text-primary">of Physical AI</span>
-                    </motion.h1>
+                        Physical AI Hardware
+                    </motion.p>
+
+                    <h1 className="text-4xl sm:text-5xl lg:text-6xl font-light leading-[1.05] max-w-4xl text-balance">
+                        <motion.span
+                            initial={{ opacity: 0, y: 24, filter: "blur(6px)" }}
+                            animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+                            transition={{ duration: 0.7, delay: 0.15 }}
+                            className="inline-block"
+                        >
+                            Robotic actuators{" "}
+                        </motion.span>
+                        <motion.span
+                            initial={{ opacity: 0, y: 24, filter: "blur(6px)" }}
+                            animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+                            transition={{ duration: 0.7, delay: 0.3 }}
+                            className="inline-block text-muted-foreground"
+                        >
+                            Your Door To The World{" "}
+                        </motion.span>
+                        <motion.span
+                            initial={{ opacity: 0, y: 24, filter: "blur(6px)" }}
+                            animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+                            transition={{ duration: 0.7, delay: 0.45 }}
+                            className="inline-block text-primary"
+                        >
+                            of Physical AI
+                        </motion.span>
+                    </h1>
 
                     <motion.div
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
-                        transition={{ duration: 0.8, delay: 0.4 }}
+                        transition={{ duration: 0.8, delay: 0.6 }}
                         className="mt-10"
                     >
-                        <Button asChild size="lg" className="uppercase tracking-[0.18em]">
-                            <a href="/shop">Pre-order now</a>
-                        </Button>
+                        <motion.div
+                            animate={{ scale: [1, 1.08, 1] }}
+                            transition={{ duration: 1.8, repeat: Infinity, repeatDelay: 0.4, ease: "easeInOut", delay: 1.2 }}
+                            className="inline-block"
+                        >
+                            <Button asChild size="lg" className="uppercase tracking-[0.18em]">
+                                <a href="/shop">Pre-order now</a>
+                            </Button>
+                        </motion.div>
                     </motion.div>
-                    <span className="ml-1 text-sm font-light tracking-[0.18em]">next batch August 2026</span>
+                    <motion.span
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        transition={{ duration: 0.6, delay: 0.9 }}
+                        className="ml-1 text-xs font-light tracking-[0.18em] inline-block"
+                    >
+                        next batch August 2026
+                    </motion.span>
 
                     {/* Scroll-down indicator — pinned to bottom-center of the hero viewport. */}
                     <motion.a
@@ -492,28 +724,99 @@ const RoboticActuators = () => {
 
             <section ref={overviewRef} className="border-t border-border py-24 lg:py-32 relative z-20 bg-transparent">
                 <div className="max-w-[1400px] mx-auto px-6 lg:px-12 lg:pl-[52%]">
-                    <p className="text-xs uppercase tracking-[0.28em] text-primary mb-6">Overview</p>
-                    <p className="text-2xl lg:text-3xl font-light leading-snug text-foreground">
-                        Mazout's robotic actuators integrate a high-performance{" "}
-                        <span className="text-primary">BLDC motor, harmonic reducer, encoder, and motor controller</span>{" "}
-                        into a compact unit. Designed for precision, reliability, and easy integration, they
-                        simplify robot development while delivering high efficiency, stable performance, and
-                        long-term durability across a wide range of robotic applications.
-                    </p>
-                    <p className="mt-6 text-lg text-muted-foreground leading-relaxed">
-                        A reliable actuator is fundamental to the robot's overall performance.
-                    </p>
+                    <motion.p
+                        initial={{ opacity: 0, y: 16 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true, margin: "-100px" }}
+                        transition={{ duration: 0.6 }}
+                        className="text-xs uppercase tracking-[0.28em] text-primary mb-6"
+                    >
+                        Overview
+                    </motion.p>
+
+                    <motion.p
+                        initial={{ opacity: 0, y: 24, filter: "blur(6px)" }}
+                        whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+                        viewport={{ once: true, margin: "-100px" }}
+                        transition={{ duration: 0.7, delay: 0.1 }}
+                        className="text-2xl lg:text-3xl font-light leading-snug text-foreground"
+                    >
+                        Get started on your robot building journey with{" "}
+                        <span className="text-primary">back-drivable robotic actuators</span>. Designed for
+                        precision, reliability, and easy integration, they simplify robot development while
+                        delivering high efficiency, stable performance, and long-term durability across a
+                        wide range of robotic applications.
+                    </motion.p>
+
+                    <motion.div
+                        initial={{ opacity: 0, y: 16 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true, margin: "-100px" }}
+                        transition={{ duration: 0.5, delay: 0.25 }}
+                        className="mt-8 flex flex-wrap gap-3"
+                    >
+                        {["Back-drivable", "High torque", "FOC control", "Compact integrated design"].map((tag, i) => (
+                            <motion.span
+                                key={tag}
+                                initial={{ opacity: 0, scale: 0.9 }}
+                                whileInView={{ opacity: 1, scale: 1 }}
+                                viewport={{ once: true, margin: "-100px" }}
+                                transition={{ duration: 0.4, delay: 0.3 + i * 0.08 }}
+                                className="px-4 py-1.5 text-xs uppercase tracking-[0.14em] border border-primary/40 text-primary rounded-full"
+                            >
+                                {tag}
+                            </motion.span>
+                        ))}
+                    </motion.div>
+
+                    <motion.p
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true, margin: "-100px" }}
+                        transition={{ duration: 0.6, delay: 0.4 }}
+                        className="mt-8 text-lg text-muted-foreground leading-relaxed"
+                    >
+                        Each actuator integrates a high-performance BLDC motor, precision cycloidal reducer,
+                        high-resolution magnetic encoder, and advanced Field-Oriented Control (FOC)
+                        electronics into a single compact module. This fully integrated design minimizes
+                        wiring, reduces system complexity, and improves reliability while delivering stable,
+                        responsive performance.
+                    </motion.p>
+
+                    <motion.p
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true, margin: "-100px" }}
+                        transition={{ duration: 0.6, delay: 0.5 }}
+                        className="mt-6 text-lg text-muted-foreground leading-relaxed"
+                    >
+                        By building robots with back-drivable motors (or simulating it via advanced
+                        software), robotics completely changes physical safety around humans, proprioception
+                        (feeling the world without sensors) and improved operation dynamics (like walking).
+                    </motion.p>
+
+                    <motion.p
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true, margin: "-100px" }}
+                        transition={{ duration: 0.6, delay: 0.6 }}
+                        className="mt-8 text-xl font-light text-foreground"
+                    >
+                        Go from idea to a functional prototype quickly with Mazout's best-in-class robotic
+                        rotary actuators.
+                    </motion.p>
                 </div>
             </section>
 
             <section id="breakdown" ref={breakdownRef} className="border-t border-border py-24 lg:py-32 bg-transparent relative">
                 <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
-                    <div className="mb-16 max-w-3xl lg:pr-[52%]">
-                        <p className="text-xs uppercase tracking-[0.28em] text-primary mb-4">3D breakdown</p>
-                        <h2 className="text-4xl lg:text-5xl font-light">Every layer, engineered.</h2>
-                        <p className="mt-4 text-muted-foreground">
-                            Scroll to explode the actuator into its subsystems — then watch it reassemble.
-                        </p>
+                    <div className="mb-16 lg:pr-[52%]">
+                        <p className="text-xs uppercase tracking-[0.28em] text-primary mb-4">Breakdown</p>
+                        <h2 className="text-5xl lg:text-7xl font-light leading-[1.05]">
+                            Every layer
+                            <br />
+                            engineered.
+                        </h2>
                     </div>
 
                     {/* Pinned crossfade container. Height matters only for pre-pin layout —
@@ -552,70 +855,90 @@ const RoboticActuators = () => {
                         <p className="text-xs uppercase tracking-[0.28em] text-primary mb-4">Features</p>
                         <h2 className="text-4xl lg:text-5xl font-light mb-12">Built for demanding robotics.</h2>
                         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                            {features.map(({ icon: Icon, title, desc }) => (
-                                <motion.div
-                                    key={title}
-                                    initial={{ opacity: 0, y: 24 }}
-                                    whileInView={{ opacity: 1, y: 0 }}
-                                    viewport={{ once: true, margin: "-80px" }}
-                                    transition={{ duration: 0.5 }}
-                                    className="p-8 border border-border rounded-xl bg-background/60 hover:border-primary/50 transition-colors"
-                                >
-                                    <Icon className="text-primary mb-4" size={22} />
-                                    <div className="text-lg font-medium mb-2">{title}</div>
-                                    <p className="text-sm text-muted-foreground leading-relaxed">{desc}</p>
-                                </motion.div>
+                            {features.map(({ icon, title, desc }) => (
+                                <FeatureCard key={title} icon={icon} title={title} desc={desc} />
                             ))}
                         </div>
                     </div>
                 </div>
             </section>
 
-            <section className="border-t border-border py-24 lg:py-32 relative z-20 bg-background">
-                <div className="max-w-[1100px] mx-auto px-6 lg:px-12">
+            <section className="border-t border-border py-16 lg:py-20 relative z-20 bg-background">
+                <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
                     <p className="text-xs uppercase tracking-[0.28em] text-primary mb-4">Specifications</p>
                     <h2 className="text-4xl lg:text-5xl font-light mb-12">Technical data.</h2>
-                    <div className="border border-border rounded-xl overflow-hidden">
-                        <table className="w-full text-sm">
-                            <tbody>
-                                {specs.map(([k, v], i) => (
-                                    <tr key={k} className={i % 2 === 0 ? "bg-card/40" : ""}>
-                                        <td className="py-4 px-6 text-muted-foreground uppercase tracking-wider text-xs w-1/2">{k}</td>
-                                        <td className="py-4 px-6 text-foreground font-medium">{v}</td>
-                                    </tr>
-                                ))}
-                            </tbody>
-                        </table>
+                    <div className="flex flex-wrap justify-between gap-x-8 gap-y-10">
+                        {specHighlights.map(({ value, label }, i) => (
+                            <motion.div
+                                key={label}
+                                initial={{ opacity: 0, y: 20 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true, margin: "-80px" }}
+                                transition={{ duration: 0.5, delay: i * 0.08 }}
+                                className="min-w-[140px] flex-1 text-center"
+                            >
+                                <div className="text-3xl lg:text-4xl font-light text-red-500">{value}</div>
+                                <div className="mt-2 text-xs uppercase tracking-[0.16em] text-white/90">{label}</div>
+                            </motion.div>
+                        ))}
                     </div>
                 </div>
             </section>
 
             <section className="border-t border-border py-24 lg:py-32 bg-card/30 relative z-20">
-                <div className="max-w-[1400px] mx-auto px-6 lg:px-12 grid lg:grid-cols-2 gap-16">
-                    <div>
-                        <p className="text-xs uppercase tracking-[0.28em] text-primary mb-4">Applications</p>
-                        <h2 className="text-4xl lg:text-5xl font-light mb-10">Wherever motion matters.</h2>
-                        <ul className="space-y-4">
-                            {applications.map((a) => (
-                                <li key={a} className="text-2xl font-light border-b border-border pb-4 flex items-center gap-4">
-                                    <span className="text-primary text-sm">◆</span>
-                                    {a}
-                                </li>
-                            ))}
-                        </ul>
-                    </div>
-                    <div>
-                        <p className="text-xs uppercase tracking-[0.28em] text-primary mb-4">Customers</p>
-                        <h2 className="text-4xl lg:text-5xl font-light mb-10">Trusted by builders.</h2>
-                        <div className="grid grid-cols-2 gap-6">
-                            {customers.map((c) => (
-                                <div key={c} className="border border-border rounded-xl p-10 text-center text-2xl font-light hover:border-primary/50 transition-colors">
-                                    {c}
-                                </div>
-                            ))}
-                        </div>
+                <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
+                    <p className="text-xs uppercase tracking-[0.28em] text-primary mb-4">Applications</p>
+                    <h2 className="text-4xl lg:text-5xl font-light mb-12">Wherever motion matters.</h2>
+
+                    <div className="grid sm:grid-cols-2 gap-6 lg:gap-8">
+                        {applications.map((app, i) => (
+                            <ApplicationFlipCard key={app.title} app={app} i={i} />
+                        ))}
                     </div>
                 </div>
+
+                <div className="max-w-[1400px] mx-auto px-6 lg:px-12 mt-24 pt-16 border-t border-border">
+                    <p className="text-center text-xs uppercase tracking-[0.28em] text-muted-foreground mb-8">
+                        Trusted by builders
+                    </p>
+                    <div className="flex flex-wrap items-center justify-center gap-x-16 gap-y-5">
+                        {customers.map((c) => (
+                            <span
+                                key={c}
+                                className="text-muted-foreground/60 hover:text-foreground text-xl font-light tracking-wide transition-colors duration-300"
+                            >
+                                {c}
+                            </span>
+                        ))}
+                    </div>
+                </div>
+            </section>
+
+            <section className="border-t border-border py-24 lg:py-32 relative z-20 bg-background">
+                <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, margin: "-80px" }}
+                    transition={{ duration: 0.6 }}
+                    className="max-w-3xl mx-auto px-6 lg:px-12 text-center flex flex-col items-center"
+                >
+                    <p className="text-xs uppercase tracking-[0.28em] text-primary mb-4">Integration</p>
+                    <h2 className="text-4xl lg:text-5xl font-light mb-8">
+                        Enabling fast robot integration.
+                    </h2>
+                    <p className="text-base lg:text-lg text-muted-foreground leading-relaxed mb-10">
+                        Whether you're prototyping a new robot, developing a commercial product, or advancing robotics research, Mazout actuators provide the performance and durability needed for demanding applications. With high torque output, accurate position control, low maintenance requirements, and long operational life, they serve as a dependable foundation for next-generation robotic systems.
+                    </p>
+                    <motion.div
+                        animate={{ scale: [1, 1.08, 1] }}
+                        transition={{ duration: 1.8, repeat: Infinity, repeatDelay: 0.4, ease: "easeInOut" }}
+                        className="inline-block"
+                    >
+                        <Button asChild size="lg" className="uppercase tracking-[0.18em]">
+                            <Link to="/shop">Pre-order now</Link>
+                        </Button>
+                    </motion.div>
+                </motion.div>
             </section>
 
             <section className="border-t border-border py-24 lg:py-32 relative z-20 bg-background">

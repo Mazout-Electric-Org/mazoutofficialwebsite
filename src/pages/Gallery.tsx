@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { ChevronLeft, ChevronRight, X } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import SEO from "@/components/SEO";
 
 import render1 from "@/assets/Render1.png";
 import zootyLanding from "@/assets/zooty-landing-vehicle.png";
@@ -68,6 +69,12 @@ const Gallery = () => {
 
   return (
     <div className="min-h-screen bg-background text-foreground">
+      <SEO
+        title="Gallery — Zooty in Action | Mazout Electric"
+        description="Photos and renders of Zooty, Mazout Electric's autonomous EV platform — from teleoperation and R&D to logistics, patrolling, and bike taxi deployments."
+        path="/gallery"
+        keywords="zooty gallery, mazout electric photos, zooty renders, autonomous EV photos, zooty deployment images"
+      />
       <Navbar />
       <section className="pt-32 pb-24 lg:pt-48 lg:pb-40">
         <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
