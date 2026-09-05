@@ -33,10 +33,7 @@ const productLinks = [
   },
 ];
 
-const navLinks = [
-  { label: "Vision", href: "/vision" },
-  { label: "Blogs", href: "/blogs" },
-];
+const navLinks = [{ label: "Blogs", href: "/blogs" }];
 
 import { Button } from "./ui/button";
 

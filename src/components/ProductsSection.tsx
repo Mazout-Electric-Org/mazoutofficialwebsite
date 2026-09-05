@@ -1,163 +1,64 @@
-import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { Link } from "react-router-dom";
+import { ArrowRight } from "lucide-react";
+import trainingImg from "@/assets/Render1.png";
+import actuatorImg from "@/assets/Elements.png";
 
-interface Product {
-  name: string;
-  category: string;
-  description: string;
-  links: { label: string; href: string }[];
-}
-
-const products: Product[] = [
+const products = [
   {
-    name: "Zooty Platform",
-    category: "Micro-Mobility",
-    description:
-      "A software-defined micro-mobility platform combining modular hardware, real-time control systems, and AI-ready architecture — built for fleet-scale urban deployments.",
-    links: [
-      { label: "Learn More", href: "#platform" },
-      { label: "Enquire", href: "#contact" },
-    ],
+    category: "Education",
+    title: "SDV Training Platform",
+    image: trainingImg,
+    href: "/training-platform",
   },
   {
-    name: "Zooty Patrolling Demonstration",
-    category: "Utility",
-    description:
-      "Collaborating with YSC Delhi to showcase autonomous patrolling and utility movement. Featuring real-time sensor fusion and adaptive campus navigation.",
-    links: [
-      { label: "Learn More", href: "/blog/patrolling-demonstration" },
-      { label: "Inquire", href: "#contact" },
-    ],
-  },
-  {
-    name: "Logistics Deployment",
-    category: "Last Mile",
-    description:
-      "Purpose-built configurations for hyperlocal and e-commerce fulfilment. Optimised for payload, range, and route density in congested urban corridors.",
-    links: [
-      { label: "Case Study", href: "#" },
-      { label: "Enquire", href: "#contact" },
-    ],
-  },
-  {
-    name: "Urban Patrol Systems",
-    category: "Security",
-    description:
-      "Campus, industrial, and municipal surveillance deployments. Connected fleet intelligence for real-time coverage mapping and incident response.",
-    links: [
-      { label: "Specifications", href: "#" },
-      { label: "Enquire", href: "#contact" },
-    ],
-  },
-  {
-    name: "Ride Platform",
-    category: "Transport",
-    description:
-      "Urban ride-hailing with connected fleet management, dynamic pricing, and rider analytics. Designed for bike taxi operators scaling across cities.",
-    links: [
-      { label: "Partner Program", href: "#" },
-      { label: "Enquire", href: "#contact" },
-    ],
-  },
-  {
-    name: "Modular Hardware",
-    category: "Engineering",
-    description:
-      "Swappable battery systems, high-efficiency motors, and ruggedised chassis. Every component is designed for independent upgrade and replacement without system downtime.",
-    links: [
-      { label: "Technical Specs", href: "#" },
-      { label: "Buy Now", href: "#" },
-    ],
-  },
-  {
-    name: "Autonomous Systems",
-    category: "R&D",
-    description:
-      "Edge computing for on-vehicle decision-making. Building towards autonomous navigation with sensor fusion, path planning, and V2X communication protocols.",
-    links: [
-      { label: "Research", href: "#" },
-      { label: "Careers", href: "#careers" },
-    ],
+    category: "Hardware",
+    title: "Robotic Actuator",
+    image: actuatorImg,
+    href: "/robotic-actuators",
   },
 ];
 
 const ProductsSection = () => {
-  const [expandedIndex, setExpandedIndex] = useState<number | null>(null);
-
   return (
-    <section className="relative py-32 lg:py-40">
+    <section id="products" className="relative border-t border-border py-24 lg:py-32">
       <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
-        {/* Section header */}
-        <div className="flex items-baseline gap-4 mb-16">
-          <h2 className="text-foreground font-semibold text-lg font-medium">Products</h2>
-          <span className="text-muted-foreground text-sm">
-            {String(products.length).padStart(2, "0")}
-          </span>
+        <div className="mb-14 lg:mb-20">
+          <p className="text-xs uppercase tracking-[0.28em] text-primary mb-4">Products</p>
+          <h2 className="text-4xl lg:text-5xl font-light leading-[1.05]">
+            Two platforms. <span className="text-muted-foreground">One mission.</span>
+          </h2>
         </div>
 
-        {/* Product cards */}
-        <div className="space-y-0">
-          {products.map((product, i) => (
-            <motion.div
-              key={product.name}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-50px" }}
-              transition={{ duration: 0.5, delay: i * 0.05 }}
-              className="border-t border-border"
+        <div className="grid sm:grid-cols-2 gap-6 lg:gap-8">
+          {products.map((product) => (
+            <Link
+              key={product.title}
+              to={product.href}
+              className="group block rounded-2xl border border-border overflow-hidden bg-card/30 hover:border-primary/40 transition-colors duration-500"
             >
-              <button
-                onClick={() =>
-                  setExpandedIndex(expandedIndex === i ? null : i)
-                }
-                className="w-full py-8 flex items-start justify-between text-left group"
-              >
-                <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-6">
-                  <h3 className="text-foreground text-xl lg:text-2xl font-light group-hover:text-primary transition-colors duration-300">
-                    {product.name}
-                  </h3>
-                  <span className="text-muted-foreground text-xs tracking-wider uppercase">
+              <div className="relative aspect-[16/10] overflow-hidden">
+                <img
+                  src={product.image}
+                  alt={product.title}
+                  className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/10 to-transparent" />
+              </div>
+              <div className="p-6 lg:p-8 flex items-center justify-between">
+                <div>
+                  <span className="text-xs uppercase tracking-[0.2em] text-muted-foreground">
                     {product.category}
                   </span>
+                  <h3 className="text-xl lg:text-2xl font-light mt-1 group-hover:text-primary transition-colors duration-300">
+                    {product.title}
+                  </h3>
                 </div>
-                <span className="text-muted-foreground text-2xl leading-none mt-1 group-hover:text-primary transition-colors duration-300">
-                  {expandedIndex === i ? "−" : "+"}
+                <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-border text-muted-foreground group-hover:border-primary group-hover:text-primary group-hover:translate-x-1 transition-all duration-300">
+                  <ArrowRight size={16} />
                 </span>
-              </button>
-
-              <AnimatePresence>
-                {expandedIndex === i && (
-                  <motion.div
-                    initial={{ height: 0, opacity: 0 }}
-                    animate={{ height: "auto", opacity: 1 }}
-                    exit={{ height: 0, opacity: 0 }}
-                    transition={{ duration: 0.3, ease: "easeInOut" }}
-                    className="overflow-hidden"
-                  >
-                    <div className="pb-8 max-w-2xl">
-                      <p className="text-muted-foreground text-sm leading-relaxed mb-6">
-                        {product.description}
-                      </p>
-                      <div className="flex flex-wrap gap-6">
-                        {product.links.map((link) => (
-                          <a
-                            key={link.label}
-                            href={link.href}
-                            className="text-primary text-sm flex items-center gap-1.5 hover:gap-3 transition-all duration-300"
-                          >
-                            {link.label}
-                            <span>→</span>
-                          </a>
-                        ))}
-                      </div>
-                    </div>
-                  </motion.div>
-                )}
-              </AnimatePresence>
-            </motion.div>
+              </div>
+            </Link>
           ))}
-          {/* Bottom border */}
-          <div className="border-t border-border" />
         </div>
       </div>
     </section>

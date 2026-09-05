@@ -24,7 +24,7 @@ const Footer = () => {
             <h4 className="text-foreground font-semibold font-medium mb-6 text-base">Company</h4>
             <ul className="space-y-3">
               {[
-                { label: "Vision", href: "/vision", external: false },
+                { label: "Why now?", href: "/#why-it-matters", external: false },
                 { label: "Careers", href: "https://wellfound.com/company/mazout-electric/jobs", external: true },
                 { label: "Blogs", href: "/blogs", external: false },
                 { label: "Gallery", href: "/gallery", external: false },

@@ -187,6 +187,17 @@ const TrainingPlatform = () => {
           </div>
         </section>
 
+        {/* Demo video */}
+        <section className="relative w-screen h-screen overflow-hidden bg-background">
+          <iframe
+            className="absolute inset-0 w-full h-full border-0"
+            src="https://www.youtube.com/embed/_yAwl3LMnLI?autoplay=1&mute=1&loop=1&playlist=_yAwl3LMnLI&controls=1&modestbranding=1&rel=0&playsinline=1"
+            title="Zooty"
+            allow="autoplay; encrypted-media; picture-in-picture"
+            allowFullScreen
+          />
+        </section>
+
         {/* Applications */}
         <section className="border-t border-border">
           <div className="max-w-[1400px] mx-auto px-6 lg:px-12 py-20">

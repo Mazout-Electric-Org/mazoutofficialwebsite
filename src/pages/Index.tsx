@@ -1,36 +1,21 @@
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
-import MeetZootySection from "@/components/MeetZootySection";
-import HeroVideoSection from "@/components/HeroVideoSection";
-import HowItWorksSection from "@/components/HowItWorksSection";
-import BlogsSection from "@/components/BlogsSection";
-import RevolutionSection from "@/components/RevolutionSection";
-import FAQSection from "@/components/FAQSection";
+import ThesisSection from "@/components/ThesisSection";
+import ProductsSection from "@/components/ProductsSection";
+import MissionSection from "@/components/MissionSection";
+import GallerySection from "@/components/GallerySection";
+import JoinUsSection from "@/components/JoinUsSection";
 import Footer from "@/components/Footer";
-import TrainingPlatformPopup from "@/components/TrainingPlatformPopup";
 import SEO from "@/components/SEO";
 
-const productJsonLd = {
+const organizationJsonLd = {
   "@context": "https://schema.org",
-  "@type": "Product",
-  name: "Zooty Electric Vehicle",
-  brand: { "@type": "Brand", name: "Mazout Electric" },
+  "@type": "Organization",
+  name: "Mazout Electric",
   description:
-    "Zooty is a multi-purpose electric vehicle by Mazout Electric — purpose-built for last-mile logistics, campus and security patrolling, and bike taxi operations. 50km range, rapid charging, zero emissions.",
-  image: "https://mazoutelectric.com/og-image.jpg",
+    "Mazout Electric builds the hardware foundation for the Physical AI era — robotic actuators, autonomous mobile platforms, and developer tooling that bring intelligence into the physical world.",
   url: "https://mazoutelectric.com/",
-  manufacturer: {
-    "@type": "Organization",
-    name: "Mazout Electric",
-    url: "https://mazoutelectric.com/",
-  },
-  offers: {
-    "@type": "Offer",
-    price: "0",
-    priceCurrency: "INR",
-    availability: "https://schema.org/InStock",
-    url: "https://zooty.mazoutelectric.com/",
-  },
+  logo: "https://mazoutelectric.com/og-image.jpg",
 };
 
 const Index = () => {
@@ -38,22 +23,19 @@ const Index = () => {
     <div className="min-h-screen bg-background text-foreground">
       <SEO
         title="Mazout Electric | Zooty — Autonomous EV & Training Platform"
-        description="Mazout Electric builds Zooty — an autonomous electric vehicle and full-stack training platform for logistics, patrolling, bike taxi and ADAS / autonomy R&D in India."
+        description="Mazout Electric builds the hardware foundation for the Physical AI era — robotic actuators, autonomous mobile platforms, and the Zooty training platform."
         path="/"
-        keywords="mazout, mazout electric, zooty, zooty EV, electric vehicle, EV, autonomous vehicle, autonomous EV, training platform, ADAS platform, autonomy research vehicle, drive by wire EV, last mile delivery EV, electric bike taxi, patrolling EV, fleet electric vehicle India"
-
-        jsonLd={productJsonLd}
+        keywords="mazout, mazout electric, physical ai, robotic actuators, zooty, zooty EV, autonomous vehicle, training platform, robotics hardware, drive by wire EV"
+        jsonLd={organizationJsonLd}
       />
       <Navbar />
       <HeroSection />
-      <MeetZootySection />
-      <HeroVideoSection />
-      <HowItWorksSection />
-      <BlogsSection />
-      <RevolutionSection />
-      <FAQSection />
+      <ThesisSection />
+      <ProductsSection />
+      <MissionSection />
+      <GallerySection />
+      <JoinUsSection />
       <Footer />
-      <TrainingPlatformPopup />
     </div>
   );
 };
