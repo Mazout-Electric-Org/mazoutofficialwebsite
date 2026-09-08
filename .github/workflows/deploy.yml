@@ -1,0 +1,49 @@
+name: Deploy to AWS
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch: {}
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build
+        env:
+          VITE_FORMSPREE_CONTACT_ENDPOINT: ${{ secrets.VITE_FORMSPREE_CONTACT_ENDPOINT }}
+        run: npm run build
+
+      - name: Set up SSH
+        run: |
+          mkdir -p ~/.ssh
+          echo "${{ secrets.DEPLOY_SSH_KEY }}" > ~/.ssh/deploy_key
+          chmod 600 ~/.ssh/deploy_key
+          ssh-keyscan -p "${{ secrets.DEPLOY_SSH_PORT }}" -H "${{ secrets.DEPLOY_HOST }}" >> ~/.ssh/known_hosts
+
+      - name: Deploy build to EC2
+        # --delete keeps the deploy path in sync with this build, but --exclude
+        # protects /iCommuteX: that's a separate SPA living under the same
+        # Caddy root (/var/www/mazoutelectric.com) and isn't part of this repo,
+        # so it must never be touched or removed by this sync.
+        run: |
+          rsync -az --delete --exclude=/iCommuteX \
+            -e "ssh -i ~/.ssh/deploy_key -p ${{ secrets.DEPLOY_SSH_PORT }}" \
+            dist/ \
+            "${{ secrets.DEPLOY_USER }}@${{ secrets.DEPLOY_HOST }}:${{ secrets.DEPLOY_PATH }}"
+
+      - name: Clean up
+        if: always()
+        run: rm -f ~/.ssh/deploy_key
