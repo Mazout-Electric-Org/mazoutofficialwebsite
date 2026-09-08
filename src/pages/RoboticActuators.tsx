@@ -55,7 +55,7 @@ import roboticArmImg from "@/assets/robotic-arm.png";
 gsap.registerPlugin(ScrollTrigger);
 
 const slides = [
-    { src: img1, alt: "Mazout robotic actuator — compact BLDC unit" },
+    { src: img1, alt: "Mazout robotic actuator - compact BLDC unit" },
     { src: img2, alt: "Robotic actuator sizes and variants" },
     { src: img3, alt: "Actuator with harmonic gear attachment" },
     { src: img4, alt: "Mechanical drawing of the actuator with dimensions" },
@@ -73,7 +73,7 @@ const features = [
 const breakdownData = [
     {
         title: "BLDC Motor",
-        desc: "Brushless DC (BLDC) motor delivers smooth, precise, and reliable motion with low maintenance and high efficiency — making it ideal for demanding robotic applications.",
+        desc: "Brushless DC (BLDC) motor delivers smooth, precise, and reliable motion with low maintenance and high efficiency - making it ideal for demanding robotic applications.",
         bullets: ["Efficiency: Up to 90–95%", "High torque-to-weight ratio", "Voltage range: 24–54V"],
     },
     {
@@ -520,7 +520,7 @@ const RoboticActuators = () => {
                             const absPos = Math.abs(localPos);
 
                             let opacity: number;
-                            let fadeFactor: number; // 0 at plateau, 1 at the outer edge — drives blur
+                            let fadeFactor: number; // 0 at plateau, 1 at the outer edge - drives blur
 
                             if (absPos <= plateau) {
                                 opacity = 1;
@@ -561,7 +561,7 @@ const RoboticActuators = () => {
     const productJsonLd = {
         "@context": "https://schema.org",
         "@type": "Product",
-        name: "Mazout Robotic Actuator — BLDC Integrated Unit",
+        name: "Mazout Robotic Actuator - BLDC Integrated Unit",
         description: "Custom robotic actuator integrating a BLDC motor, harmonic reducer, encoder and FOC motor controller. Made in India by Mazout Electric.",
         brand: { "@type": "Brand", name: "Mazout Electric" },
         image: slides.map((s) => `https://mazoutelectric.com${s.src}`),
@@ -603,8 +603,8 @@ const RoboticActuators = () => {
                 </div>
             </div>
             <SEO
-                title="Robotic Actuators in India | Custom BLDC Actuators — Mazout"
-                description="Mazout builds custom robotic actuators in India — compact BLDC motor + harmonic reducer + encoder + FOC controller in one unit. For humanoids, autonomous vehicles, robotic arms and quadrupeds."
+                title="Robotic Actuators in India | Custom BLDC Actuators - Mazout"
+                description="Mazout builds custom robotic actuators in India - compact BLDC motor + harmonic reducer + encoder + FOC controller in one unit. For humanoids, autonomous vehicles, robotic arms and quadrupeds."
                 path="/robotic-actuators"
                 keywords="robotic actuators in India, custom robotic actuators, BLDC actuator, robotic actuator, harmonic actuator, humanoid actuator, robot joint actuator, integrated servo actuator, Mazout actuator"
 

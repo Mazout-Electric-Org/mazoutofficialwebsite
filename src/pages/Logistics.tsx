@@ -16,7 +16,7 @@ const breadcrumbJsonLd = {
 const Logistics = () => (
   <div className="min-h-screen bg-background text-foreground">
     <SEO
-      title="Zooty for Logistics — Last-Mile Delivery EV | Mazout Electric"
+      title="Zooty for Logistics - Last-Mile Delivery EV | Mazout Electric"
       description="Zooty for logistics: a purpose-built electric vehicle for hyperlocal and e-commerce last-mile fulfilment, optimised for payload, range, and route density in congested urban corridors."
       path="/logistics"
       keywords="zooty logistics, last mile delivery EV, e-commerce delivery vehicle, hyperlocal delivery EV, electric logistics vehicle India, last mile fulfilment EV"

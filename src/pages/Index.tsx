@@ -13,7 +13,7 @@ const organizationJsonLd = {
   "@type": "Organization",
   name: "Mazout Electric",
   description:
-    "Mazout Electric builds the hardware foundation for the Physical AI era — robotic actuators, autonomous mobile platforms, and developer tooling that bring intelligence into the physical world.",
+    "Mazout Electric builds the hardware foundation for the Physical AI era - robotic actuators, autonomous mobile platforms, and developer tooling that bring intelligence into the physical world.",
   url: "https://mazoutelectric.com/",
   logo: "https://mazoutelectric.com/og-image.jpg",
 };
@@ -22,8 +22,8 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-background text-foreground">
       <SEO
-        title="Mazout Electric | Zooty — Autonomous EV & Training Platform"
-        description="Mazout Electric builds the hardware foundation for the Physical AI era — robotic actuators, autonomous mobile platforms, and the Zooty training platform."
+        title="Mazout Electric | Zooty - Autonomous EV & Training Platform"
+        description="Mazout Electric builds the hardware foundation for the Physical AI era - robotic actuators, autonomous mobile platforms, and the Zooty training platform."
         path="/"
         keywords="mazout, mazout electric, physical ai, robotic actuators, zooty, zooty EV, autonomous vehicle, training platform, robotics hardware, drive by wire EV"
         jsonLd={organizationJsonLd}

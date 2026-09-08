@@ -2,10 +2,10 @@ import { useLayoutEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { Factory, Home, GraduationCap } from "lucide-react";
-import presentationsBg from "@/assets/presentations.jpg";
-import architectureBg from "@/assets/architure-diagram.png";
-import iptifBg from "@/assets/IIT-ACB_IPTIF_Exhibition.jpg";
+import { Factory, GraduationCap } from "lucide-react";
+import presentationsBg from "@/assets/Render1.png";
+import architectureBg from "@/assets/Teleoperate.png";
+import iptifBg from "@/assets/presentations.jpg";
 import humanoidBg from "@/assets/humanoid.png";
 import moleculeBg from "@/assets/Molecule.jpeg";
 
@@ -20,13 +20,14 @@ const FADE_EDGE = 0.78; // |localPos| above this: fully hidden — kept > 0.5 so
 const panelBackgrounds = [presentationsBg, architectureBg, iptifBg, humanoidBg, moleculeBg];
 
 const stackItems = [
-  "Intelligent robotic actuators",
   "Autonomous mobile robot platforms",
   "Robot controllers and embedded electronics",
   "Open robotics SDKs",
   "AI-ready hardware platforms",
   "Drive-by-wire mobility systems",
   "Development and education platforms",
+  "Data collection and annotation",
+  "Industrial AI models",
 ];
 
 const focusAreas = [
@@ -34,12 +35,7 @@ const focusAreas = [
     icon: Factory,
     title: "Industrial Automation",
     desc: "Factories worldwide face labor shortages while productivity demand rises. Physical AI enables autonomous inspection, material handling, machine tending, warehouse automation, assembly, and collaborative manufacturing.",
-    link: { label: "Check robotic actuators", href: "/robotic-actuators" },
-  },
-  {
-    icon: Home,
-    title: "Home Automation",
-    desc: "As populations age and urbanization increases, intelligent robots will become everyday assistants — from household chores and elderly care to indoor logistics and home maintenance.",
+    link: { label: "Check battery automation", href: "/battery-manufacturing-autopilot" },
   },
   {
     icon: GraduationCap,
@@ -171,7 +167,7 @@ const ThesisSection = () => {
                 untouched.
               </p>
               <p className="text-sm lg:text-base text-foreground/90 leading-relaxed mb-3">
-                This creates one of humanity's biggest bottlenecks—not intelligence, but
+                This creates one of humanity's biggest bottlenecks - not intelligence, but
                 execution.
               </p>
               <p className="text-sm lg:text-base text-muted-foreground leading-relaxed">
@@ -222,7 +218,7 @@ const ThesisSection = () => {
             <div className="max-w-3xl lg:max-w-5xl">
               <div className="text-xs uppercase tracking-[0.28em] text-primary mb-3">03 / 05</div>
               <h3 className="text-3xl lg:text-4xl font-light mb-6">Where We Focus</h3>
-              <div className="grid md:grid-cols-3 gap-5 lg:gap-6">
+              <div className="grid sm:grid-cols-2 gap-5 lg:gap-6 max-w-2xl">
                 {focusAreas.map((area) => (
                   <div
                     key={area.title}

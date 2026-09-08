@@ -42,7 +42,7 @@ const images = [
   { src: patrollingCollage, caption: "Patrolling Collage" },
   { src: patrollingRoute, caption: "Patrolling Route" },
   { src: sdvArchitecture, caption: "SDV Architecture" },
-  { src: patrollingCoverNew, caption: "Patrolling — YSC Delhi" },
+  { src: patrollingCoverNew, caption: "Patrolling - YSC Delhi" },
   { src: zootyTaxi, caption: "Zooty Taxi" },
   { src: zootyoffice, caption: "Zooty Design Office" },
 ];
@@ -70,8 +70,8 @@ const Gallery = () => {
   return (
     <div className="min-h-screen bg-background text-foreground">
       <SEO
-        title="Gallery — Zooty in Action | Mazout Electric"
-        description="Photos and renders of Zooty, Mazout Electric's autonomous EV platform — from teleoperation and R&D to logistics, patrolling, and bike taxi deployments."
+        title="Gallery - Zooty in Action | Mazout Electric"
+        description="Photos and renders of Zooty, Mazout Electric's autonomous EV platform - from teleoperation and R&D to logistics, patrolling, and bike taxi deployments."
         path="/gallery"
         keywords="zooty gallery, mazout electric photos, zooty renders, autonomous EV photos, zooty deployment images"
       />

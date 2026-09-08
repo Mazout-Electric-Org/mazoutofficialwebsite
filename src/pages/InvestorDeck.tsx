@@ -129,7 +129,7 @@ const InvestorDeck = () => {
 
             <SlideSection num="04" eyebrow="State of the art" title="Autonomous deliveries are already happening">
               <p className="text-muted-foreground text-base lg:text-lg leading-relaxed">
-                Driven solely by tele-operation today — with real risks.
+                Driven solely by tele-operation today - with real risks.
               </p>
               <Bullets
                 items={[
@@ -140,20 +140,20 @@ const InvestorDeck = () => {
                 ]}
               />
               <div className="grid sm:grid-cols-2 gap-4 pt-4">
-                <Stat value="10M+" label="Autonomous deliveries by Starship Technologies — undisputed #1 in last-mile" />
+                <Stat value="10M+" label="Autonomous deliveries by Starship Technologies - undisputed #1 in last-mile" />
                 <Stat value="2014→26" label="From founding to 10M deliveries; Serve, Coco, Ottonomy follow" />
               </div>
             </SlideSection>
 
             <SlideSection num="05" eyebrow="Insight" title="Robots need reliable training data">
               <p className="text-muted-foreground text-base lg:text-lg leading-relaxed">
-                Our solution: convert existing vehicles into data engines, plus manually ride-able delivery bots — Zooty.
+                Our solution: convert existing vehicles into data engines, plus manually ride-able delivery bots - Zooty.
               </p>
               <Bullets
                 items={[
                   "Entirely failure-proof from day one",
                   "Fast, real-world data collection",
-                  "Human on the field — best signal for training data",
+                  "Human on the field - best signal for training data",
                 ]}
               />
             </SlideSection>
@@ -175,7 +175,7 @@ const InvestorDeck = () => {
             <SlideSection num="07" eyebrow="Traction" title="Pilots and demos">
               <Bullets
                 items={[
-                  <>Live demos in <span className="text-foreground">Delhi, India</span> — a city with <span className="text-primary text-2xl font-light">1,000+</span> dark stores</>,
+                  <>Live demos in <span className="text-foreground">Delhi, India</span> - a city with <span className="text-primary text-2xl font-light">1,000+</span> dark stores</>,
                   <>NDA signed with <span className="text-foreground">Uber Eats</span>, currently working on API integration ✔︎</>,
                 ]}
               />
@@ -186,13 +186,13 @@ const InvestorDeck = () => {
                 <div className="p-6 rounded-lg border border-border bg-card/40 space-y-3">
                   <p className="text-primary text-xs tracking-[0.3em] uppercase">Vision</p>
                   <p className="text-foreground text-lg font-light leading-relaxed">
-                    Completely autonomous vehicles, optimizing reach for consumer goods with the fastest and cheapest deliveries — under <span className="text-primary text-2xl">$1</span> per mile.
+                    Completely autonomous vehicles, optimizing reach for consumer goods with the fastest and cheapest deliveries - under <span className="text-primary text-2xl">$1</span> per mile.
                   </p>
                 </div>
                 <div className="p-6 rounded-lg border border-border bg-card/40 space-y-3">
                   <p className="text-primary text-xs tracking-[0.3em] uppercase">Moat</p>
                   <p className="text-foreground text-lg font-light leading-relaxed">
-                    Custom-trained VLA model paired with manually-ridden vehicles — the fastest, most reliable data collection and training pipeline in the category.
+                    Custom-trained VLA model paired with manually-ridden vehicles - the fastest, most reliable data collection and training pipeline in the category.
                   </p>
                 </div>
               </div>
@@ -209,7 +209,7 @@ const InvestorDeck = () => {
               />
             </SlideSection>
 
-            <SlideSection num="10" eyebrow="Appendix · Hardware" title="Molecule — integrated control unit">
+            <SlideSection num="10" eyebrow="Appendix · Hardware" title="Molecule - integrated control unit">
               <Bullets
                 items={[
                   "STM32 microcontroller",
@@ -242,9 +242,9 @@ const InvestorDeck = () => {
               <Bullets
                 items={[
                   <>Dark store deliveries crossing <span className="text-primary text-2xl font-light">1M+</span> orders/day in India and scaling fast in the US</>,
-                  <>Last-mile labor cost up <span className="text-primary text-2xl font-light">35%</span> in the US since 2020 — margins broken</>,
-                  <>VLA (Vision-Language-Action) models maturing — robotics finally has a usable AI stack</>,
-                  <>Battery, compute and sensor BOM down <span className="text-primary text-2xl font-light">60%</span> in 5 years — viable unit economics for the first time</>,
+                  <>Last-mile labor cost up <span className="text-primary text-2xl font-light">35%</span> in the US since 2020 - margins broken</>,
+                  <>VLA (Vision-Language-Action) models maturing - robotics finally has a usable AI stack</>,
+                  <>Battery, compute and sensor BOM down <span className="text-primary text-2xl font-light">60%</span> in 5 years - viable unit economics for the first time</>,
                   <>Regulatory clarity emerging for low-speed sidewalk &amp; bike-lane vehicles in 20+ US states</>,
                 ]}
               />

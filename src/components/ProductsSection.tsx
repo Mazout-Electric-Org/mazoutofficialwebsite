@@ -1,20 +1,20 @@
 import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 import trainingImg from "@/assets/Render1.png";
-import actuatorImg from "@/assets/Elements.png";
+import batteryAutomationImg from "@/assets/buildo-cells.jpg";
 
 const products = [
+  {
+    category: "Manufacturing",
+    title: "Battery Automation",
+    image: batteryAutomationImg,
+    href: "/battery-manufacturing-autopilot",
+  },
   {
     category: "Education",
     title: "SDV Training Platform",
     image: trainingImg,
     href: "/training-platform",
-  },
-  {
-    category: "Hardware",
-    title: "Robotic Actuator",
-    image: actuatorImg,
-    href: "/robotic-actuators",
   },
 ];
 
@@ -23,7 +23,7 @@ const ProductsSection = () => {
     <section id="products" className="relative border-t border-border py-24 lg:py-32">
       <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
         <div className="mb-14 lg:mb-20">
-          <p className="text-xs uppercase tracking-[0.28em] text-primary mb-4">Products</p>
+          <p className="text-xs uppercase tracking-[0.28em] text-primary mb-4">Solutions</p>
           <h2 className="text-4xl lg:text-5xl font-light leading-[1.05]">
             Two platforms. <span className="text-muted-foreground">One mission.</span>
           </h2>

@@ -16,7 +16,7 @@ const breadcrumbJsonLd = {
 const Patrolling = () => (
   <div className="min-h-screen bg-background text-foreground">
     <SEO
-      title="Zooty for Patrolling — Campus & Security Surveillance EV | Mazout Electric"
+      title="Zooty for Patrolling - Campus & Security Surveillance EV | Mazout Electric"
       description="Zooty for patrolling: an electric vehicle for campus, industrial, and municipal surveillance deployments, with connected fleet intelligence for real-time coverage mapping and incident response."
       path="/patrolling"
       keywords="zooty patrolling, campus security EV, electric patrol vehicle, surveillance EV India, municipal patrolling vehicle, security fleet EV"

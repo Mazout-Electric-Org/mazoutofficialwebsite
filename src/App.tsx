@@ -28,6 +28,7 @@ const Cookies = lazy(() => import("./pages/Cookies.tsx"));
 const NotFound = lazy(() => import("./pages/NotFound.tsx"));
 const RoboticActuators = lazy(() => import("./pages/RoboticActuators.tsx"));
 const Shop = lazy(() => import("./pages/Shop.tsx"));
+const BatteryManufacturingAutopilot = lazy(() => import("./pages/BatteryManufacturingAutopilot.tsx"));
 
 const queryClient = new QueryClient();
 
@@ -54,6 +55,7 @@ const App = () => (
               <Route path="/privacy" element={<Privacy />} />
               <Route path="/robotic-actuators" element={<RoboticActuators />} />
               <Route path="/shop" element={<Shop />} />
+              <Route path="/battery-manufacturing-autopilot" element={<BatteryManufacturingAutopilot />} />
               <Route path="/terms" element={<Terms />} />
               <Route path="/cookies" element={<Cookies />} />
               {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}

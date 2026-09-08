@@ -31,7 +31,7 @@ import mechDrawingImg from "@/assets/actuator_mechnical_drawing.png";
 import zootyRenderHeroImg from "@/assets/zooty-render-hero.png";
 
 const slides = [
-    { src: elementsImg, alt: "Mazout robotic actuator — exploded components" },
+    { src: elementsImg, alt: "Mazout robotic actuator - exploded components" },
     { src: humanoidImg, alt: "Robotic actuator in a humanoid application" },
     { src: mechDrawingImg, alt: "Mechanical drawing of the actuator with dimensions" },
     { src: zootyRenderHeroImg, alt: "Robotic actuator render" },
@@ -91,7 +91,7 @@ const Shop = () => {
     return (
         <div className="min-h-screen bg-background text-foreground">
             <SEO
-                title="Shop | Mazout Robotic Actuator — Buy Now"
+                title="Shop | Mazout Robotic Actuator - Buy Now"
                 description="Buy Mazout's custom BLDC robotic actuator. In-stock units, 1-year warranty, full SDK access. Plus accessories: CAN adapters, tool kits, and diagnostic gear."
                 path="/shop"
                 keywords="buy robotic actuator, BLDC actuator price, robotic actuator India, actuator accessories"
@@ -203,7 +203,7 @@ const Shop = () => {
                         <p className="text-xs uppercase tracking-[0.28em] text-primary mb-4">Documentation</p>
                         <h3 className="text-3xl font-light mb-4">Everything you need.</h3>
                         <p className="text-muted-foreground mb-8">
-                            API reference, examples, firmware notes, and integration guides — open source.
+                            API reference, examples, firmware notes, and integration guides - open source.
                         </p>
                         <Button asChild variant="outline" size="lg">
                             <a href="https://github.com/Mazout-Electric/Documentation/blob/main/README.md" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2">

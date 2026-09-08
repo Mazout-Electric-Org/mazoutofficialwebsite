@@ -74,7 +74,7 @@ const HeroSection = () => {
           transition={{ duration: 0.7, delay: 0.7 }}
           className="text-base lg:text-lg text-muted-foreground leading-relaxed max-w-2xl mx-auto mb-12"
         >
-          We believe the coming decade belongs to Physical AI—robots capable of
+          We believe the coming decade belongs to Physical AI - robots capable of
           perceiving, deciding, and acting autonomously in the real world. Just as
           electricity amplified human muscle during the Industrial Revolution, Physical
           AI will amplify human productivity by automating physical work across every
@@ -88,7 +88,7 @@ const HeroSection = () => {
           className="flex flex-col sm:flex-row items-center justify-center gap-4"
         >
           <Button size="lg" asChild className="uppercase tracking-[0.18em]">
-            <a href="#products">Products</a>
+            <a href="#products">Solutions</a>
           </Button>
           <Button
             size="lg"

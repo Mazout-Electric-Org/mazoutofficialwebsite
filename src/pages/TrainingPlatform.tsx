@@ -11,10 +11,10 @@ import zootyLanding from "@/assets/zooty-landing-vehicle.png";
 import render1 from "@/assets/Render1.png";
 
 const gallery = [
-  { src: zootyRender, alt: "Zooty training platform — front render" },
-  { src: zootyHero, alt: "Zooty platform — hero view" },
-  { src: zootyLanding, alt: "Zooty platform — landing view" },
-  { src: render1, alt: "Zooty platform — alternate render" },
+  { src: zootyRender, alt: "Zooty training platform - front render" },
+  { src: zootyHero, alt: "Zooty platform - hero view" },
+  { src: zootyLanding, alt: "Zooty platform - landing view" },
+  { src: render1, alt: "Zooty platform - alternate render" },
 ];
 
 const applications = [
@@ -40,7 +40,7 @@ const peripherals = [
 ];
 
 const included = [
-  { icon: GraduationCap, title: "Hands-on Training", desc: "2-day onboarding with our engineers — hardware, SDK, and your first deployment." },
+  { icon: GraduationCap, title: "Hands-on Training", desc: "2-day onboarding with our engineers - hardware, SDK, and your first deployment." },
   { icon: FileText, title: "Operating Manual", desc: "Full printed + digital manual covering safety, maintenance, and APIs." },
   { icon: ShieldCheck, title: "1-Year Warranty", desc: "Hardware warranty with on-site replacement for critical components." },
   { icon: Wrench, title: "Spares Kit", desc: "Starter spares: fuses, harnesses, mounts, and a backup compute module." },
@@ -51,7 +51,7 @@ const faqs = [
   { q: "Is it road-legal?", a: "Zooty is delivered as a research and training platform. Public-road operation depends on your jurisdiction; we support homologation paperwork for partners." },
   { q: "What software stack is supported?", a: "Linux, Autoware, CARLA bridge, Python and C++ SDKs, and a REST/MQTT cloud API." },
   { q: "What's the lead time?", a: "Next batch ships in June. Order now to reserve a unit." },
-  { q: "Do you offer custom configurations?", a: "Yes — sensor stack, compute, and drive-by-wire options can be tailored. Talk to sales." },
+  { q: "Do you offer custom configurations?", a: "Yes - sensor stack, compute, and drive-by-wire options can be tailored. Talk to sales." },
 ];
 
 const TrainingPlatform = () => {
@@ -62,7 +62,7 @@ const TrainingPlatform = () => {
   const productJsonLd = {
     "@context": "https://schema.org",
     "@type": "Product",
-    name: "Zooty — Training and Development Platform",
+    name: "Zooty - Training and Development Platform",
     description: "Road-ready electric vehicle platform for ADAS, autonomy, and robotics R&D. Made in India.",
     brand: { "@type": "Brand", name: "Mazout Electric" },
     image: gallery.map((g) => g.src),
@@ -77,7 +77,7 @@ const TrainingPlatform = () => {
   return (
     <div className="min-h-screen bg-background text-foreground">
       <SEO
-        title="Zooty Training Platform — Autonomous EV for ADAS & Robotics R&D"
+        title="Zooty Training Platform - Autonomous EV for ADAS & Robotics R&D"
         description="Zooty by Mazout Electric is a road-ready autonomous electric vehicle training platform for ADAS, autonomy and robotics research. Sensors, compute, drive-by-wire and open SDK included. Made in India."
         path="/training-platform"
 
@@ -118,7 +118,7 @@ const TrainingPlatform = () => {
             <div className="flex flex-col">
               <div className="flex flex-wrap gap-2 mb-5">
                 <span className="px-3 py-1 text-xs uppercase tracking-[0.2em] border border-primary/40 text-primary rounded-full">
-                  New stock — June
+                  New stock - June
                 </span>
                 <span className="px-3 py-1 text-xs uppercase tracking-[0.2em] border border-border text-muted-foreground rounded-full inline-flex items-center gap-1">
                   <MapPin size={12} /> Made in India
@@ -127,13 +127,13 @@ const TrainingPlatform = () => {
 
               <p className="text-xs uppercase tracking-[0.24em] text-primary mb-3">Product</p>
               <h1 className="font-serif text-4xl lg:text-6xl leading-tight mb-6">
-                Zooty — Training and Development Platform
+                Zooty - Training and Development Platform
               </h1>
               <p className="text-muted-foreground text-base lg:text-lg leading-relaxed mb-8">
                 Zooty is a compact, road-ready electric vehicle engineered as a full-stack
                 research and training platform. Drive-by-wire chassis, extensive sensor suite,
                 and an open SDK let teams move from idea to on-road
-                deployment in weeks — not years. Built for institutes, OEM R&D groups,
+                deployment in weeks - not years. Built for institutes, OEM R&D groups,
                 and autonomy startups.
               </p>
 
@@ -161,7 +161,7 @@ const TrainingPlatform = () => {
                 </Button>
               </div>
               <p className="text-xs text-muted-foreground mb-8">
-                Tap <span className="text-foreground">Sales Enquiry</span> to open a short form — our team responds within 24 hours.
+                Tap <span className="text-foreground">Sales Enquiry</span> to open a short form - our team responds within 24 hours.
               </p>
 
               {/* Quick links */}
@@ -248,7 +248,7 @@ const TrainingPlatform = () => {
           <div className="max-w-[1400px] mx-auto px-6 lg:px-12 py-20">
             <p className="text-xs uppercase tracking-[0.24em] text-primary mb-3">Support</p>
             <h2 className="font-serif text-3xl lg:text-5xl leading-tight mb-12 max-w-3xl">
-              Training, manuals, and support — included
+              Training, manuals, and support - included
             </h2>
             <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
               {included.map(({ icon: Icon, title, desc }) => (

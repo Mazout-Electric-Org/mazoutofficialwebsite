@@ -1,12 +1,12 @@
 import { Link } from "react-router-dom";
 import zootyNight from "@/assets/Zooty.jpg";
 import teleopDashboard from "@/assets/dashboard_stream.png";
-import roboticArm from "@/assets/robotic-arm.png";
+import zootyTeam from "@/assets/Zooty_team.jpg";
 
 const previewImages = [
   { src: zootyNight, alt: "Zooty electric vehicle prototype" },
   { src: teleopDashboard, alt: "Teleoperation dashboard live feed" },
-  { src: roboticArm, alt: "Robotic actuator hardware" },
+  { src: zootyTeam, alt: "Zooty team" },
 ];
 
 const GallerySection = () => {

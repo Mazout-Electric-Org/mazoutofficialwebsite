@@ -8,8 +8,8 @@ const Vision = () => {
   return (
     <div className="min-h-screen bg-background text-foreground">
       <SEO
-        title="Vision — Building the Rails for Autonomous Commerce | Mazout Electric"
-        description="Mazout Electric is building the operating system for urban movement — autonomous EV fleets, networked intelligence, and infrastructure for the next era of mobility."
+        title="Vision - Building the Rails for Autonomous Commerce | Mazout Electric"
+        description="Mazout Electric is building the operating system for urban movement - autonomous EV fleets, networked intelligence, and infrastructure for the next era of mobility."
         path="/vision"
         keywords="mazout vision, autonomous mobility, autonomous commerce, autonomous EV fleet, urban mobility OS, mazout electric vision"
       />

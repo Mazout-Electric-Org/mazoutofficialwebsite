@@ -6,21 +6,22 @@ const MissionSection = () => {
       <div className="relative max-w-3xl mx-auto px-6 lg:px-12 text-center">
         <p className="text-xs uppercase tracking-[0.28em] text-primary mb-6">Our Mission</p>
         <h2 className="text-3xl lg:text-5xl font-light leading-[1.15] mb-10">
-          Building the hardware foundation for the Physical AI era.
+          Empowering the Physical AI era.
         </h2>
         <p className="text-base lg:text-lg text-muted-foreground leading-relaxed mb-6">
-          From robotic actuators and intelligent electronics to autonomous vehicles and developer
-          platforms, our mission is to create technologies that make building robots faster, more
-          affordable, and accessible to innovators everywhere.
+          From real-world data collection, precise annotation, and advanced simulation to
+          training custom Vision-Language-Action (VLA) models, our mission is to build the
+          software and intelligence layer that brings industrial automation to life.
         </p>
         <p className="text-base lg:text-lg text-muted-foreground leading-relaxed mb-10">
           We envision a future where intelligence is no longer confined to software, but embodied
-          in machines that move, build, assist, explore, and work alongside humanity.
+          in robots that move, build, assist, and work alongside humanity - supported by the next
+          generation of industrial training and education.
         </p>
         <p className="text-lg lg:text-xl text-foreground font-light">
           Because the future is not only intelligent.
           <br />
-          It is physical.
+          <span className="text-primary">It is physical.</span>
         </p>
       </div>
     </section>

@@ -1,6 +1,6 @@
 import { Fragment, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, Sun, Moon, ChevronDown, Bot, GraduationCap, Cog } from "lucide-react";
+import { Menu, X, Sun, Moon, ChevronDown, GraduationCap, BatteryCharging } from "lucide-react";
 import { Link } from "react-router-dom";
 import ContactDialog from "./ContactDialog";
 import ComLogo1 from "@/assets/ComLogo1.png";
@@ -14,22 +14,16 @@ import {
 
 const productLinks = [
   {
-    label: "Zooty",
-    href: "/",
-    description: "Micro-mobility robot platform",
-    icon: Bot,
+    label: "Battery Manufacturing Autopilot",
+    href: "/battery-manufacturing-autopilot",
+    description: "Autonomous battery production line",
+    icon: BatteryCharging,
   },
   {
-    label: "Training Platform",
+    label: "SDV Training Platform",
     href: "/training-platform",
     description: "Hands-on robotics learning",
     icon: GraduationCap,
-  },
-  {
-    label: "Robotic Actuators",
-    href: "/robotic-actuators",
-    description: "Precision motion hardware",
-    icon: Cog,
   },
 ];
 
@@ -76,7 +70,7 @@ const Navbar = () => {
               {i === 0 && (
                 <DropdownMenu key="products">
                   <DropdownMenuTrigger className="group flex items-center gap-1 text-muted-foreground hover:text-foreground text-sm transition-colors duration-300 outline-none">
-                    Products
+                    Solutions
                     <ChevronDown
                       size={14}
                       className="transition-transform duration-300 group-data-[state=open]:rotate-180"
@@ -175,7 +169,7 @@ const Navbar = () => {
                   {i === 0 && (
                     <div className="flex flex-col gap-3 border-t border-border pt-4">
                       <span className="text-muted-foreground text-xs uppercase tracking-wider">
-                        Products
+                        Solutions
                       </span>
                       <div className="flex flex-col gap-1 -mx-2">
                         {productLinks.map((product) => (

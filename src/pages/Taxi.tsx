@@ -16,8 +16,8 @@ const breadcrumbJsonLd = {
 const Taxi = () => (
   <div className="min-h-screen bg-background text-foreground">
     <SEO
-      title="Zooty as Bike Taxi — Electric Ride-Hailing Vehicle | Mazout Electric"
-      description="Zooty as taxi: urban ride-hailing with connected fleet management, dynamic pricing, and rider analytics — designed for electric bike taxi operators scaling across cities."
+      title="Zooty as Bike Taxi - Electric Ride-Hailing Vehicle | Mazout Electric"
+      description="Zooty as taxi: urban ride-hailing with connected fleet management, dynamic pricing, and rider analytics - designed for electric bike taxi operators scaling across cities."
       path="/taxi"
       keywords="zooty taxi, electric bike taxi, ride hailing EV, electric taxi India, bike taxi fleet management, EV ride hailing platform"
       jsonLd={breadcrumbJsonLd}

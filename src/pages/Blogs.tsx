@@ -111,7 +111,7 @@ const Blogs = () => {
   return (
     <div className="min-h-screen bg-background text-foreground">
       <SEO
-        title="Blogs — Autonomous EVs, Logistics & Mobility | Mazout Electric"
+        title="Blogs - Autonomous EVs, Logistics & Mobility | Mazout Electric"
         description="Insights from Mazout Electric on autonomous vehicles, last-mile logistics, software-defined EVs, patrolling, and the future of urban mobility."
         path="/blogs"
         keywords="mazout blog, zooty blog, autonomous vehicle blog, electric vehicle India, last mile logistics, software defined vehicle"

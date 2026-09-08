@@ -114,7 +114,7 @@ const blogContent: Record<string, BlogEntry> = {
       { type: "h2", text: "Accelerating Autonomous Innovation" },
       {
         type: "p",
-        text: "Zooty is more than a vehicle—it is a development platform designed to accelerate innovation. By providing ready-to-use capabilities and SDKs, developers can spend less time building infrastructure and more time creating solutions that solve real-world problems."
+        text: "Zooty is more than a vehicle - it is a development platform designed to accelerate innovation. By providing ready-to-use capabilities and SDKs, developers can spend less time building infrastructure and more time creating solutions that solve real-world problems."
       },
       {
         type: "p",
@@ -170,7 +170,7 @@ const blogContent: Record<string, BlogEntry> = {
       },
       {
         type: "p",
-        text: "The dashboard was designed to provide complete situational awareness through live camera feeds, vehicle telemetry, battery information, GPS data, system diagnostics, and control feedback — all within a single interface."
+        text: "The dashboard was designed to provide complete situational awareness through live camera feeds, vehicle telemetry, battery information, GPS data, system diagnostics, and control feedback - all within a single interface."
       },
       { type: "h2", text: "The Importance of Latency" },
       {
@@ -620,7 +620,7 @@ const blogContent: Record<string, BlogEntry> = {
       },
       {
         type: "p",
-        text: "As the embedded developer behind <strong>Zooty</strong> — a compact teleoperated utility vehicle designed for last-mile logistics and industrial logistics — I’ve faced these issues firsthand. Zooty is powered by an <strong>STM32 microcontroller</strong> and uses <strong>ST3215 serial bus servos</strong> and actuators to actuate custom mechanisms for throttle, brakes, steering, and compartments. What follows are the real hidden challenges we encountered, far beyond the glossy marketing renderings."
+        text: "As the embedded developer behind <strong>Zooty</strong> - a compact teleoperated utility vehicle designed for last-mile logistics and industrial logistics - I’ve faced these issues firsthand. Zooty is powered by an <strong>STM32 microcontroller</strong> and uses <strong>ST3215 serial bus servos</strong> and actuators to actuate custom mechanisms for throttle, brakes, steering, and compartments. What follows are the real hidden challenges we encountered, far beyond the glossy marketing renderings."
       },
       { type: "h2", text: "Real-Time Control vs Linux Comfort: The Dual-Core Dilemma" },
       {
@@ -654,7 +654,7 @@ const blogContent: Record<string, BlogEntry> = {
       { type: "h2", text: "STM3215s Are Powerful but Demanding" },
       {
         type: "p",
-        text: "The ST3215 serial servos offer impressive performance — up to 30kg·cm torque, metal gears, and daisy-chain capability over a single bus. Zooty currently uses four of them for:"
+        text: "The ST3215 serial servos offer impressive performance - up to 30kg·cm torque, metal gears, and daisy-chain capability over a single bus. Zooty currently uses four of them for:"
       },
       {
         type: "ul",
@@ -769,7 +769,7 @@ const blogContent: Record<string, BlogEntry> = {
       },
       {
         type: "p",
-        text: "If you’re starting your own robotic vehicle project, here’s my strongest advice: <strong>prototype the worst-case scenarios first</strong> — maximum load, minimum signal strength, highest vibration, and longest latency. Everything looks easy until you test those conditions."
+        text: "If you’re starting your own robotic vehicle project, here’s my strongest advice: <strong>prototype the worst-case scenarios first</strong> - maximum load, minimum signal strength, highest vibration, and longest latency. Everything looks easy until you test those conditions."
       },
       {
         type: "p",
@@ -790,7 +790,7 @@ const blogContent: Record<string, BlogEntry> = {
       },
       {
         type: "p",
-        text: "To innovate at the speed of software, developers need to be able to write code for a vehicle feature—like a battery optimization algorithm—without needing to know exactly which wire, CAN bus, or microcontroller is physically executing the command. They need an abstraction layer that lets them forget the lower levels and focus entirely on the high-level logic.",
+        text: "To innovate at the speed of software, developers need to be able to write code for a vehicle feature - like a battery optimization algorithm - without needing to know exactly which wire, CAN bus, or microcontroller is physically executing the command. They need an abstraction layer that lets them forget the lower levels and focus entirely on the high-level logic.",
       },
       {
         type: "image",
@@ -810,7 +810,7 @@ const blogContent: Record<string, BlogEntry> = {
         type: "image",
         src: molecule,
         alt: "Molecule",
-        caption: "Molecule — Development kit for robotics",
+        caption: "Molecule - Development kit for robotics",
       },
       {
         type: "p",
@@ -863,12 +863,12 @@ const blogContent: Record<string, BlogEntry> = {
       },
       {
         type: "p",
-        text: "The resolution to this friction lies not in more labor, but in the autonomous compartmentalization of the final 500 meters. This is the \"Last Leg\"—the most time consuming and sensitive segment of the supply chain.",
+        text: "The resolution to this friction lies not in more labor, but in the autonomous compartmentalization of the final 500 meters. This is the \"Last Leg\" - the most time consuming and sensitive segment of the supply chain.",
       },
       { type: "h2", text: "The Macro Trend: The Rise of the Dark Store Economy" },
       {
         type: "p",
-        text: "The traditional retail footprint is being replaced by \"Dark Stores\"—micro-fulfillment centers strategically positioned in high-density urban areas. In India, the surge of Quick Commerce (Q-Commerce) has set a global benchmark for frequency and speed.",
+        text: "The traditional retail footprint is being replaced by \"Dark Stores\" - micro-fulfillment centers strategically positioned in high-density urban areas. In India, the surge of Quick Commerce (Q-Commerce) has set a global benchmark for frequency and speed.",
       },
       { type: "h3", text: "The Data of Hyper-Local Delivery (India Market)" },
       {
@@ -930,11 +930,11 @@ const blogContent: Record<string, BlogEntry> = {
       { type: "h2", text: "The Economic Case Study: NIT Rourkela and the Campus Economy" },
       {
         type: "p",
-        text: "The viability of this model is best demonstrated by the informal logistics economies emerging in closed campuses. At NIT Rourkela—a campus housing thousands of students—a significant logistical friction point existed: students were forced to walk to the main gate to collect parcels and food.",
+        text: "The viability of this model is best demonstrated by the informal logistics economies emerging in closed campuses. At NIT Rourkela - a campus housing thousands of students - a significant logistical friction point existed: students were forced to walk to the main gate to collect parcels and food.",
       },
       {
         type: "p",
-        text: "Enterprising students identified this \"Last Leg\" gap and began offering internal delivery services. In over a month, this peer-to-peer delivery network generated over 50,000 INR in revenue. This is a micro-market proof of concept. If a manual internal delivery system can generate such value in a single campus, an autonomous fleet like Zooty—operating 24/7 with zero labor cost—represents a massive untapped utility for the millions of people living in gated communities and tech parks.",
+        text: "Enterprising students identified this \"Last Leg\" gap and began offering internal delivery services. In over a month, this peer-to-peer delivery network generated over 50,000 INR in revenue. This is a micro-market proof of concept. If a manual internal delivery system can generate such value in a single campus, an autonomous fleet like Zooty - operating 24/7 with zero labor cost - represents a massive untapped utility for the millions of people living in gated communities and tech parks.",
       },
       { type: "h2", text: "The Scale of Opportunity" },
       {
@@ -960,7 +960,7 @@ const blogContent: Record<string, BlogEntry> = {
       },
       {
         type: "p",
-        text: "The future of logistics is not just about moving goods from Point A to Point B; it is about the \"Last Leg\"—the invisible, autonomous, and secure movement of essentials right to your doorstep. Zooty is the physical manifestation of this logical evolution.",
+        text: "The future of logistics is not just about moving goods from Point A to Point B; it is about the \"Last Leg\" - the invisible, autonomous, and secure movement of essentials right to your doorstep. Zooty is the physical manifestation of this logical evolution.",
       },
     ],
   },
@@ -968,12 +968,12 @@ const blogContent: Record<string, BlogEntry> = {
     title: "Zooty with YSC, Delhi for Patrolling & Utility",
     date: "2026-02-08",
     readTime: "4 min read",
-    hero: { src: patrollingCover, alt: "Zooty x Daud-è-Dilli — Smart patrolling assistant for your facility" },
+    hero: { src: patrollingCover, alt: "Zooty x Daud-è-Dilli - Smart patrolling assistant for your facility" },
     blocks: [
       { type: "h2", text: "Overview" },
       {
         type: "p",
-        text: "Large public gatherings demand more than planning—they require real-time adaptability, mobility, and control.",
+        text: "Large public gatherings demand more than planning - they require real-time adaptability, mobility, and control.",
       },
       {
         type: "p",
@@ -981,13 +981,13 @@ const blogContent: Record<string, BlogEntry> = {
       },
       {
         type: "p",
-        text: "The event, hosted by Daud-è-Dilli, brought together 300+ participants to promote Clean Air and Drug-Free Living. With roads sealed and a defined event perimeter in place, the challenge was clear: ensure seamless monitoring, crowd management, and security—without disrupting the environment or experience.",
+        text: "The event, hosted by Daud-è-Dilli, brought together 300+ participants to promote Clean Air and Drug-Free Living. With roads sealed and a defined event perimeter in place, the challenge was clear: ensure seamless monitoring, crowd management, and security - without disrupting the environment or experience.",
       },
       {
         type: "image",
         src: patrollingRoute,
         alt: "Route map for the 10 KM Super Hero Run around Yamuna Sports Complex",
-        caption: "Route map for the 10 KM Super Hero Run — the perimeter Zooty patrolled.",
+        caption: "Route map for the 10 KM Super Hero Run - the perimeter Zooty patrolled.",
       },
       { type: "divider" },
       { type: "h2", text: "Deployment Objective" },
@@ -997,7 +997,7 @@ const blogContent: Record<string, BlogEntry> = {
       },
       {
         type: "p",
-        text: "This was not a pilot in isolation—it was a live operational deployment under real conditions.",
+        text: "This was not a pilot in isolation - it was a live operational deployment under real conditions.",
       },
       { type: "divider" },
       { type: "h2", text: "On-Ground Impact with Zooty" },
@@ -1005,7 +1005,7 @@ const blogContent: Record<string, BlogEntry> = {
         type: "image",
         src: patrollingCollage,
         alt: "Zooty deployed on-ground at the Super Hero Run with participants and organizers",
-        caption: "Zooty on-ground at the Super Hero Run — start/finish line, perimeter patrols, and participant interactions.",
+        caption: "Zooty on-ground at the Super Hero Run - start/finish line, perimeter patrols, and participant interactions.",
       },
       {
         type: "p",
@@ -1028,7 +1028,7 @@ const blogContent: Record<string, BlogEntry> = {
           },
           {
             bold: "Enhanced authority & visibility",
-            text: "The upright, standing design gave personnel a commanding field of view—improving both awareness and perception.",
+            text: "The upright, standing design gave personnel a commanding field of view - improving both awareness and perception.",
           },
           {
             bold: "Zero-emission operation",
@@ -1072,7 +1072,7 @@ const blogContent: Record<string, BlogEntry> = {
       { type: "h2", text: "Proof Through Demonstration" },
       {
         type: "p",
-        text: "This event served as a live proof of concept—showing that Zooty is not just a product, but a practical solution for patrolling, monitoring, and utility operations in dynamic environments.",
+        text: "This event served as a live proof of concept - showing that Zooty is not just a product, but a practical solution for patrolling, monitoring, and utility operations in dynamic environments.",
       },
       {
         type: "link",
@@ -1084,13 +1084,13 @@ const blogContent: Record<string, BlogEntry> = {
       { type: "h2", text: "Looking Ahead" },
       {
         type: "p",
-        text: "Mazout Electric is building technology for use cases of national importance—where mobility, efficiency, and sustainability intersect.",
+        text: "Mazout Electric is building technology for use cases of national importance - where mobility, efficiency, and sustainability intersect.",
       },
       { type: "p", text: "Zooty is already transforming how patrolling is done." },
       { type: "p", text: "The next step is inevitable: Autonomous patrolling." },
       {
         type: "p",
-        text: "Imagine Zooty performing perimeter monitoring, anomaly detection, and crowd management—without human intervention.",
+        text: "Imagine Zooty performing perimeter monitoring, anomaly detection, and crowd management - without human intervention.",
       },
     ],
   },
